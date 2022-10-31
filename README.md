@@ -97,7 +97,7 @@ Anderson Mendoza - [@Anderson](https://www.linkedin.com/in/anderson-mendoza-ramo
 
 Giancarlos Olihua - [@Jankarurosu](https://github.com/Jankarurosu) - gianaromog_03@hotmail.com
 
-Jhon Aguilar -[@JhonFrancoAguilar](https://www.linkedin.com/in/jhon-franco-aguilar-rodriguez-223564225/) - jfaguilarrodriguez@gmail.com
+Jhon Aguilar - [@JhonFrancoAguilar](https://www.linkedin.com/in/jhon-franco-aguilar-rodriguez-223564225/) - jfaguilarrodriguez@gmail.com
 
 Alonso Cuadros - [@DiegoCuadros](https://github.com/DiegoCuadros) - diegocuadros2011@gmail.com
 
