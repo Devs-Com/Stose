@@ -5,7 +5,7 @@ package com.example.stose.models;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "products")
+@Document(collection = "blogs")
 public class BlogDTO {
 	
 	@Id

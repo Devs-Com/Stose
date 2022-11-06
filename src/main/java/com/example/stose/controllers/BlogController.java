@@ -21,13 +21,13 @@ import com.example.stose.repositories.BlogDAO;
 @RestController
 @CrossOrigin(origins = "*", methods = { RequestMethod.POST, RequestMethod.GET, RequestMethod.PUT,
 		RequestMethod.DELETE })
-@RequestMapping("/api/products")
+@RequestMapping("/api/blogs")
 public class BlogController {
 
 	@Autowired
 	private BlogDAO repository;
 
-	@PostMapping("/product")
+	@PostMapping("/blogs")
 	public BlogDTO create(@Validated @RequestBody BlogDTO p) {
 		return repository.insert(p);
 	}
@@ -37,12 +37,12 @@ public class BlogController {
 		return repository.findAll();
 	}
 
-	@PutMapping("/product/{id}")
+	@PutMapping("/blogs/{id}")
 	public BlogDTO update(@PathVariable String id, @Validated @RequestBody BlogDTO p) {
 		return repository.save(p);
 	}
 
-	@DeleteMapping("/product/{id}")
+	@DeleteMapping("/blogs/{id}")
 	public void delete(@PathVariable String id) {
 		repository.deleteById(id);
 	}
