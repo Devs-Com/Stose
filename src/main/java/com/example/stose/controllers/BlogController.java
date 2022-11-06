@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.stose.models.BlogDTO;
-import com.example.stose.repositories.BlogDAO;
+import com.example.stose.repositories.IBlogDAO;
 
 @RestController
 @CrossOrigin(origins = "*", methods = { RequestMethod.POST, RequestMethod.GET, RequestMethod.PUT,
@@ -25,9 +25,9 @@ import com.example.stose.repositories.BlogDAO;
 public class BlogController {
 
 	@Autowired
-	private BlogDAO repository;
+	private IBlogDAO repository;
 
-	@PostMapping("/blogs")
+	@PostMapping("/blog")
 	public BlogDTO create(@Validated @RequestBody BlogDTO p) {
 		return repository.insert(p);
 	}
@@ -37,12 +37,12 @@ public class BlogController {
 		return repository.findAll();
 	}
 
-	@PutMapping("/blogs/{id}")
+	@PutMapping("/blog/{id}")
 	public BlogDTO update(@PathVariable String id, @Validated @RequestBody BlogDTO p) {
 		return repository.save(p);
 	}
 
-	@DeleteMapping("/blogs/{id}")
+	@DeleteMapping("/blog/{id}")
 	public void delete(@PathVariable String id) {
 		repository.deleteById(id);
 	}

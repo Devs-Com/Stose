@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.example.stose.models.BlogDTO;
 
 @Repository
-public interface BlogDAO extends MongoRepository<BlogDTO, String> {
+public interface IBlogDAO extends MongoRepository<BlogDTO, String> {
 	
 	
 }
