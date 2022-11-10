@@ -7,12 +7,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.data.annotation.CreatedBy;
+
 @Entity
 @Table(name = "tb_libro")
 public class Libro {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
 	private Long id;
 	
 	@Column(name = "titulo",nullable = false,length = 50)
@@ -74,7 +77,7 @@ public class Libro {
     }
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -82,7 +85,7 @@ public class Libro {
     }
 
     public String getTitulo() {
-        return titulo;
+        return this.titulo;
     }
 
     public void setTitulo(String titulo) {
@@ -90,7 +93,7 @@ public class Libro {
     }
 
     public String getAutor() {
-        return autor;
+        return this.autor;
     }
 
     public void setAutor(String autor) {
@@ -98,7 +101,7 @@ public class Libro {
     }
 
     public String getId_editorial() {
-        return id_editorial;
+        return this.id_editorial;
     }
 
     public void setId_editorial(String id_editorial) {
@@ -106,7 +109,7 @@ public class Libro {
     }
 
     public String getId_categoria() {
-        return id_categoria;
+        return this.id_categoria;
     }
 
     public void setId_categoria(String id_categoria) {
@@ -122,7 +125,7 @@ public class Libro {
     }
 
     public String getPrecio() {
-        return precio;
+        return this.precio;
     }
 
     public void setPrecio(String precio) {
@@ -130,7 +133,7 @@ public class Libro {
     }
 
     public String getNumero_pagina() {
-        return numero_pagina;
+        return this.numero_pagina;
     }
 
     public void setNumero_pagina(String numero_pagina) {
@@ -138,7 +141,7 @@ public class Libro {
     }
 
     public String getYear_publicacion() {
-        return year_publicacion;
+        return this.year_publicacion;
     }
 
     public void setYear_publicacion(String year_publicacion) {
@@ -146,7 +149,7 @@ public class Libro {
     }
 
     public String getDisponible() {
-        return disponible;
+        return this.disponible;
     }
 
     public void setDisponible(String disponible) {
