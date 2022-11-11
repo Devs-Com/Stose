@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Registro de libros</title>
+<!-- CSS only -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<a class="navbar-brand" href="#"> Control de libros</a>
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/libros}">Control de libros</a></li>
+			</ul>
+		</div>
+	</nav>
+
+    <br>
+    <div class="container">
+       <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+              <h1 class="text-center">Registro de libro</h1>
+              <div class="card-body">
+                 <form th:action="@{/libros}" th:object="${libro}" method="POST">
+                    <div class="form-group">
+                       <label>Titulo : </label>
+                       <input type="text" name="titulo" th:field="*{titulo}" class="form-control" placeholder="Digite el titulo : " required>
+                    </div>
+                    
+                    <div class="form-group">
+                       <label>Autor : </label>
+                       <input type="text" name="autor" th:field="*{autor}" class="form-control" placeholder="Digite el autor : " required>
+                    </div>
+                    
+                    <div class="form-group">
+                       <label>Id Editorial : </label>
+                       <input type="number" name="id_editorial" th:field="*{id_editorial}" class="form-control" placeholder="Digite el id del editorial : " required>
+                    </div>
+
+                    <div class="form-group">
+                     <label>Id Categoria : </label>
+                     <input type="number" name="id_categoria" th:field="*{id_categoria}" class="form-control" placeholder="Digite el id de la categoria : " required>
+                  </div>
+
+                  <div class="form-group">
+                     <label>Id Subcategoria : </label>
+                     <input type="number" name="id_subcategoria" th:field="*{id_subcategoria}" class="form-control" placeholder="Digite el id de la subcategoria : " required>
+                  </div>
+
+                  <div class="form-group">
+                     <label>Precio : </label>
+                     <input type="number" name="precio" th:field="*{precio}" class="form-control" placeholder="Digite el precio : " required>
+                  </div>
+                  
+                  <div class="form-group">
+                     <label>Número de Paginas : </label>
+                     <input type="number" name="numero_pagina" th:field="*{numero_pagina}" class="form-control" placeholder="Digite el número de páginas : " required>
+                  </div>
+
+                  <div class="form-group">
+                     <label>Año de Publicacion : </label>
+                     <input type="number" name="year_publicacion" th:field="*{year_publicacion}" class="form-control" placeholder="Digite el año de publicación : " required>
+                  </div>
+
+                  <div class="form-group">
+                     <label>Disponible : </label>
+                     <input type="text" name="disponible" th:field="*{disponible}" class="form-control" placeholder="Digite si esta disponible (coloque si o no) : " required>
+                  </div>
+                   
+                    <div class="box-footer">
+                       <button class="btn btn-success">Guardar</button>
+                    </div>
+                 </form>
+              </div>
+          </div>
+       </div>
+    </div>
+</body>
+</html>
