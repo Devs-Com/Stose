@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.stose.entity.Libro;
-import com.example.stose.services.LibroServicio;
+import com.example.stose.services.LibroService;
 
 @Controller
-public class LibroControlador {
+public class LibroController {
 
 	@Autowired
-	private LibroServicio servicio;
+	private LibroService servicio;
 
 	@GetMapping({ "/libros", "/" })
 	public String listarLibros(Model modelo) {

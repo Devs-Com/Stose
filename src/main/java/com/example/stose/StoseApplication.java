@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import com.example.stose.entity.Libro;
-import com.example.stose.repositories.LibroRepositorio;
+import com.example.stose.repositories.LibroRepositorie;
 
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -24,7 +24,7 @@ public class StoseApplication implements CommandLineRunner{
 	}
 
 	@Autowired
-	private LibroRepositorio repositorio;
+	private LibroRepositorie repositorio;
 	
 	@Override
 	public void run(String... args) throws Exception {

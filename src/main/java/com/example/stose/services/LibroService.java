@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.example.stose.entity.Libro;
 
-public interface LibroServicio {
+public interface LibroService {
 
 	public List<Libro> listarTodosLosLibros();
 	

@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.stose.entity.Libro;
-import com.example.stose.repositories.LibroRepositorio;
+import com.example.stose.repositories.LibroRepositorie;
 
 @Service
-public class LibroServicioImpl implements LibroServicio {
+public class LibroServiceImpl implements LibroService {
 
 	@Autowired
-	private LibroRepositorio repositorio;
+	private LibroRepositorie repositorio;
 
 	@Override
 	public List<Libro> listarTodosLosLibros() {
