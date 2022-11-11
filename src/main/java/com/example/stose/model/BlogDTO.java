@@ -1,4 +1,4 @@
-package com.example.stose.models;
+package com.example.stose.model;
 
 //import java.time.LocalDate;
 

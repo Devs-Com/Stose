@@ -1,12 +1,12 @@
-package com.example.stose.servicio;
+package com.example.stose.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.stose.entidad.Libro;
-import com.example.stose.repositorio.LibroRepositorio;
+import com.example.stose.entity.Libro;
+import com.example.stose.repositories.LibroRepositorio;
 
 @Service
 public class LibroServicioImpl implements LibroServicio {

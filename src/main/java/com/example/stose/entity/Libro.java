@@ -1,4 +1,4 @@
-package com.example.stose.entidad;
+package com.example.stose.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

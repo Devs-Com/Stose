@@ -1,8 +1,8 @@
-package com.example.stose.servicio;
+package com.example.stose.services;
 
 import java.util.List;
 
-import com.example.stose.entidad.Libro;
+import com.example.stose.entity.Libro;
 
 public interface LibroServicio {
 

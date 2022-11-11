@@ -1,4 +1,4 @@
-package com.example.stose.controllers;
+package com.example.stose.controller;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.stose.models.BlogDTO;
+import com.example.stose.model.BlogDTO;
 import com.example.stose.repositories.IBlogDAO;
 
 @RestController

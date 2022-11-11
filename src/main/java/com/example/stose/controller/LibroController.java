@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.example.stose.entidad.Libro;
-import com.example.stose.servicio.LibroServicio;
+import com.example.stose.entity.Libro;
+import com.example.stose.services.LibroServicio;
 
 @Controller
 public class LibroControlador {
