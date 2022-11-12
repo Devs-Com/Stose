@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title th:text="${TituloPagina}"></title>
+    <title>.Stose | Inicio</title>
     <link rel="shortcut icon" href="./assets/images_readme/logo/logoWhite.png">
-    <link rel="stylesheet" href="/css/detalle-libro.css">
+    <link rel="stylesheet" href="/css/index.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
 </head>
 <body>
     <div id="page" class="site">
@@ -32,8 +36,8 @@
                         <div class="left">
                             <ul class="flexitem main-links">
                                 <li class="links">
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Lista de deseos</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Lista de deseos</a></li>
                                 </li>
                             </ul>
                         </div>
@@ -87,13 +91,13 @@
                                             # libros en el carrito
                                         </div>
                                         <div class="cart-body">
-                                            <ul class="products mini" th:each="Lista : ${CarritoC}">
+                                            <ul class="products mini">
                                                 <li class="item">
                                                     <div class="thumbnail object-cover">
                                                         <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
                                                     </div>
                                                     <div class="item-content">
-                                                        <p><a href="#" th:text="${Lista.CarritoCompras1}"></a></p>
+                                                        <p><a href="#">/*Nombre del libro*/</a></p>
                                                         <span class="price">
                                                             <span>$0.00</span>
                                                             <span class="fly-item"><span>1x</span></span>
@@ -106,7 +110,7 @@
                                                         <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
                                                     </div>
                                                     <div class="item-content">
-                                                        <p><a href="#" th:text="${Lista.CarritoCompras2}"></a></p>
+                                                        <p><a href="#">/*Nombre del libro*/</a></p>
                                                         <span class="price">
                                                             <span>$0.00</span>
                                                             <span class="fly-item"><span>1x</span></span>
@@ -119,7 +123,7 @@
                                                         <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
                                                     </div>
                                                     <div class="item-content">
-                                                        <p><a href="#" th:text="${Lista.CarritoCompras3}"></a></p>
+                                                        <p><a href="#">/*Nombre del libro*/</a></p>
                                                         <span class="price">
                                                             <span>$0.00</span>
                                                             <span class="fly-item"><span>1x</span></span>
@@ -132,7 +136,7 @@
                                                         <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
                                                     </div>
                                                     <div class="item-content">
-                                                        <p><a href="#" th:text="${Lista.CarritoCompras4}"></a></p>
+                                                        <p><a href="#">/*Nombre del libro*/</a></p>
                                                         <span class="price">
                                                             <span>$0.00</span>
                                                             <span class="fly-item"><span>1x</span></span>
@@ -168,11 +172,7 @@
                             <div class="ctg-cat">
                                 <div class="ctg-head">
                                     <div class="main-text">Categorías</div>
-                                    <div class="mini-text mobile-hide">Total 135 libros</div>
-                                    <a href="#" class="ctg-trigger mobile-hide">
-                                        <i class="ri-menu-3-line ri-xl"></i>
-                                        <i class="ri-close-line ri-xl"></i>
-                                    </a>
+                                    <div class="mini-text mobile-hide">Total # libros</div>
                                 </div>
                                 <div class="ctg-menu">
                                     <ul class="second-links">
@@ -350,180 +350,388 @@
                         </div>
                     </div>
                 </div>
-            </div>  
+            </div>
         </header>
 
         <main>
-            
-            <!-- breadcrumb -->
-            <div class="single-product">
+            <!-- slider -->
+            <div class="slider">
                 <div class="container">
                     <div class="wrapper">
-                        <div class="breadcrumb">
-                            <ul class="flexitem">
-                                <li><a href="/inicio/">Inicio</a></li>
-                                <li><a href="/inicio/tienda/">Tienda</a></li>
-                                <li>**Nombre del libro**</li>
-                            </ul>
+                        <div class="myslider swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="image object-cover">
+                                            <img src="./assets/slider/slider1.jpg" alt="">
+                                        </div>
+                                        <div class="text-content flexcol">
+                                            <h4>Los mejores libros</h4>
+                                            <h2><span>Ven y encuentra</span><br>tu libro ideal</h2>
+                                            <a href="./tienda.html" class="primary-button">Comprar ahora</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="image object-cover">
+                                            <img src="./assets/slider/slider0.jpg">
+                                        </div>
+                                        <div class="text-content flexcol">
+                                            <h4>Tendencias</h4>
+                                            <h2><span>Consigue los libros</span><br>mas buscados</h2>
+                                            <a href="./tienda.html" class="primary-button">Comprar ahora</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="image object-cover">
+                                            <img src="./assets/slider/slider3.jpg">
+                                        </div>
+                                        <div class="text-content flexcol">
+                                            <h4>Pedidos</h4>
+                                            <h2><span>Te lo llevamos</span><br>directo a tu casa</h2>
+                                            <a href="./tienda.html" class="primary-button">Comprar ahora</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="item">
+                                        <div class="image object-cover">
+                                            <img src="./assets/slider/slider2.jpg">
+                                        </div>
+                                        <div class="text-content flexcol">
+                                            <h4>Comunidad</h4>
+                                            <h2><span>Ayúdanos a</span><br>seguir creciendo</h2>
+                                            <a href="./tienda.html" class="primary-button">Comprar ahora</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
                         </div>
-                        
-                        <!-- books images -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- brands -->
+            <div class="brands">
+                <div class="container">
+                    <div class="wrapper flexitem">
+                        <div class="item">
+                            <a href="#0">
+                                <img src="./assets/brands/logo1.png" alt="">
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#0">
+                                <img src="./assets/brands/logo2.png" alt="">
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#0">
+                                <img src="./assets/brands/logo3.png" alt="">
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#0">
+                                <img src="./assets/brands/logo4.png" alt="">
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#0">
+                                <img src="./assets/brands/logo5.png" alt="">
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#0">
+                                <img src="./assets/brands/logo6.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- trending books -->
+            <div class="trending">
+                <div class="container">
+                    <div class="wrapper">
+                        <div class="sectop flexitem">
+                            <h2><span class="circle"></span><span>Libros en Tendencia</span></h2>
+                        </div>
                         <div class="column">
-                            <div class="products one">
-                                <div class="flexwrap">
-                                    <div class="row">
-                                        <div class="item is_sticky">
-                                            <div class="price">
-                                                <span class="discount">0%<br>OFF</span>
+                            <div class="flexwrap">
+                                <div class="row products big">
+                                    <div class="item">
+                                        <div class="ofter">
+                                            <p>Libro en Oferta</p>
+                                        </div>
+                                        <div class="media">
+                                            <div class="image">
+                                                <a href="/inicio/libro-oferta">
+                                                    <img src="./assets/images/ejemplo.png" alt="">
+                                                </a>
                                             </div>
-                                            <div class="big-image">
-                                                <div class="big-image-wrapper">
-                                                    <div class="image-show">
-                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
-                                                    </div>
-                                                </div>
+                                            <div class="hoverable">
+                                                <ul>
+                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="discount circle flexcenter"><span>0%</span></div>
+                                        </div>
+                                        <div class="content">
+                                            <div class="rating">
+                                                <div class="stars"></div>
+                                                <span class="mini-text">(#)</span>
+                                            </div>
+                                            <h3 class="main-links"><a href="/inicio/libro-oferta">/*Nombre de libro*/</a></h3>
+                                            <div class="price">
+                                                <span class="current">$0.00</span>
+                                                <span class="normal mini-text">$0.00</span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="item" th:each="Lista : ${DetalleLibro}">
-                                            <h1 th:text="${Lista.Titulo}"></h1><br>
-                                            <h3 th:text="${Lista.Autor}"></h3>
-                                            <div class="content">
-                                                <div class="rating">
-                                                    <div class="stars"></div>
-                                                    <a href="#" class="mini-text"># reseñas</a>
-                                                    <a href="" class="add-review mini-text">Agrega tu reseña</a>
-                                                </div>
-                                                <div class="stock-sku">
-                                                    <span class="available">En Stock</span>
-                                                    <span class="sku mini-text">SKU-###</span>
-                                                </div>
-                                                <div class="price">
-                                                    <span class="current">$0.00</span>
-                                                    <span class="normal">$0.00</span>
-                                                </div>
-                                                <div class="actions">
-                                                    <div class="qty-control flexitem">
-                                                        <button class="minus circle">-</button>
-                                                        <input type="text" value="1">
-                                                        <button class="plus circle">+</button>
-                                                    </div>
-                                                    <div class="button-cart"><button class="primary-button">Agregar al carrito</button></div>
-                                                    <div class="wish-share">
-                                                        <ul class="flexitem second-links">
-                                                            <li><a href="#">
-                                                                <span class="icon-large"><i class="ri-heart-line"></i></span>
-                                                                <span>Favoritos</span>
-                                                            </a></li>
-                                                            <li><a href="#">
-                                                                <span class="icon-large"><i class="ri-share-line"></i></span>
-                                                                <span>Compartir</span>
-                                                            </a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div class="description collapse">
-                                                    <ul>
-                                                        <li class="has-child">
-                                                            <a href="#0" class="icon-small">Descripción</a>
-                                                            <div class="content" th:each="Lista : ${Descripcion}">
-                                                                <p th:text="${Lista.Contenido}"></p>
-                                                            </div>
-                                                        </li>
-                                                        <li class="has-child">
-                                                            <a href="#0" class="icon-small">Información</a>
-                                                            <ul class="content" th:each="Lista : ${Informacion}">
-                                                                <li ><span>Autor</span> <span th:text="${Lista.AutorInfo}"></span></li>
-                                                                <li ><span>Categoría</span> <span th:text="${Lista.Categoria}"></span></li>
-                                                                <li ><span>Año de<br> publicación</span > <span th:text="${Lista.AnoPublicacion}"></span></li>
-                                                                <li ><span>Editorial</span> <span th:text="${Lista.Editorial}"></span></li>
-                                                                <li ><span>Número de<br> páginas</span> <span th:text="${Lista.NumeroPaginas}"></span></li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="has-child">
-                                                            <a href="#" class="icon-small">Reseñas<span class="mini-text">#</span></a>
-                                                            <div class="content">
-                                                                <div class="reviews">
-                                                                    <h4>Reseñas de los Clientes</h4>
-                                                                    <div class="review-block">
-                                                                        <div class="review-block-head">
-                                                                            <a href="#review-form" class="secondary-button">Escribe tu reseña</a>
-                                                                        </div>
-                                                                        <div class="review-block-body">
-                                                                            <ul>
-                                                                                <li class="item">
-                                                                                    <div class="review-form">
-                                                                                        <p class="person">Reseña por /*Nombre de usuario*/</p>
-                                                                                        <p class="mini-text">El /*dd/mm/aa*/</p>
-                                                                                    </div>
-                                                                                    <div class="review-title">
-                                                                                        <p>/*Titulo de reseña*/</p>
-                                                                                    </div>
-                                                                                    <div class="review-text">
-                                                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis asperiores deserunt, ab fuga est molestiae consequuntur quidem quisquam maiores cum sed quis itaque ad numquam repellendus voluptatum iure, perferendis eius.</p>
-                                                                                    </div>
-                                                                                </li>
-                                                                                <li class="item">
-                                                                                    <div class="review-form">
-                                                                                        <p class="person">Reseña por /*Nombre de usuario*/</p>
-                                                                                        <p class="mini-text">El /*dd/mm/aa*/</p>
-                                                                                    </div>
-                                                                                    <div class="review-title">
-                                                                                        <p>/*Titulo de reseña*/</p>
-                                                                                    </div>
-                                                                                    <div class="review-text">
-                                                                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis asperiores deserunt, ab fuga est molestiae consequuntur quidem quisquam maiores cum sed quis itaque ad numquam repellendus voluptatum iure, perferendis eius.</p>
-                                                                                    </div>
-                                                                                </li>
-                                                                            </ul>
-                                                                            <div class="second-links">
-                                                                                <a href="#" class="view-all">Mirar todas las reseñas <i class="ri-arrow-right-line"></i></a>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div id="review-rorm" class="review-form">
-                                                                            <h4>Escribe tu reseña</h4>
-                                                                            <div class="rating">
-                                                                                <p>Ingresa tu puntuación</p>
-                                                                                <div class="rate-this">
-                                                                                    <input type="radio" name='rating' id="star5">
-                                                                                    <label for="star5"><i class="ri-star-fill"></i></label>
-
-                                                                                    <input type="radio" name='rating' id="star4">
-                                                                                    <label for="star4"><i class="ri-star-fill"></i></label>
-
-                                                                                    <input type="radio" name='rating' id="star3">
-                                                                                    <label for="star3"><i class="ri-star-fill"></i></label>
-
-                                                                                    <input type="radio" name='rating' id="star2">
-                                                                                    <label for="star2"><i class="ri-star-fill"></i></label>
-
-                                                                                    <input type="radio" name='rating' id="star1">
-                                                                                    <label for="star1"><i class="ri-star-fill"></i></label>
-                                                                                </div>
-                                                                            </div>
-                                                                            <form action="">
-                                                                                <p>
-                                                                                    <label>Nombre</label>
-                                                                                    <input type="text">
-                                                                                </p>
-                                                                                <p>
-                                                                                    <label>Resumen</label>
-                                                                                    <input type="text">
-                                                                                </p>
-                                                                                <p>
-                                                                                    <label>Reseña</label>
-                                                                                    <textarea cols="30" rows="10"></textarea>
-                                                                                </p>
-                                                                                <p><a href="#" class="primary-button">Enviar reseña</a></p>
-                                                                            </form>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                </div>
+                                <div class="row products mini-trending">
+                                    <div class="item">
+                                        <div class="media">
+                                            <div class="thumbnail object-cover">
+                                                <a href="./detalle-libro.html">
+                                                    <img src="./assets/images/ejemplo.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="hoverable">
+                                                <ul>
+                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="discount circle flexcenter"><span>0%</span></div>
+                                        </div>
+                                        <div class="content">
+                                            <h3 class="main-links"><a href="./detalle-libro.html">/*Nombre de libro*/</a></h3>
+                                            <div class="rating">
+                                                <div class="stars"></div>
+                                                <span class="mini-text">(#)</span>
+                                            </div>
+                                            <div class="price">
+                                                <span class="current">$0.00</span>
+                                                <span class="normal mini-text">$0.00</span>
+                                            </div>
+                                            <div class="mini-text">
+                                                <p># vendidos</p>
+                                                <p>Envió gratis</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="media">
+                                            <div class="thumbnail object-cover">
+                                                <a href="./detalle-libro.html">
+                                                    <img src="./assets/images/ejemplo.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="hoverable">
+                                                <ul>
+                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="discount circle flexcenter"><span>0%</span></div>
+                                        </div>
+                                        <div class="content">
+                                            <h3 class="main-links"><a href="./detalle-libro.html">/*Nombre de libro*/</a></h3>
+                                            <div class="rating">
+                                                <div class="stars"></div>
+                                                <span class="mini-text">(#)</span>
+                                            </div>
+                                            <div class="price">
+                                                <span class="current">$0.00</span>
+                                                <span class="normal mini-text">$0.00</span>
+                                            </div>
+                                            <div class="mini-text">
+                                                <p># vendidos</p>
+                                                <p>Envió gratis</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="media">
+                                            <div class="thumbnail object-cover">
+                                                <a href="./detalle-libro.html">
+                                                    <img src="./assets/images/ejemplo.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="hoverable">
+                                                <ul>
+                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="discount circle flexcenter"><span>0%</span></div>
+                                        </div>
+                                        <div class="content">
+                                            <h3 class="main-links"><a href="./detalle-libro.html">/*Nombre de libro*</a></h3>
+                                            <div class="rating">
+                                                <div class="stars"></div>
+                                                <span class="mini-text">(#)</span>
+                                            </div>
+                                            <div class="price">
+                                                <span class="current">$0.00</span>
+                                                <span class="normal mini-text">$0.00</span>
+                                            </div>
+                                            <div class="mini-text">
+                                                <p># vendidos</p>
+                                                <p>Envió gratis</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="media">
+                                            <div class="thumbnail object-cover">
+                                                <a href="./detalle-libro.html">
+                                                    <img src="./assets/images/ejemplo.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="hoverable">
+                                                <ul>
+                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="discount circle flexcenter"><span>0%</span></div>
+                                        </div>
+                                        <div class="content">
+                                            <h3 class="main-links"><a href="./detalle-libro.html">/*Nombre de libro*/</a></h3>
+                                            <div class="rating">
+                                                <div class="stars"></div>
+                                                <span class="mini-text">(#)</span>
+                                            </div>
+                                            <div class="price">
+                                                <span class="current">$0.00</span>
+                                                <span class="normal mini-text">$0.00</span>
+                                            </div>
+                                            <div class="mini-text">
+                                                <p># vendidos</p>
+                                                <p>Envió gratis</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row products mini-trending">
+                                    <div class="item">
+                                        <div class="media">
+                                            <div class="thumbnail object-cover">
+                                                <a href="./detalle-libro.html">
+                                                    <img src="./assets/images/ejemplo.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="hoverable">
+                                                <ul>
+                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="discount circle flexcenter"><span>0%</span></div>
+                                        </div>
+                                        <div class="content">
+                                            <h3 class="main-links"><a href="./detalle-libro.html">/*Nombre de libro*/</a></h3><div class="rating">
+                                                <div class="stars"></div>
+                                                <span class="mini-text">(#)</span>
+                                            </div>
+                                            <div class="price">
+                                                <span class="current">$0.00</span>
+                                                <span class="normal mini-text">$0.00</span>
+                                            </div>
+                                            <div class="mini-text">
+                                                <p># vendidos</p>
+                                                <p>Envió gratis</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="media">
+                                            <div class="thumbnail object-cover">
+                                                <a href="./detalle-libro.html">
+                                                    <img src="./assets/images/ejemplo.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="hoverable">
+                                                <ul>
+                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="discount circle flexcenter"><span>0%</span></div>
+                                        </div>
+                                        <div class="content">
+                                            <h3 class="main-links"><a href="./detalle-libro.html">/*Nombre de libro*/</a></h3>
+                                            <div class="rating">
+                                                <div class="stars"></div>
+                                                <span class="mini-text">(#)</span>
+                                            </div>
+                                            <div class="price">
+                                                <span class="current">$0.00</span>
+                                                <span class="normal mini-text">$0.00</span>
+                                            </div>
+                                            <div class="mini-text">
+                                                <p># vendidos</p>
+                                                <p>Envió gratis</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="media">
+                                            <div class="thumbnail object-cover">
+                                                <a href="./detalle-libro.html">
+                                                    <img src="./assets/images/ejemplo.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="hoverable">
+                                                <ul>
+                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="discount circle flexcenter"><span>0%</span></div>
+                                        </div>
+                                        <div class="content">
+                                            <h3 class="main-links"><a href="./detalle-libro.html">/*Nombre de libro*/</a></h3>
+                                            <div class="rating">
+                                                <div class="stars"></div>
+                                                <span class="mini-text">(#)</span>
+                                            </div>
+                                            <div class="price">
+                                                <span class="current">$0.00</span>
+                                                <span class="normal mini-text">$0.00</span>
+                                            </div>
+                                            <div class="mini-text">
+                                                <p># vendidos</p>
+                                                <p>Envió gratis</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="media">
+                                            <div class="thumbnail object-cover">
+                                                <a href="./detalle-libro.html">
+                                                    <img src="./assets/images/ejemplo.png" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="hoverable">
+                                                <ul>
+                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="discount circle flexcenter"><span>0%</span></div>
+                                        </div>
+                                        <div class="content">
+                                            <h3 class="main-links"><a href="./detalle-libro.html">/*Nombre de libro*/</a></h3>
+                                            <div class="rating">
+                                                <div class="stars"></div>
+                                                <span class="mini-text">(#)</span>
+                                            </div>
+                                            <div class="price">
+                                                <span class="current">$0.00</span>
+                                                <span class="normal mini-text">$0.00</span>
+                                            </div>
+                                            <div class="mini-text">
+                                                <p># vendidos</p>
+                                                <p>Envió gratis</p>
                                             </div>
                                         </div>
                                     </div>
@@ -534,14 +742,14 @@
                 </div>
             </div>
 
-            <!-- related books -->
+            <!-- featured books -->
             <div class="features">
                 <div class="container">
                     <div class="wrapper">
                         <div class="sectop flexitem">
-                            <h2><span class="circle"></span><span>Libros Relacionados</span></h2>
+                            <h2><span class="circle"></span><span>Libros Destacados</span></h2>
                             <div class="second-links">
-                                <a href="/inicio/tienda" class="view-all">Ver más<i class="ri-arrow-right-line"></i></a>
+                                <a href="./tienda.html" class="view-all">Ver más<i class="ri-arrow-right-line"></i></a>
                             </div>
                         </div>
                         <div class="column">
@@ -565,7 +773,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                          <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado1}"></a></h3>
+                                        <h3><a href="/inicio/detalle-libro">/*Nombre de libro*</a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -575,7 +783,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a href="./detalle-libro.html">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -591,7 +799,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                       <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado2}"></a></h3>
+                                        <h3><a href="./detalle-libro.html">/*Nombre de libro*/</a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -601,7 +809,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a href="./detalle-libro.html">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -617,7 +825,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                        <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado3}"></a></h3>
+                                        <h3><a href="./detalle-libro.html">/*Nombre de libro*/</a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -627,7 +835,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a href="./detalle-libro.html">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -643,7 +851,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                        <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado4}"></a></h3>
+                                        <h3><a href="./detalle-libro.html">/*Nombre de libro*/</a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -653,7 +861,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a href="./detalle-libro.html">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -669,7 +877,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                         <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado5}"></a></h3>
+                                        <h3><a href="./detalle-libro.html">/*Nombre de libro*/</a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -679,7 +887,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a href="./detalle-libro.html">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -695,7 +903,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                        <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado6}"></a></h3>
+                                        <h3><a href="./detalle-libro.html">/*Nombre de libro*/</a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -705,7 +913,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a href="./detalle-libro.html">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -721,7 +929,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                        <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado7}"></a></h3>
+                                        <h3><a href="./detalle-libro.html">/*Nombre de libro*/</a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -731,7 +939,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a href="./detalle-libro.html">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -747,7 +955,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                         <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado8}"></a></h3>
+                                        <h3><a href="./detalle-libro.html">/*Nombre de libro*/</a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -759,6 +967,7 @@
                     </div>
                 </div>
             </div>
+
         </main>
 
         <footer>
@@ -782,58 +991,58 @@
             </div>
 
             <!-- widgets -->
-           <div class="widgets">
+            <div class="widgets">
                 <div class="container">
                     <div class="wrapper">
                         <div class="flexwrap">
                             <div class="row">
                                 <div class="item mini-links">
                                     <h4>Ayuda y Contacto</h4>
-                                    <ul class="flexcol" th:each="Lista : ${AyudaC}">
-                                        <li><a href="#" th:text="${Lista.Cuenta}"></a></li>
-                                        <li><a href="#" th:text="${Lista.Pedidos}"></a></li>
-                                        <li><a href="#" th:text="${Lista.Envios}"></a></li>
-                                        <li><a href="#" th:text="${Lista.Devoluciones}"></a></li>
-                                        <li><a href="#" th:text="${Lista.Contactanos}"></a></li>
+                                    <ul class="flexcol">
+                                        <li><a href="#">Tu Cuenta</a></li>
+                                        <li><a href="#">Tus pedidos</a></li>
+                                        <li><a href="/costos-de-envio.html">Tarifas de Envio</a></li>
+                                        <li><a href="#">Devoluciones</a></li>
+                                        <li><a href="#">Contáctanos</a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="item mini-links">
                                     <h4>Libros Categorías</h4>
-                                    <ul class="flexcol" th:each="Lista : ${LibrosC}">
-                                        <li><a href="#" th:text="${Lista.Arte}"></a></li>
-                                        <li><a href="#" th:text="${Lista.Biografias}"></a></li>
-                                        <li><a href="#" th:text="${Lista.Ciencias}"></a></li>
-                                        <li><a href="#" th:text="${Lista.Computacion}"></a></li>
-                                        <li><a href="#" th:text="${Lista.Deportes}"></a></li>
-                                        <li><a href="#" th:text="${Lista.Derecho}"></a></li>
-                                        <li><a href="#" th:text="${Lista.Economia}"></a></li>
-                                        <li><a href="#" th:text="${Lista.EstilosDeVida}"></a></li>
-                                        <li><a href="#" th:text="${Lista.Ficcion}"></a></li>
-                                        <li><a href="#" th:text="${Lista.FilosofiaYreligion}"></a></li>
-                                        <li><a href="#" th:text="${Lista.InfantilesYjuveniles}"></a></li>
+                                    <ul class="flexcol">
+                                        <li><a href="#">Arte</a></li>
+                                        <li><a href="#">Biografías</a></li>
+                                        <li><a href="#">Ciencias</a></li>
+                                        <li><a href="#">Computación</a></li>
+                                        <li><a href="#">Deportes</a></li>
+                                        <li><a href="#">Derecho</a></li>
+                                        <li><a href="#">Economía</a></li>
+                                        <li><a href="#">Estilos de Vida</a></li>
+                                        <li><a href="#">Ficción</a></li>
+                                        <li><a href="#">Filosofía y Religión</a></li>
+                                        <li><a href="#">Infantiles y Juveniles</a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="item mini-links">
                                     <h4>Métodos de Pago</h4>
-                                    <ul class="flexcol" th:each="Lista : ${MetodosP}">
-                                        <li><a href="#" th:text="${Lista.TarjetasDeCredito}"></a></li>
-                                        <li><a href="#" th:text="${Lista.Paypal}"></a></li>
+                                    <ul class="flexcol">
+                                        <li><a href="#">Tarjetas de Créditos</a></li>
+                                        <li><a href="#">Paypal</a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="item mini-links">
                                     <h4>Sobre Nosotros</h4>
-                                    <ul class="flexcol" th:each="Lista : ${Nosotros}">
-                                        <li><a href="#" th:text="${Lista.Iempresa}"></a></li>
-                                        <li><a href="#" th:text="${Lista.Noticias}"></a></li>
-                                        <li><a href="#" th:text="${Lista.Inversores}"></a></li>
-                                        <li><a href="#" th:text="${Lista.Politicas}"></a></li>
-                                        <li><a href="#" th:text="${Lista.ClienteV}"></a></li>
+                                    <ul class="flexcol">
+                                        <li><a href="#">Información de la Compañía</a></li>
+                                        <li><a href="#">Noticias</a></li>
+                                        <li><a href="#">Inversores</a></li>
+                                        <li><a href="#">Políticas</a></li>
+                                        <li><a href="#">Valoración de los Clientes</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -929,6 +1138,7 @@
 
         </footer>
     </div>
-    <script src="/js/detalle-libro.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="/js/index.js"></script>
 </body>
 </html>
