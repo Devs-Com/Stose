@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.stose.model.detalleLibroModel;
-import com.example.stose.model.tiendaModel;
+import com.example.stose.model.indexModel;
 
 
 
@@ -25,14 +25,14 @@ public class detalleLibroController {
     public String ControllerDetalleLibro(Model model) {
     	
     	        //CARRITO DE COMPRAS
-    			detalleLibroModel CarritoC = new detalleLibroModel();
-    	    	CarritoC.setCarritoCompras1("/*Nombre del libro*/");
-    	        CarritoC.setCarritoCompras2("/*Nombre del libro*/");
-    	    	CarritoC.setCarritoCompras3("/*Nombre del libro*/");
-    	    	CarritoC.setCarritoCompras4("/*Nombre del libro*/");
-    	    			
-    	    	List<detalleLibroModel> ListCarritoC = new ArrayList<>();
-    	        ListCarritoC.add(CarritoC);
+    	indexModel CarritoC = new indexModel();
+		CarritoC.setCarritoCompras1("/*Nombre de libro*/");
+		CarritoC.setCarritoCompras2("/*Nombre de libro*/");
+		CarritoC.setCarritoCompras3("/*Nombre de libro*/");
+		CarritoC.setCarritoCompras4("/*Nombre de libro*/");
+		
+		List<indexModel> ListCarritoC = new ArrayList<>();
+		ListCarritoC.add(CarritoC);
     			
     			//DETALLE LIBROS
     			
@@ -84,7 +84,7 @@ public class detalleLibroController {
     			
     			//CONTENIDO DEL FOOTER
     			//Ayuda y contacto
-    			tiendaModel AyudaC = new tiendaModel();
+    			indexModel AyudaC = new indexModel();
     			AyudaC.setCuenta("Tu Cuenta");
     			AyudaC.setPedidos("Tus Pedidos");
     			AyudaC.setEnvios("Tarifas de Envio");
@@ -92,11 +92,11 @@ public class detalleLibroController {
     			AyudaC.setContactanos("Contactanos");
     							
     							
-    			List<tiendaModel> ListAyudaC = new ArrayList<>();
+    			List<indexModel> ListAyudaC = new ArrayList<>();
     			ListAyudaC.add(AyudaC);
     			
     			//Libros y categorias
-    			tiendaModel LibrosC = new tiendaModel();
+    			indexModel LibrosC = new indexModel();
     			LibrosC.setArte("Arte");
     			LibrosC.setBiografias("Biografias");
     			LibrosC.setCiencias("Ciencias");
@@ -109,26 +109,26 @@ public class detalleLibroController {
     		    LibrosC.setFilosofiaYreligion("Filosofia y Religion");
     		    LibrosC.setInfantilesYjuveniles("Infantiles y Juveniles");
     			
-    			List<tiendaModel> ListLibrosC = new ArrayList<>();
+    			List<indexModel> ListLibrosC = new ArrayList<>();
     			ListLibrosC.add(LibrosC);
     			
     			//Metodos de pago
-    		    tiendaModel MetodosP = new tiendaModel();
+    			indexModel MetodosP = new indexModel();
     		    MetodosP.setTarjetasDeCredito("Tarjetas de Credito");
     		    MetodosP.setPaypal("Paypal");
     							
-    		    List<tiendaModel> ListMetodosP = new ArrayList<>();
+    		    List<indexModel> ListMetodosP = new ArrayList<>();
     		    ListMetodosP.add(MetodosP);
     			
     		    //Sobre Nosotros
-    		    tiendaModel Nosotros = new tiendaModel();
+    		    indexModel Nosotros = new indexModel();
     		    Nosotros.setIempresa("Informacion de la Compañia");
     		    Nosotros.setNoticias("Noticias");
     		    Nosotros.setInversores("Inversores");
     		    Nosotros.setPoliticas("Politicas");
     		    Nosotros.setClienteV("Valoracion de los clientes");
     							
-    		    List<tiendaModel> ListNosotros = new ArrayList<>();
+    		    List<indexModel> ListNosotros = new ArrayList<>();
     		    ListNosotros.add(Nosotros);
     			
     		    //Models 

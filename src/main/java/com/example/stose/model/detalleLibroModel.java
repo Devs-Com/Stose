@@ -1,12 +1,6 @@
 package com.example.stose.model;
 
 public class detalleLibroModel {
-	    //Carrito de compras
-		private String CarritoCompras1;
-		private String CarritoCompras2;
-		private String CarritoCompras3;
-		private String CarritoCompras4;
-			
 		//Detalle Libro
 		private String Titulo;
 		private String Autor;
@@ -30,36 +24,6 @@ public class detalleLibroModel {
 		private String LibroRelacionado6;
 		private String LibroRelacionado7;
 		private String LibroRelacionado8;
-		
-	    //CARRITO DE COMPRAS
-	    
-	    public String getCarritoCompras1() {
-	        return CarritoCompras1;
-	    }
-	    public void setCarritoCompras1(String carritoCompras1) {
-	        CarritoCompras1 = carritoCompras1;
-	    }
-	    
-	    public String getCarritoCompras2() {
-	        return CarritoCompras2;
-	    }
-	    public void setCarritoCompras2(String carritoCompras2) {
-	        CarritoCompras2 = carritoCompras2;
-	    }
-	    
-	    public String getCarritoCompras3() {
-	        return CarritoCompras3;
-	    }
-	    public void setCarritoCompras3(String carritoCompras3) {
-	        CarritoCompras3 = carritoCompras3;
-	    }
-	    
-	    public String getCarritoCompras4() {
-	        return CarritoCompras4;
-	    }
-	    public void setCarritoCompras4(String carritoCompras4) {
-	        CarritoCompras4 = carritoCompras4;
-	    }
 		
 		//DETALLE LIBRO
 		public String getTitulo() {
