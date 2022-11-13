@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>.Stose | Carrito de Compras</title>
+    <title th:text="${TituloPagina}"></title>
     <link rel="shortcut icon" href="./assets/images_readme/logo/logoWhite.png">
+    <link rel="stylesheet" href="/css/nosotros.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/revision-pedido.css">
 </head>
 <body>
     <div id="page" class="site">
@@ -33,8 +32,8 @@
                         <div class="left">
                             <ul class="flexitem main-links">
                                 <li class="links">
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Lista de deseos</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Lista de deseos</a></li>
                                 </li>
                             </ul>
                         </div>
@@ -62,6 +61,7 @@
                                     <li><a href="/inicio/tienda">Tienda</a></li>
                                     <li><a href="/inicio/costos-de-envio">Costos de envío</a></li>
                                     <li><a href="/inicio/nosotros">Nosotros</a></li>
+                                    <li><a href="/inicio/crearblog">Crear Blog</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -88,13 +88,13 @@
                                             # libros en el carrito
                                         </div>
                                         <div class="cart-body">
-                                            <ul class="products mini">
+                                            <ul class="products mini" th:each="Lista : ${CarritoC}">
                                                 <li class="item">
                                                     <div class="thumbnail object-cover">
                                                         <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
                                                     </div>
                                                     <div class="item-content">
-                                                        <p><a href="#">/*Nombre del libro*/</a></p>
+                                                        <p><a href="#" th:text="${Lista.CarritoCompras1}"></a></p>
                                                         <span class="price">
                                                             <span>$0.00</span>
                                                             <span class="fly-item"><span>1x</span></span>
@@ -107,7 +107,7 @@
                                                         <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
                                                     </div>
                                                     <div class="item-content">
-                                                        <p><a href="#">/*Nombre del libro*/</a></p>
+                                                        <p><a href="#" th:text="${Lista.CarritoCompras2}"></a></p>
                                                         <span class="price">
                                                             <span>$0.00</span>
                                                             <span class="fly-item"><span>1x</span></span>
@@ -120,7 +120,7 @@
                                                         <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
                                                     </div>
                                                     <div class="item-content">
-                                                        <p><a href="#">/*Nombre del libro*/</a></p>
+                                                        <p><a href="#" th:text="${Lista.CarritoCompras3}"></a></p>
                                                         <span class="price">
                                                             <span>$0.00</span>
                                                             <span class="fly-item"><span>1x</span></span>
@@ -133,7 +133,7 @@
                                                         <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
                                                     </div>
                                                     <div class="item-content">
-                                                        <p><a href="#">/*Nombre del libro*/</a></p>
+                                                        <p><a href="#" th:text="${Lista.CarritoCompras4}"></a></p>
                                                         <span class="price">
                                                             <span>$0.00</span>
                                                             <span class="fly-item"><span>1x</span></span>
@@ -149,7 +149,7 @@
                                                 <p><strong>$0.00</strong></p>
                                             </div>
                                             <div class="actions">
-                                                <a href="/inicio/revision-pedido" class="primary-button">Verificar</a>
+                                                <a href="/inicio/revision-pedido"  class="primary-button">Verificar</a>
                                                 <a href="/inicio/carrito-compras" class="secondary-button">Ver Carrito</a></div>
                                         </div>
                                     </div>
@@ -351,144 +351,32 @@
                         </div>
                     </div>
                 </div>
-            </div>      
+            </div>  
         </header>
 
-        <main>
-
-            <div class="single-checkout">
-                <div class="container">
-                    <div class="wrapper">
-                        <div class="checkout flexwrap">
-                            <div class="item left styled">
-                                <h1>Dirección de Envío</h1>
-                                <form action="">
-                                    <p>
-                                        <label for="email">Correo Electrónico <span></span></label>
-                                        <input type="email" name="email" id="email" autocomplete="off" required>
-                                    </p>
-                                    <p>
-                                        <label for="fname">Primer Nombre <span></span></label>
-                                        <input type="text" id="fname" required>
-                                    </p>
-                                    <p>
-                                        <label for="lname">Apellidos <span></span></label>
-                                        <input type="text" id="lname" required>
-                                    </p>
-                                    <p>
-                                        <label for="address">Dirección <span></span></label>
-                                        <input type="text" id="address" required>
-                                    </p>
-                                    <p>
-                                        <label for="district">Distrito <span></span></label>
-                                        <select name="district" id="district">
-                                            <option value=""></option>
-                                            <option value="1">Santa Anita</option>
-                                            <option value="2">Ate</option>
-                                            <option value="3">El Agustino</option>
-                                            <option value="4" selected="selected">La Victoria</option>
-                                            <option value="5">Otro</option>
-                                        </select>
-                                    </p>
-                                    <p>
-                                        <label for="postal">Zip/Código Postal <span></span></label>
-                                        <input type="number" id="postal" required>
-                                    </p>
-                                    <p>
-                                        <label for="phone">Número de teléfono <span></span></label>
-                                        <input type="number" id="phone" required>
-                                    </p>
-                                    <p>
-                                        <label>Notas del Pedido (Opcional)</label>
-                                        <textarea cols="30" rows="10"></textarea>
-                                    </p>
-                                    <p class="checkset">
-                                        <input type="checkbox" id="anaccount">
-                                        <label for="anaccount">Crear una cuenta?</label>
-                                    </p>
-                                </form>
-                                <div class="primary-checkout">
-                                    <button class="primary-button">Realizar Pedido</button>
-                                </div>
-                            </div>
-                            <div class="item right">
-                                <h2>Resumen del Pedido</h2>
-                                <div class="summary-order is_sticky">
-                                    <div class="summary-totals">
-                                        <ul>
-                                            <li>
-                                                <span>Subtotal</span>
-                                                <span>$0.00</span>
-                                            </li>
-                                            <li>
-                                                <span>Descuento</span>
-                                                <span>-$0.00</span>
-                                            </li>
-                                            <li>
-                                                <span>Total</span>
-                                                <strong>$0.00<strong>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <ul class="products mini">
-                                        <li class="item">
-                                            <div class="thumbnail object-cover">
-                                                <img src="./assets/images/ejemplo.png" alt="">
-                                            </div>
-                                            <div class="item-content">
-                                                <p>/*Nombre de libro*/</p>
-                                                <span class="price">
-                                                    <span>$0.00</span>
-                                                    <span>x 1</span>
-                                                </span>
-                                            </div>
-                                        </li>
-                                        <li class="item">
-                                            <div class="thumbnail object-cover">
-                                                <img src="./assets/images/ejemplo.png" alt="">
-                                            </div>
-                                            <div class="item-content">
-                                                <p>/*Nombre de libro*/</p>
-                                                <span class="price">
-                                                    <span>$0.00</span>
-                                                    <span>x 1</span>
-                                                </span>
-                                            </div>
-                                        </li>
-                                        <li class="item">
-                                            <div class="thumbnail object-cover">
-                                                <img src="./assets/images/ejemplo.png" alt="">
-                                            </div>
-                                            <div class="item-content">
-                                                <p>/*Nombre de libro*/</p>
-                                                <span class="price">
-                                                    <span>$0.00</span>
-                                                    <span>x 1</span>
-                                                </span>
-                                            </div>
-                                        </li>
-                                        <li class="item">
-                                            <div class="thumbnail object-cover">
-                                                <img src="./assets/images/ejemplo.png" alt="">
-                                            </div>
-                                            <div class="item-content">
-                                                <p>/*Nombre de libro*/</p>
-                                                <span class="price">
-                                                    <span>$0.00</span>
-                                                    <span>x 1</span>
-                                                </span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+       
+            
+            
+            <center>
+            <div class="container">
+                <img src="https://kinsta.com/es/wp-content/uploads/sites/8/2021/12/about-us-page-1024x512.png" style="opacity: 0.4; height: 570px; width: 1500px;">
+                <div class="centrado"><h1>Sobre Nosotros</h1>
+                    
+                    <br>
+            
+                    <div class="container" th:each="Lista : ${Descripcion}" > <p th:text="${Lista.Descripcion}"></p>                            
+                        </div>   
+            
+                    
+            
                 </div>
-            </div>
-
-        </main>
-        
+              </div>
+              </center>
+              
+              
+                        
+                          
+             
         <footer>
             <!-- newsletter -->
             <div class="newsletter">
@@ -509,59 +397,59 @@
                 </div>
             </div>
 
-            <!-- widgets -->
-            <div class="widgets categoria">
+             <!-- widgets -->
+             <div class="widgets">
                 <div class="container">
                     <div class="wrapper">
                         <div class="flexwrap">
                             <div class="row">
                                 <div class="item mini-links">
                                     <h4>Ayuda y Contacto</h4>
-                                    <ul class="flexcol">
-                                        <li><a href="#">Tu Cuenta</a></li>
-                                        <li><a href="#">Tus pedidos</a></li>
-                                        <li><a href="#">Tarifas de Envio</a></li>
-                                        <li><a href="#">Devoluciones</a></li>
-                                        <li><a href="#">Contáctanos</a></li>
+                                    <ul class="flexcol" th:each="Lista : ${AyudaC}">
+                                        <li><a href="#" th:text="${Lista.Cuenta}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Pedidos}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Envios}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Devoluciones}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Contactanos}"></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="item mini-links">
                                     <h4>Libros Categorías</h4>
-                                    <ul class="flexcol">
-                                        <li><a href="#">Arte</a></li>
-                                        <li><a href="#">Biografías</a></li>
-                                        <li><a href="#">Ciencias</a></li>
-                                        <li><a href="#">Computación</a></li>
-                                        <li><a href="#">Deportes</a></li>
-                                        <li><a href="#">Derecho</a></li>
-                                        <li><a href="#">Economía</a></li>
-                                        <li><a href="#">Estilos de Vida</a></li>
-                                        <li><a href="#">Ficción</a></li>
-                                        <li><a href="#">Filosofía y Religión</a></li>
-                                        <li><a href="#">Infantiles y Juveniles</a></li>
+                                    <ul class="flexcol" th:each="Lista : ${LibrosC}">
+                                        <li><a href="#" th:text="${Lista.Arte}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Biografias}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Ciencias}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Computacion}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Deportes}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Derecho}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Economia}"></a></li>
+                                        <li><a href="#" th:text="${Lista.EstilosDeVida}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Ficcion}"></a></li>
+                                        <li><a href="#" th:text="${Lista.FilosofiaYreligion}"></a></li>
+                                        <li><a href="#" th:text="${Lista.InfantilesYjuveniles}"></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="item mini-links">
                                     <h4>Métodos de Pago</h4>
-                                    <ul class="flexcol">
-                                        <li><a href="#">Tarjetas de Créditos</a></li>
-                                        <li><a href="#">Paypal</a></li>
+                                    <ul class="flexcol" th:each="Lista : ${MetodosP}">
+                                        <li><a href="#" th:text="${Lista.TarjetasDeCredito}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Paypal}"></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="item mini-links">
                                     <h4>Sobre Nosotros</h4>
-                                    <ul class="flexcol">
-                                        <li><a href="#">Información de la Compañía</a></li>
-                                        <li><a href="#">Noticias</a></li>
-                                        <li><a href="#">Inversores</a></li>
-                                        <li><a href="#">Políticas</a></li>
-                                        <li><a href="#">Valoración de los Clientes</a></li>
+                                    <ul class="flexcol" th:each="Lista : ${Nosotros}">
+                                        <li><a href="#" th:text="${Lista.Iempresa}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Noticias}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Inversores}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Politicas}"></a></li>
+                                        <li><a href="#" th:text="${Lista.ClienteV}"></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -570,24 +458,83 @@
                 </div>
             </div>
 
-            <!-- socials -->
-            <div class="footer-info">
+          <!-- socials -->
+          <div class="footer-info">
+            <div class="container">
+                <div class="wrapper">
+                    <div class="flexcol">
+                        <div class="logo">
+                            <a href="/inicio/"><span class="circle"></span>.Stose</a>
+                        </div>
+                        <div class="socials">
+                            <ul class="flexitem">
+                                <li><a href="https://twitter.com/StoseOficial" target="_blank"><i class="ri-twitter-line"></i></a></li>
+                                <li><a href="https://www.facebook.com/profile.php?id=100087639915317&sk=about" target="_blank"><i class="ri-facebook-line"></i></a></li>
+                                <li><a href="https://www.instagram.com/stose_oficial_la/" target="_blank"><i class="ri-instagram-line"></i></a></li>
+                                <li><a href="https://www.youtube.com/channel/UClqy7a7vzpY-vwNqyAVb2eA" target="_blank"><i class="ri-youtube-line"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="mini-text">Copyright 2022 © .Stose. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+
+            <!-- bottoms navigation -->
+            <div class="menu-bottom desktop-hide">
                 <div class="container">
                     <div class="wrapper">
-                        <div class="flexcol">
-                            <div class="logo">
-                                <a href="/inicio/"><span class="circle"></span>.Stose</a>
-                            </div>
-                            <div class="socials">
-                                <ul class="flexitem">
-                                    <li><a href="https://twitter.com/StoseOficial" target="_blank"><i class="ri-twitter-line"></i></a></li>
-                                    <li><a href="https://www.facebook.com/profile.php?id=100087639915317&sk=about" target="_blank"><i class="ri-facebook-line"></i></a></li>
-                                    <li><a href="https://www.instagram.com/stose_oficial_la/" target="_blank"><i class="ri-instagram-line"></i></a></li>
-                                    <li><a href="https://www.youtube.com/channel/UClqy7a7vzpY-vwNqyAVb2eA" target="_blank"><i class="ri-youtube-line"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <p class="mini-text">Copyright 2022 © .Stose. Todos los derechos reservados.</p>
+                        <nav>
+                            <ul class="flexitem">
+                                <li>
+                                    <a href="#">
+                                        <i class="ri-bar-chart-line"></i>
+                                        <span>Tendencias</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="ri-user-6-line"></i>
+                                        <span>Cuenta</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="ri-heart-line"></i>
+                                        <span>Deseados</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#0" class="t-search">
+                                        <i class="ri-search-line"></i>
+                                        <span>Buscar</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#0" class="cart-trigger">
+                                        <i class="ri-shopping-cart-line"></i>
+                                        <span>Carrito</span>
+                                        <div class="fly-item">
+                                            <span class="item-number">#</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <!-- bottom search desktop-->
+            <div class="search-bottom desktop-hide">
+                <div class="container">
+                    <div class="wrapper">
+                        <form action="" class="search">
+                            <a href="#" class="t-close search-close flexcenter"><i class="ri-close-line"></i></a>
+                            <span class="icon-large"><i class="ri-search-line"></i></span>
+                            <input type="search" placeholder="Buscar en toda la tienda..." required>
+                            <button type="submit">Buscar</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -596,96 +543,7 @@
             <div class="overlay"></div>
 
         </footer>
-
-        <!-- bottoms navigation -->
-        <div class="menu-bottom desktop-hide">
-            <div class="container">
-                <div class="wrapper">
-                    <nav>
-                        <ul class="flexitem">
-                            <li>
-                                <a href="#">
-                                    <i class="ri-bar-chart-line"></i>
-                                    <span>Tendencias</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="ri-user-6-line"></i>
-                                    <span>Cuenta</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="ri-heart-line"></i>
-                                    <span>Deseados</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#0" class="t-search">
-                                    <i class="ri-search-line"></i>
-                                    <span>Buscar</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#0" class="cart-trigger">
-                                    <i class="ri-shopping-cart-line"></i>
-                                    <span>Carrito</span>
-                                    <div class="fly-item">
-                                        <span class="item-number">#</span>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-
-        <!-- bottom search desktop-->
-        <div class="search-bottom desktop-hide">
-            <div class="container">
-                <div class="wrapper">
-                    <form action="" class="search">
-                        <a href="#" class="t-close search-close flexcenter"><i class="ri-close-line"></i></a>
-                        <span class="icon-large"><i class="ri-search-line"></i></span>
-                        <input type="search" placeholder="Buscar en toda la tienda..." required>
-                        <button type="submit">Buscar</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <!-- ad -->
-        <div id="modal" class="modal">
-            <div class="content flexcol">
-                <div class="image object-cover">
-                    <img src="./assets/images/ejemplo.png" alt="">
-                </div>
-                <h2>Obtenga las últimas ofertas y cupones</h2>
-                <p class="mobile-hide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit magnam suscipit, officiis animi sequi facilis nesciunt numquam unde ad aliquam autem ab id qui quam necessitatibus voluptatibus. Dolor, error ullam!</p>
-                <form action="" class="search">
-                    <span class="icon-large"><i class="ri-mail-line"></i></span>
-                    <input type="mail" placeholder="Correo Electrónico">
-                    <button>Suscribirse</button>
-                </form>
-                <a href="#" class="mini-text">No mostrar mas este anuncio</a>
-                <a href="#0" class="t-close modalclose flexcenter">
-                    <i class="ri-close-line"></i>
-                </a>
-            </div>
-        </div>
-
-        <!-- bottom to go back up -->
-        <div class="backtotop">
-            <a href="#" class="flexcol">
-                <i class="ri-arrow-up-line"></i>
-                <span>Inicio</span>
-            </a>
-        </div>
-
     </div>
-    <script src="/js/revision-pedido.js"></script>
+    <script src="./js/nosotros.js"></script>
 </body>
-
 </html>
