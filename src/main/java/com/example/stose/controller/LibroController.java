@@ -1,25 +1,34 @@
 package com.example.stose.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.stose.entity.Libro;
 import com.example.stose.services.LibroService;
 
 @Controller
+@RequestMapping("/inicio")
 public class LibroController {
+	
+	@Value("${title.libros}")
+	private String TitlePage;
 
 	@Autowired
 	private LibroService servicio;
 
-	@GetMapping({ "/libros", "/" })
+	@GetMapping({ "/inicio", "/libros" })
 	public String listarLibros(Model modelo) {
 		modelo.addAttribute("libros", servicio.listarTodosLosLibros());
+
+		modelo.addAttribute("TituloPagina", TitlePage);
+
 		return "libros";
 	}
 
