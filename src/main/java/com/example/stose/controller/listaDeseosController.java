@@ -20,7 +20,7 @@ public class listaDeseosController {
 	@Value("${title.listadeseos}")
 	private String TitlePage;
 	
-	@GetMapping({ "/lista-de-deseos", "/", "Lista-de-deseos" })
+	@GetMapping({ "/inicio", "/lista-de-deseos" })
     public String ControllerIndex(Model model) {
 		
 		//SECCION Carrito de compras
