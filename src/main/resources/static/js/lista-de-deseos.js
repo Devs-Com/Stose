@@ -19,12 +19,12 @@ copyMenu();
 
 //show mobile menu
 const menuButton = document.querySelector('.trigger'),
-      closeButton = document.querySelector('.t-close'),
-      addclass = document.querySelector('.site')
-menuButton.addEventListener('click', function() {
+    closeButton = document.querySelector('.t-close'),
+    addclass = document.querySelector('.site')
+menuButton.addEventListener('click', function () {
     addclass.classList.toggle('showmenu')
 })
-closeButton.addEventListener('click', function() {
+closeButton.addEventListener('click', function () {
     addclass.classList.remove('showmenu')
 })
 
@@ -41,23 +41,21 @@ function toggle(e) {
     }
 }
 
-
-//slider
-const swiper = new Swiper('.swiper', {
-    loop: true,
-    pagination: {
-        el: '.swiper-pagination',
-    },
-});
+// show ctg menu
+const ctgButton = document.querySelector('.ctg-cat .ctg-trigger'),
+    ctgClass = document.querySelector('.site');
+ctgButton.addEventListener('click', function () {
+    ctgClass.classList.toggle('showctg')
+})
 
 //show search
 const searchButton = document.querySelector('.t-search'),
-      tClose = document.querySelector('.search-close'),
-      showClass = document.querySelector('.site');
-searchButton.addEventListener('click', function() {
+    tClose = document.querySelector('.search-close'),
+    showClass = document.querySelector('.site');
+searchButton.addEventListener('click', function () {
     showClass.classList.toggle('showsearch');
 })
-tClose.addEventListener('click', function() {
+tClose.addEventListener('click', function () {
     showClass.classList.remove('showsearch')
 })
 
