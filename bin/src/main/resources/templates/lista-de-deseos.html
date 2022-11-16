@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title th:text="${TituloPagina}"></title>
+   <title th:text="${TituloPagina}"></title>
     <link rel="shortcut icon" href="./assets/images_readme/logo/logoWhite.png">
-    <link rel="stylesheet" href="/css/nosotros.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/lista-de-deseos.css">
 </head>
+
 <body>
     <div id="page" class="site">
 
         <aside class="site-off desktop-hide">
             <div class="off-canvas">
                 <div class="canvas-head flexitem">
-                    <div class="logo"><a href="/inicio/"><span class="circle"></span>.Stose</a></div>
+                    <div class="logo"><a href="./index.html"><span class="circle"></span>.Stose</a></div>
                     <a href="#" class="t-close flexcenter"><i class="ri-close-line"></i></a>
                 </div>
                 <div class="categories"></div>
@@ -32,8 +34,10 @@
                         <div class="left">
                             <ul class="flexitem main-links">
                                 <li class="links">
-                                    <li><a href="#">Blog</a></li>
+                                <li><a href="#">Blog</a></li>
                                     <li><a href="#">Lista de deseos</a></li>
+                                    <li><a href="/inicio/crearblog">Crear Blog</a></li>
+                                    <li><a href="/inicio/libros">Gestionar Libros</a></li>
                                 </li>
                             </ul>
                         </div>
@@ -54,14 +58,13 @@
                     <div class="wrapper flexitem">
                         <a href="#" class="trigger desktop-hide"><span class="i ri-menu-2-line"></span></a>
                         <div class="left flexitem">
-                            <div class="logo"><a href="/inicio/"><span class="circle"></span>.Stose</a></div>
+                            <div class="logo"><a href="./index.html"><span class="circle"></span>.Stose</a></div>
                             <nav class="mobile-hide">
                                 <ul class="flexitem second-links">
                                     <li><a href="/inicio/">Inicio</a></li>
                                     <li><a href="/inicio/tienda">Tienda</a></li>
                                     <li><a href="/inicio/costos-de-envio">Costos de envío</a></li>
                                     <li><a href="/inicio/nosotros">Nosotros</a></li>
-                                    <li><a href="/inicio/crearblog">Crear Blog</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -84,7 +87,7 @@
                                                                     alt=""></a>
                                                         </div>
                                                         <div class="item-content">
-                                                            <p th:each="Lista : ${LibrosDeseados}"><a href="#" th:text="${Lista.LibroDeseado1}"></a></p>
+                                                            <p><a href="#">/*Nombre del libro*/</a></p>
                                                             <span class="price">
                                                                 <span>$0.00</span>
 
@@ -99,7 +102,7 @@
                                                                     alt=""></a>
                                                         </div>
                                                         <div class="item-content">
-                                                            <p th:each="Lista : ${LibrosDeseados}"><a href="#" th:text="${Lista.LibroDeseado2}"></a></p>
+                                                            <p><a href="#">/*Nombre del libro*/</a></p>
                                                             <span class="price">
                                                                 <span>$0.00</span>
 
@@ -114,7 +117,7 @@
                                                                     alt=""></a>
                                                         </div>
                                                         <div class="item-content">
-                                                           <p th:each="Lista : ${LibrosDeseados}"><a href="#" th:text="${Lista.LibroDeseado3}"></a></p>
+                                                            <p><a href="#">/*Nombre del libro*/</a></p>
                                                             <span class="price">
                                                                 <span>$0.00</span>
 
@@ -129,7 +132,7 @@
                                                                     alt=""></a>
                                                         </div>
                                                         <div class="item-content">
-                                                            <p th:each="Lista : ${LibrosDeseados}"><a href="#" th:text="${Lista.LibroDeseado4}"></a></p>
+                                                            <p><a href="#">/*Nombre del libro*/</a></p>
                                                             <span class="price">
                                                                 <span>$0.00</span>
 
@@ -229,7 +232,7 @@
                                                 <p><strong>$0.00</strong></p>
                                             </div>
                                             <div class="actions">
-                                                <a href="/inicio/revision-pedido"  class="primary-button">Verificar</a>
+                                                <a href="/inicio/revision-pedido" class="primary-button">Verificar</a>
                                                 <a href="/inicio/carrito-compras" class="secondary-button">Ver Carrito</a></div>
                                         </div>
                                     </div>
@@ -336,7 +339,8 @@
                                                 <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
                                             </a>
                                             <ul>
-                                                <li><a href="#">Derecho de Países o Territorios Concretos y Áreas Específicas del Derecho</a></li>
+                                                <li><a href="#">Derecho de Países o Territorios Concretos y Áreas
+                                                        Específicas del Derecho</a></li>
                                                 <li><a href="#">Derecho Internacional</a></li>
                                                 <li><a href="#">Derecho: Guías de Estudio y Revisión</a></li>
                                                 <li><a href="#">Teoría General del Derecho</a></li>
@@ -362,7 +366,8 @@
                                                 <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
                                             </a>
                                             <ul>
-                                                <li><a href="#">Antigüedades, Objetos De Época («Vintage») Y Coleccionables</a></li>
+                                                <li><a href="#">Antigüedades, Objetos De Época («Vintage») Y
+                                                        Coleccionables</a></li>
                                                 <li><a href="#">Artesanías, Artes Decorativas Y Manualidades</a></li>
                                                 <li><a href="#">Artículos De Papelería Y Miscelánea</a></li>
                                                 <li><a href="#">Cocina / Comidas Y Bebidas, Etc</a></li>
@@ -407,12 +412,16 @@
                                                 <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
                                             </a>
                                             <ul>
-                                                <li><a href="#">Ficción Infantil / Ficción Juvenil e Historias Reales</a></li>
-                                                <li><a href="#">Infantil / Juvenil: Artículos De Escritorio Y Papelería Y Objetos Diversos</a></li>
-                                                <li><a href="#">Infantil / Juvenil: Cuestiones Personales Y Sociales</a></li>
+                                                <li><a href="#">Ficción Infantil / Ficción Juvenil e Historias
+                                                        Reales</a></li>
+                                                <li><a href="#">Infantil / Juvenil: Artículos De Escritorio Y Papelería
+                                                        Y Objetos Diversos</a></li>
+                                                <li><a href="#">Infantil / Juvenil: Cuestiones Personales Y Sociales</a>
+                                                </li>
                                                 <li><a href="#">Infantil/Juvenil: Anuarios, Antologías Y Poesía</a></li>
                                                 <li><a href="#">Infantil/Juvenil: Interés General</a></li>
-                                                <li><a href="#">Libros para niños: ilustrados, de actividades y de primeros conceptos de aprendizaje</a></li>
+                                                <li><a href="#">Libros para niños: ilustrados, de actividades y de
+                                                        primeros conceptos de aprendizaje</a></li>
                                                 <li><a href="#">Material Educativo</a></li>
                                             </ul>
                                         </li>
@@ -431,32 +440,192 @@
                         </div>
                     </div>
                 </div>
-            </div>  
+            </div>
         </header>
 
-       
-            
-            
-            <center>
-            <div class="container">
-                <img src="https://kinsta.com/es/wp-content/uploads/sites/8/2021/12/about-us-page-1024x512.png" style="opacity: 0.4; height: 570px; width: 1500px;">
-                <div class="centrado"><h1>Sobre Nosotros</h1>
-                    
-                    <br>
-            
-                    <div class="container" th:each="Lista : ${Descripcion}" > <p th:text="${Lista.Descripcion}"></p>                            
-                        </div>   
-            
-                    
-            
+        <main>
+
+            <div class="single-wish">
+                <div class="container">
+                    <div class="wrapper">
+                        <div class="breadcrumb">
+                            <ul class="flexitem">
+                                <li><a href="./index.html">Inicio</a></li>
+                                <li>Lista de Deseos</li>
+                            </ul>
+                        </div>
+                        <div class="page-title">
+                            <h1>Lista de Deseos</h1>
+                        </div>
+                        <div class="products one wish">
+                            <div class="flexwrap">
+                                <form action="" class="form-wish">
+                                    <div class="item">
+                                        <table id="wish-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Libro</th>
+                                                    <th>Autor</th>
+                                                    <th>Categoria</th>
+                                                    <th>Editorial</th>
+                                                    <th>Año de publicación</th>
+                                                    <th>Precio</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="flexitem">
+                                                        <div class="thumbnail object-cover">
+                                                            <a href="#"><img src="./assets/images/ejemplo.png"
+                                                                    alt=""></a>
+                                                        </div>
+                                                        <div class="content">
+                                                             <strong th:each="Lista : ${LibrosDT}"><a href="#"th:text="${Lista.LibroDeseoT1}"></a></strong>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="content">
+                                                            <strong th:each="Lista : ${LibrosDT}"><a href="#" th:text="${Lista.Autor1}"></a></strong>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="content">
+                                                            <strong th:each="Lista : ${LibrosDT}"><a href="#" th:text="${Lista.Categoria1}"></a></strong>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="content">
+                                                            <strong th:each="Lista : ${LibrosDT}"><a href="#" th:text="${Lista.Editorial1}"></a></strong>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="content">
+                                                            <strong><a href="#">/*####*/</a></strong>
+                                                        </div>
+                                                    </td>
+                                                    <td>$0.00</td>
+
+                                                    <td><a href="#" class="item-remove"><i
+                                                                class="ri-close-line"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="flexitem">
+                                                        <div class="thumbnail object-cover">
+                                                            <a href="#"><img src="./assets/images/ejemplo.png"
+                                                                    alt=""></a>
+                                                        </div>
+                                                        <div class="content">
+                                                            <strong th:each="Lista : ${LibrosDT}"><a href="#"th:text="${Lista.LibroDeseoT2}"></a></strong>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="content">
+                                                            <strong th:each="Lista : ${LibrosDT}"><a href="#" th:text="${Lista.Autor2}"></a></strong>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="content">
+                                                            <strong th:each="Lista : ${LibrosDT}"><a href="#" th:text="${Lista.Categoria2}"></a></strong>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="content">
+                                                            <strong th:each="Lista : ${LibrosDT}"><a href="#" th:text="${Lista.Editorial2}"></a></strong>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="content">
+                                                            <strong><a href="#">/*####*/</a></strong>
+                                                        </div>
+                                                    </td>
+                                                    <td>$0.00</td>
+
+                                                    <td><a href="#" class="item-remove"><i
+                                                                class="ri-close-line"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="flexitem">
+                                                        <div class="thumbnail object-cover">
+                                                            <a href="#"><img src="./assets/images/ejemplo.png"
+                                                                    alt=""></a>
+                                                        </div>
+                                                        <div class="content">
+                                                             <strong th:each="Lista : ${LibrosDT}"><a href="#"th:text="${Lista.LibroDeseoT3}"></a></strong>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="content">
+                                                            <strong th:each="Lista : ${LibrosDT}"><a href="#" th:text="${Lista.Autor3}"></a></strong>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="content">
+                                                            <strong th:each="Lista : ${LibrosDT}"><a href="#" th:text="${Lista.Categoria3}"></a></strong>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="content">
+                                                            <strong th:each="Lista : ${LibrosDT}"><a href="#" th:text="${Lista.Editorial3}"></a></strong>
+                                                        </div>
+                                                    <td>
+                                                        <div class="content">
+                                                            <strong><a href="#">/*####*/</a></strong>
+                                                        </div>
+                                                    </td>
+                                                    <td>$0.00</td>
+
+                                                    <td><a href="#" class="item-remove"><i
+                                                                class="ri-close-line"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="flexitem">
+                                                        <div class="thumbnail object-cover">
+                                                            <a href="#"><img src="./assets/images/ejemplo.png"
+                                                                    alt=""></a>
+                                                        </div>
+                                                        <div class="content">
+                                                            <strong th:each="Lista : ${LibrosDT}"><a href="#"th:text="${Lista.LibroDeseoT4}"></a></strong>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="content">
+                                                            <strong th:each="Lista : ${LibrosDT}"><a href="#" th:text="${Lista.Autor4}"></a></strong>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="content">
+                                                            <strong th:each="Lista : ${LibrosDT}"><a href="#" th:text="${Lista.Categoria4}"></a></strong>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="content">
+                                                            <strong th:each="Lista : ${LibrosDT}"><a href="#" th:text="${Lista.Editorial4}"></a></strong>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="content">
+                                                            <strong><a href="#">/*####*/</a></strong>
+                                                        </div>
+                                                    </td>
+                                                    <td>$0.00</td>
+
+                                                    <td><a href="#" class="item-remove"><i
+                                                                class="ri-close-line"></i></a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              </center>
-              
-              
-                        
-                          
-             
+            </div>
+
+        </main>
+
         <footer>
             <!-- newsletter -->
             <div class="newsletter">
@@ -465,7 +634,9 @@
                         <div class="box">
                             <div class="content">
                                 <h3>Suscríbete a nuestro boletín</h3>
-                                <p>Recibe actualizaciones por correo electrónico sobre nuestros libros más recientes y <strong> ofertas especiales</strong></p>
+                                <p>Recibe actualizaciones por correo electrónico sobre nuestros libros más recientes y
+                                    <strong> ofertas especiales</strong>
+                                </p>
                             </div>
                             <form action="" class="search">
                                 <span class="icon-large"><i class="ri-mail-line"></i></span>
@@ -477,8 +648,9 @@
                 </div>
             </div>
 
-             <!-- widgets -->
-             <div class="widgets">
+            <!-- widgets -->
+            <!-- widgets -->
+            <div class="widgets">
                 <div class="container">
                     <div class="wrapper">
                         <div class="flexwrap">
@@ -538,27 +710,27 @@
                 </div>
             </div>
 
-          <!-- socials -->
-          <div class="footer-info">
-            <div class="container">
-                <div class="wrapper">
-                    <div class="flexcol">
-                        <div class="logo">
-                            <a href="/inicio/"><span class="circle"></span>.Stose</a>
+            <!-- socials -->
+            <div class="footer-info">
+                <div class="container">
+                    <div class="wrapper">
+                        <div class="flexcol">
+                            <div class="logo">
+                                <a href="/inicio/"><span class="circle"></span>.Stose</a>
+                            </div>
+                            <div class="socials">
+                                <ul class="flexitem">
+                                    <li><a href="https://twitter.com/StoseOficial" target="_blank"><i class="ri-twitter-line"></i></a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100087639915317&sk=about" target="_blank"><i class="ri-facebook-line"></i></a></li>
+                                    <li><a href="https://www.instagram.com/stose_oficial_la/" target="_blank"><i class="ri-instagram-line"></i></a></li>
+                                    <li><a href="https://www.youtube.com/channel/UClqy7a7vzpY-vwNqyAVb2eA" target="_blank"><i class="ri-youtube-line"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="socials">
-                            <ul class="flexitem">
-                                <li><a href="https://twitter.com/StoseOficial" target="_blank"><i class="ri-twitter-line"></i></a></li>
-                                <li><a href="https://www.facebook.com/profile.php?id=100087639915317&sk=about" target="_blank"><i class="ri-facebook-line"></i></a></li>
-                                <li><a href="https://www.instagram.com/stose_oficial_la/" target="_blank"><i class="ri-instagram-line"></i></a></li>
-                                <li><a href="https://www.youtube.com/channel/UClqy7a7vzpY-vwNqyAVb2eA" target="_blank"><i class="ri-youtube-line"></i></a></li>
-                            </ul>
-                        </div>
+                        <p class="mini-text">Copyright 2022 © .Stose. Todos los derechos reservados.</p>
                     </div>
-                    <p class="mini-text">Copyright 2022 © .Stose. Todos los derechos reservados.</p>
                 </div>
             </div>
-        </div>
 
             <!-- bottoms navigation -->
             <div class="menu-bottom desktop-hide">
@@ -627,6 +799,7 @@
 
         </footer>
     </div>
-    <script src="./js/nosotros.js"></script>
+    <script src="/js/lista-de-deseos.js"></script>
 </body>
+
 </html>

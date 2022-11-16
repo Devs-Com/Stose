@@ -33,6 +33,15 @@ public class NosotrosController {
 				
 				List<indexModel> ListCarritoC = new ArrayList<>();
 				ListCarritoC.add(CarritoC);
+				
+				//SECCION Lista de Deseos
+				indexModel LibrosDeseados = new indexModel();
+				LibrosDeseados.setLibroDeseado1("/*Nombre de libro*/");
+				LibrosDeseados.setLibroDeseado2("/*Nombre de libro*/");
+				LibrosDeseados.setLibroDeseado3("/*Nombre de libro*/");
+				LibrosDeseados.setLibroDeseado4("/*Nombre de libro*/");
+				List<indexModel> ListLibrosDeseados = new ArrayList<>();
+				ListLibrosDeseados.add(LibrosDeseados);
 
         //Nosotros
         nosotrosModel Descripcion = new nosotrosModel();
@@ -97,27 +106,9 @@ public class NosotrosController {
 				model.addAttribute("MetodosP", ListMetodosP);
 				model.addAttribute("Nosotros", ListNosotros);
                 model.addAttribute("Descripcion", ListDescripcion);
-				
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+                model.addAttribute("CarritoC", ListCarritoC);
+                model.addAttribute("LibrosDeseados", ListLibrosDeseados );
+                
         
         
         return "nosotros";

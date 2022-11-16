@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>.Stose | Carrito de Compras</title>
+    <title th:text="${TituloPagina}"></title>
     <link rel="shortcut icon" href="./assets/images_readme/logo/logoWhite.png">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/carrito-compras.css">
@@ -61,7 +61,7 @@
                                     <li><a href="/inicio/">Inicio</a></li>
                                     <li><a href="/inicio/tienda">Tienda</a></li>
                                     <li><a href="/inicio/costos-de-envio">Costos de envío</a></li>
-                                    <li><a href="#">Nosotros</a></li>
+                                    <li><a href="/inicio/nosotros">Nosotros</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -88,13 +88,13 @@
                                             # libros en el carrito
                                         </div>
                                         <div class="cart-body">
-                                            <ul class="products mini">
+                                            <ul class="products mini" th:each="Lista : ${CarritoC}">
                                                 <li class="item">
                                                     <div class="thumbnail object-cover">
                                                         <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
                                                     </div>
                                                     <div class="item-content">
-                                                        <p><a href="#">/*Nombre del libro*/</a></p>
+                                                        <p><a href="#" th:text="${Lista.CarritoCompras1}"></a></p>
                                                         <span class="price">
                                                             <span>$0.00</span>
                                                             <span class="fly-item"><span>1x</span></span>
@@ -107,7 +107,7 @@
                                                         <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
                                                     </div>
                                                     <div class="item-content">
-                                                        <p><a href="#">/*Nombre del libro*/</a></p>
+                                                        <p><a href="#" th:text="${Lista.CarritoCompras2}"></a></p>
                                                         <span class="price">
                                                             <span>$0.00</span>
                                                             <span class="fly-item"><span>1x</span></span>
@@ -120,7 +120,7 @@
                                                         <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
                                                     </div>
                                                     <div class="item-content">
-                                                        <p><a href="#">/*Nombre del libro*/</a></p>
+                                                        <p><a href="#" th:text="${Lista.CarritoCompras3}"></a></p>
                                                         <span class="price">
                                                             <span>$0.00</span>
                                                             <span class="fly-item"><span>1x</span></span>
@@ -133,7 +133,7 @@
                                                         <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
                                                     </div>
                                                     <div class="item-content">
-                                                        <p><a href="#">/*Nombre del libro*/</a></p>
+                                                        <p><a href="#" th:text="${Lista.CarritoCompras4}"></a></p>
                                                         <span class="price">
                                                             <span>$0.00</span>
                                                             <span class="fly-item"><span>1x</span></span>
@@ -361,7 +361,7 @@
                     <div class="wrapper">
                         <div class="breadcrumb">
                             <ul class="flexitem">
-                                <li><a href="./index.html">Inicio</a></li>
+                                <li><a href="/inicio/">Inicio</a></li>
                                 <li>Carrito</li>
                             </ul>
                         </div>
@@ -389,7 +389,7 @@
                                                             <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
                                                         </div>
                                                         <div class="content">
-                                                            <strong><a href="#">/*Nombre del libro*/</a></strong>
+                                                            <strong th:each="Lista : ${LibroT}"><a href="#" th:text="${Lista.LibroTabla1}"></a></strong>
                                                         </div>
                                                     </td>
                                                     <td>$0.00</td>
@@ -409,7 +409,7 @@
                                                             <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
                                                         </div>
                                                         <div class="content">
-                                                            <strong><a href="#">/*Nombre del libro*/</a></strong>
+                                                            <strong th:each="Lista : ${LibroT}"><a href="#" th:text="${Lista.LibroTabla2}"></a></strong>
                                                         </div>
                                                     </td>
                                                     <td>$0.00</td>
@@ -429,7 +429,7 @@
                                                             <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
                                                         </div>
                                                         <div class="content">
-                                                            <strong><a href="#">/*Nombre del libro*/</a></strong>
+                                                            <strong th:each="Lista : ${LibroT}"><a href="#" th:text="${Lista.LibroTabla3}"></a></strong>
                                                         </div>
                                                     </td>
                                                     <td>$0.00</td>
@@ -449,7 +449,7 @@
                                                             <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
                                                         </div>
                                                         <div class="content">
-                                                            <strong><a href="#">/*Nombre del libro*/</a></strong>
+                                                            <strong th:each="Lista : ${LibroT}"><a href="#" th:text="${Lista.LibroTabla4}"></a></strong>
                                                         </div>
                                                     </td>
                                                     <td>$0.00</td>
@@ -549,58 +549,58 @@
             </div>
 
             <!-- widgets -->
-            <div class="widgets categoria">
+            <div class="widgets">
                 <div class="container">
                     <div class="wrapper">
                         <div class="flexwrap">
                             <div class="row">
                                 <div class="item mini-links">
                                     <h4>Ayuda y Contacto</h4>
-                                    <ul class="flexcol">
-                                        <li><a href="#">Tu Cuenta</a></li>
-                                        <li><a href="#">Tus pedidos</a></li>
-                                        <li><a href="#">Tarifas de Envio</a></li>
-                                        <li><a href="#">Devoluciones</a></li>
-                                        <li><a href="#">Contáctanos</a></li>
+                                    <ul class="flexcol" th:each="Lista : ${AyudaC}">
+                                        <li><a href="#" th:text="${Lista.Cuenta}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Pedidos}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Envios}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Devoluciones}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Contactanos}"></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="item mini-links">
                                     <h4>Libros Categorías</h4>
-                                    <ul class="flexcol">
-                                        <li><a href="#">Arte</a></li>
-                                        <li><a href="#">Biografías</a></li>
-                                        <li><a href="#">Ciencias</a></li>
-                                        <li><a href="#">Computación</a></li>
-                                        <li><a href="#">Deportes</a></li>
-                                        <li><a href="#">Derecho</a></li>
-                                        <li><a href="#">Economía</a></li>
-                                        <li><a href="#">Estilos de Vida</a></li>
-                                        <li><a href="#">Ficción</a></li>
-                                        <li><a href="#">Filosofía y Religión</a></li>
-                                        <li><a href="#">Infantiles y Juveniles</a></li>
+                                    <ul class="flexcol" th:each="Lista : ${LibrosC}">
+                                        <li><a href="#" th:text="${Lista.Arte}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Biografias}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Ciencias}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Computacion}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Deportes}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Derecho}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Economia}"></a></li>
+                                        <li><a href="#" th:text="${Lista.EstilosDeVida}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Ficcion}"></a></li>
+                                        <li><a href="#" th:text="${Lista.FilosofiaYreligion}"></a></li>
+                                        <li><a href="#" th:text="${Lista.InfantilesYjuveniles}"></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="item mini-links">
                                     <h4>Métodos de Pago</h4>
-                                    <ul class="flexcol">
-                                        <li><a href="#">Tarjetas de Créditos</a></li>
-                                        <li><a href="#">Paypal</a></li>
+                                    <ul class="flexcol" th:each="Lista : ${MetodosP}">
+                                        <li><a href="#" th:text="${Lista.TarjetasDeCredito}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Paypal}"></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="item mini-links">
                                     <h4>Sobre Nosotros</h4>
-                                    <ul class="flexcol">
-                                        <li><a href="#">Información de la Compañía</a></li>
-                                        <li><a href="#">Noticias</a></li>
-                                        <li><a href="#">Inversores</a></li>
-                                        <li><a href="#">Políticas</a></li>
-                                        <li><a href="#">Valoración de los Clientes</a></li>
+                                    <ul class="flexcol" th:each="Lista : ${Nosotros}">
+                                        <li><a href="#" th:text="${Lista.Iempresa}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Noticias}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Inversores}"></a></li>
+                                        <li><a href="#" th:text="${Lista.Politicas}"></a></li>
+                                        <li><a href="#" th:text="${Lista.ClienteV}"></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -619,11 +619,10 @@
                             </div>
                             <div class="socials">
                                 <ul class="flexitem">
-                                    <li><a href="#"><i class="ri-twitter-line"></i></a></li>
-                                    <li><a href="#"><i class="ri-facebook-line"></i></a></li>
-                                    <li><a href="#"><i class="ri-instagram-line"></i></a></li>
-                                    <li><a href="#"><i class="ri-linkedin-line"></i></a></li>
-                                    <li><a href="#"><i class="ri-youtube-line"></i></a></li>
+                                    <li><a href="https://twitter.com/StoseOficial" target="_blank"><i class="ri-twitter-line"></i></a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100087639915317&sk=about" target="_blank"><i class="ri-facebook-line"></i></a></li>
+                                    <li><a href="https://www.instagram.com/stose_oficial_la/" target="_blank"><i class="ri-instagram-line"></i></a></li>
+                                    <li><a href="https://www.youtube.com/channel/UClqy7a7vzpY-vwNqyAVb2eA" target="_blank"><i class="ri-youtube-line"></i></a></li>
                                 </ul>
                             </div>
                         </div>

@@ -33,6 +33,15 @@ public class listaDeseosController {
 		List<indexModel> ListCarritoC = new ArrayList<>();
 		ListCarritoC.add(CarritoC);
 		
+		//SECCION Lista de Deseos
+		indexModel LibrosDeseados = new indexModel();
+		LibrosDeseados.setLibroDeseado1("/*Nombre de libro*/");
+		LibrosDeseados.setLibroDeseado2("/*Nombre de libro*/");
+		LibrosDeseados.setLibroDeseado3("/*Nombre de libro*/");
+		LibrosDeseados.setLibroDeseado4("/*Nombre de libro*/");
+		List<indexModel> ListLibrosDeseados = new ArrayList<>();
+		ListLibrosDeseados.add(LibrosDeseados);
+		
 		//TABLA DE LISTA DE DESEOS
 		
 		listaDeseosModel LibrosDT = new listaDeseosModel();
@@ -114,7 +123,7 @@ public class listaDeseosController {
 		model.addAttribute("Nosotros", ListNosotros);
 		model.addAttribute("CarritoC", ListCarritoC);
 		model.addAttribute("LibrosDT", ListLibrosDT);
-		
+		model.addAttribute("LibrosDeseados", ListLibrosDeseados );
 		
 		return "lista-de-deseos";
 	}

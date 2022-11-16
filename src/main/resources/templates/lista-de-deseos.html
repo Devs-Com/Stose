@@ -17,7 +17,7 @@
         <aside class="site-off desktop-hide">
             <div class="off-canvas">
                 <div class="canvas-head flexitem">
-                    <div class="logo"><a href="./index.html"><span class="circle"></span>.Stose</a></div>
+                    <div class="logo"><a href="/inicio"><span class="circle"></span>.Stose</a></div>
                     <a href="#" class="t-close flexcenter"><i class="ri-close-line"></i></a>
                 </div>
                 <div class="categories"></div>
@@ -58,7 +58,7 @@
                     <div class="wrapper flexitem">
                         <a href="#" class="trigger desktop-hide"><span class="i ri-menu-2-line"></span></a>
                         <div class="left flexitem">
-                            <div class="logo"><a href="./index.html"><span class="circle"></span>.Stose</a></div>
+                            <div class="logo"><a href="/inicio"><span class="circle"></span>.Stose</a></div>
                             <nav class="mobile-hide">
                                 <ul class="flexitem second-links">
                                     <li><a href="/inicio/">Inicio</a></li>
@@ -87,7 +87,7 @@
                                                                     alt=""></a>
                                                         </div>
                                                         <div class="item-content">
-                                                            <p><a href="#">/*Nombre del libro*/</a></p>
+                                                            <p th:each="Lista : ${LibrosDeseados}"><a href="#" th:text="${Lista.LibroDeseado1}"></a></p>
                                                             <span class="price">
                                                                 <span>$0.00</span>
 
@@ -102,7 +102,7 @@
                                                                     alt=""></a>
                                                         </div>
                                                         <div class="item-content">
-                                                            <p><a href="#">/*Nombre del libro*/</a></p>
+                                                            <p th:each="Lista : ${LibrosDeseados}"><a href="#" th:text="${Lista.LibroDeseado2}"></a></p>
                                                             <span class="price">
                                                                 <span>$0.00</span>
 
@@ -117,7 +117,7 @@
                                                                     alt=""></a>
                                                         </div>
                                                         <div class="item-content">
-                                                            <p><a href="#">/*Nombre del libro*/</a></p>
+                                                            <p th:each="Lista : ${LibrosDeseados}"><a href="#" th:text="${Lista.LibroDeseado3}"></a></p>
                                                             <span class="price">
                                                                 <span>$0.00</span>
 
@@ -132,7 +132,7 @@
                                                                     alt=""></a>
                                                         </div>
                                                         <div class="item-content">
-                                                            <p><a href="#">/*Nombre del libro*/</a></p>
+                                                            <p th:each="Lista : ${LibrosDeseados}"><a href="#" th:text="${Lista.LibroDeseado4}"></a></p>
                                                             <span class="price">
                                                                 <span>$0.00</span>
 

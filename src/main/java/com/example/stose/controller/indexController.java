@@ -33,6 +33,17 @@ public class indexController {
 				List<indexModel> ListCarritoC = new ArrayList<>();
 				ListCarritoC.add(CarritoC);
 				
+				//SECCION Lista de Deseos
+				indexModel LibrosDeseados = new indexModel();
+				LibrosDeseados.setLibroDeseado1("/*Nombre de libro*/");
+				LibrosDeseados.setLibroDeseado2("/*Nombre de libro*/");
+				LibrosDeseados.setLibroDeseado3("/*Nombre de libro*/");
+				LibrosDeseados.setLibroDeseado4("/*Nombre de libro*/");
+				List<indexModel> ListLibrosDeseados = new ArrayList<>();
+				ListLibrosDeseados.add(LibrosDeseados);
+				
+				
+				
 
 				//SECCION Libros en Tendencia
 				//Libro en Oferta
@@ -132,6 +143,7 @@ public class indexController {
 				model.addAttribute("LibroT", ListLibroT);
 				model.addAttribute("LibroD", ListLibroD);
 				model.addAttribute("CarritoC", ListCarritoC);
+				model.addAttribute("LibrosDeseados", ListLibrosDeseados );
 		
         return "index";
     }

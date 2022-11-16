@@ -7,6 +7,12 @@ public class indexModel {
 		private String CarritoCompras3;
 		private String CarritoCompras4;
 		
+		//Lista de deseos
+		private String LibroDeseado1;
+		private String LibroDeseado2;
+		private String LibroDeseado3;
+		private String LibroDeseado4;
+		
 	    //Libro en Oferta
 	    private String LibroOferta;
 	    
@@ -78,6 +84,7 @@ public class indexModel {
 	  		private String Tienda;
 	  		private String CostoDeEnvio;
 	  		private String Nosotros;
+	  		
 	    //CARRITO DE COMPRAS
 	    
 	    public String getCarritoCompras1() {
@@ -106,6 +113,36 @@ public class indexModel {
 	    }
 	    public void setCarritoCompras4(String carritoCompras4) {
 	        CarritoCompras4 = carritoCompras4;
+	    }
+	    
+	    //LISTA DE DESEOS
+	    
+	    public String getLibroDeseado1() {
+	        return LibroDeseado1;
+	    }
+	    public void setLibroDeseado1(String libroDeseado1) {
+	    	LibroDeseado1 = libroDeseado1;
+	    }
+	    
+	    public String getLibroDeseado2() {
+	        return LibroDeseado2;
+	    }
+	    public void setLibroDeseado2(String libroDeseado2) {
+	    	LibroDeseado2 = libroDeseado2;
+	    }
+	    
+	    public String getLibroDeseado3() {
+	        return LibroDeseado3;
+	    }
+	    public void setLibroDeseado3(String libroDeseado3) {
+	    	LibroDeseado3 = libroDeseado3;
+	    }
+	    
+	    public String getLibroDeseado4() {
+	        return LibroDeseado4;
+	    }
+	    public void setLibroDeseado4(String libroDeseado4) {
+	    	LibroDeseado4 = libroDeseado4;
 	    }
 	    
 
