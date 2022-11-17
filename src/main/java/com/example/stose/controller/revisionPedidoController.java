@@ -17,7 +17,7 @@ import com.example.stose.model.indexModel;
 @RequestMapping("/inicio")
 public class revisionPedidoController {
  
-	@Value("${title.}")
+	@Value("${title.revisionpedido}")
 	private String TitlePage;
 	
     @GetMapping({ "/revision-pedido", "Revision-Pedido" })
