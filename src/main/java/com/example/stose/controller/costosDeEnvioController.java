@@ -48,7 +48,7 @@ public class costosDeEnvioController {
 		HeaderT.setListaDeDeseos("ListaDeDeseos");
 		HeaderT.setRegistrate("Registrate");
 		HeaderT.setMiCuenta("MiCuenta");
-		HeaderT.setRevisionDePedidos("RevisionDePedidos");
+		HeaderT.setRevisionDePedidos("Revision De Pedidos");
 						
 						
 		List<indexModel> ListHeaderT = new ArrayList<>();

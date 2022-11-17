@@ -3,6 +3,7 @@ package com.example.stose.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,10 @@ import com.example.stose.model.indexModel;
 @Controller
 @RequestMapping("/inicio")
 public class revisionPedidoController {
-    
+ 
+	@Value("${title.}")
+	private String TitlePage;
+	
     @GetMapping({ "/revision-pedido", "Revision-Pedido" })
     public String ControllerRevisionPedido(Model model) {
     	
@@ -29,6 +33,7 @@ public class revisionPedidoController {
     			ListLibrosDeseados.add(LibrosDeseados);
     	    	
     			model.addAttribute("LibrosDeseados", ListLibrosDeseados );
+    			model.addAttribute("Titulo", TitlePage);
         return "revision-pedido";
     }
 }

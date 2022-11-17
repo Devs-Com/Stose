@@ -155,6 +155,7 @@ public class indexModel {
 	  		
 	  		
 	  		
+	  		
 	  		//SUBCATEGORIA
 	  		public String getSubCategoria38() {
 				return SubCategoria38;
