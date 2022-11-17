@@ -41,20 +41,6 @@ public class tiendaController {
     			LibrosDeseados.setLibroDeseado4("/*Nombre de libro*/");
     			List<indexModel> ListLibrosDeseados = new ArrayList<>();
     			ListLibrosDeseados.add(LibrosDeseados);
-    	    	
-    			//Header top
-    			
-    			indexModel HeaderT = new indexModel();
-    			HeaderT.setBlog("Blog");
-    			HeaderT.setProductosDestacados("ProductosDestacados");
-    			HeaderT.setListaDeDeseos("ListaDeDeseos");
-    			HeaderT.setRegistrate("Registrate");
-    			HeaderT.setMiCuenta("MiCuenta");
-    			HeaderT.setRevisionDePedidos("Revision De Pedidos");
-    							
-    							
-    			List<indexModel> ListHeaderT = new ArrayList<>();
-    			ListHeaderT.add(HeaderT);
     			
     			//Categoria
     			
@@ -128,6 +114,21 @@ public class tiendaController {
     							
     			List<indexModel> ListSubCategoria = new ArrayList<>();
     			ListSubCategoria.add(SubCategoria);
+    	    	
+
+    			//Header top
+    			
+    			indexModel HeaderT = new indexModel();
+    			HeaderT.setBlog("Blog");
+    			HeaderT.setProductosDestacados("ProductosDestacados");
+    			HeaderT.setListaDeDeseos("ListaDeDeseos");
+    			HeaderT.setRegistrate("Registrate");
+    			HeaderT.setMiCuenta("MiCuenta");
+    			HeaderT.setRevisionDePedidos("Revision De Pedidos");
+    							
+    							
+    			List<indexModel> ListHeaderT = new ArrayList<>();
+    			ListHeaderT.add(HeaderT);
 
     			
     			//Ayuda y contacto
@@ -193,6 +194,10 @@ public class tiendaController {
     			model.addAttribute("HeaderT",ListHeaderT );
     			model.addAttribute("LibrosDeseados",ListLibrosDeseados);
     			model.addAttribute("Titulo", TitlePage);
+
+    			model.addAttribute("LibrosDeseados", ListLibrosDeseados );
+    			model.addAttribute("SubCategoria", ListSubCategoria);
+
     	
         return "tienda";
     }
