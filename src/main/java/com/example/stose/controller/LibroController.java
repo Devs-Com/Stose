@@ -42,7 +42,7 @@ public class LibroController {
 	@PostMapping("/libros")
 	public String guardarLibro(@ModelAttribute("libro") Libro libro) {
 		servicio.guardarLibro(libro);
-		return "redirect:/libros";
+		return "redirect:/inicio/libros";
 	}
 
 	@GetMapping("/libros/editar/{id}")
@@ -67,12 +67,12 @@ public class LibroController {
 		libroExistente.setDisponible(libro.getDisponible());
 
 		servicio.actualizarLibro(libroExistente);
-		return "redirect:/libros";
+		return "redirect:/inicio/libros";
 	}
 
 	@GetMapping("/libros/{id}")
 	public String eliminarLibro(@PathVariable Long id) {
 		servicio.eliminarLibro(id);
-		return "redirect:/libros";
+		return "redirect:/inicio/libros";
 	}
 }

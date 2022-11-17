@@ -26,7 +26,7 @@
           <div class="col-lg-18 col-md-18 col-sm-18 container justify-content-center card">
               <h1 class="text-center">Edición de libro</h1>
               <div class="card-body">
-                 <form th:action="@{/libros/{id}(id=${libro.id})}" th:object="${libro}" method="POST">
+                 <form th:action="@{/inicio/libros/{id}(id=${libro.id})}" th:object="${libro}" method="POST">
                   <div class="form-group">
                      <label>Titulo : </label>
                      <input type="text" name="titulo" th:field="*{titulo}" class="form-control" placeholder="Digite el titulo : " required>
