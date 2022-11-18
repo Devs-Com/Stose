@@ -104,7 +104,82 @@ public class revisionPedidoController {
     							
     			List<indexModel> ListSubCategoria = new ArrayList<>();
     			ListSubCategoria.add(SubCategoria);
-    	    	
+    			
+    			//Header top
+    			
+    			indexModel HeaderT = new indexModel();
+    			HeaderT.setBlog("Blog");
+    			HeaderT.setProductosDestacados("ProductosDestacados");
+    			HeaderT.setListaDeDeseos("Lista de Deseos");
+    			HeaderT.setRegistrate("Registrate");
+    			HeaderT.setMiCuenta("Mi Cuenta");
+    			HeaderT.setRevisionDePedidos("Revision De Pedidos");
+    							
+    							
+    			List<indexModel> ListHeaderT = new ArrayList<>();
+    			ListHeaderT.add(HeaderT);
+    			
+    			//Ayuda y contacto
+    			indexModel AyudaC = new indexModel();
+    			AyudaC.setCuenta("Tu Cuenta");
+    			AyudaC.setPedidos("Tus Pedidos");
+    			AyudaC.setEnvios("Tarifas de Envio");
+    			AyudaC.setDevoluciones("Devoluciones");
+    			AyudaC.setContactanos("Contactanos");
+    			
+    			
+    			List<indexModel> ListAyudaC = new ArrayList<>();
+    			ListAyudaC.add(AyudaC);
+    			
+    			//Libros y categorias
+    			
+    			indexModel LibrosC = new indexModel();
+    			LibrosC.setArte("Arte");
+    			LibrosC.setBiografias("Biografias");
+    			LibrosC.setCiencias("Ciencias");
+    			LibrosC.setComputacion("Computacion");
+    			LibrosC.setDeportes("Deportes");
+    			LibrosC.setDerecho("Derecho");
+    			LibrosC.setEconomia("Economia");
+    			LibrosC.setEstilosDeVida("Estilos de Vida");
+    			LibrosC.setFiccion("Ficcion");
+    			LibrosC.setFilosofiaYreligion("Filosofia y Religion");
+    			LibrosC.setInfantilesYjuveniles("Infantiles y Juveniles");
+    			
+    			
+    			List<indexModel> ListLibrosC = new ArrayList<>();
+    			ListLibrosC.add(LibrosC);
+    			
+    			//Metodos de pago
+    			
+    			indexModel MetodosP = new indexModel();
+    			MetodosP.setTarjetasDeCredito("Tarjetas de Credito");
+    			MetodosP.setPaypal("Paypal");
+    			
+    			List<indexModel> ListMetodosP = new ArrayList<>();
+    			ListMetodosP.add(MetodosP);
+    			
+    			//Sobre Nosotros
+    			
+    			indexModel Nosotros = new indexModel();
+    			Nosotros.setIempresa("Informacion de la Compañia");
+    			Nosotros.setNoticias("Noticias");
+    			Nosotros.setInversores("Inversores");
+    			Nosotros.setPoliticas("Políticas");
+    			Nosotros.setClienteV("Valoracion de los clientes");
+    			
+    			
+    			List<indexModel> ListNosotros = new ArrayList<>();
+    			ListNosotros.add(Nosotros);
+
+    	    	//MODELS
+    			model.addAttribute("AyudaC", ListAyudaC );
+    			model.addAttribute("LibrosC", ListLibrosC );
+    			model.addAttribute("MetodosP", ListMetodosP );
+    			model.addAttribute("Nosotros", ListNosotros );
+    			
+    			model.addAttribute("HeaderT", ListHeaderT );
+    			
     			model.addAttribute("LibrosDeseados", ListLibrosDeseados );
 
     			model.addAttribute("Titulo", TitlePage);
