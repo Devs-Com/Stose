@@ -121,7 +121,7 @@ public class tiendaController {
     			indexModel HeaderT = new indexModel();
     			HeaderT.setBlog("Blog");
     			HeaderT.setProductosDestacados("ProductosDestacados");
-    			HeaderT.setListaDeDeseos("ListaDeDeseos");
+    			HeaderT.setListaDeDeseos("Lista de Deseos");
     			HeaderT.setRegistrate("Registrate");
     			HeaderT.setMiCuenta("MiCuenta");
     			HeaderT.setRevisionDePedidos("Revision De Pedidos");
