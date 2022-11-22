@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title th:text="${TituloPagina}"></title>
+<!-- CSS only -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<a class="navbar-brand" href="/inicio/">Volver al Inicio</a>
+	</nav>
+
+
+	<div class="container">
+		<br>
+		<div class="row">
+			<h1>Lista de libros</h1>
+		</div>
+		<div class="row">
+		   <div class="col-lg-3">
+		     <a th:href="@{/inicio/libros/nuevo}" class="btn btn-primary btn-sm mb3">Agregar libro</a>
+		   </div>
+		</div>
+		<br>
+		<table class="table table-striped table-bordered">
+			<thead class="table-dark">
+				<tr>
+					<th>Titulo</th>
+					<th>Autor</th>
+					<th>Id Editorial</th>
+					<th>Id Categoria</th>
+					<th>Id Subcategoria</th>
+					<th>Precio</th>
+					<th>Numero de Paginas</th>
+					<th>Año de Publicacion</th>
+					<th>Disponible</th>
+					<th>Acciones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="libro : ${libros}">
+					<td th:text="${libro.titulo}">Titulo</td>
+					<td th:text="${libro.autor}">Autor</td>
+					<td th:text="${libro.id_editorial}">Id Editorial</td>
+					<td th:text="${libro.id_categoria}">Id Categoria</td>
+					<td th:text="${libro.id_subcategoria}">Id Subcategoria</td>
+					<td th:text="${libro.precio}">Precio</td>
+					<td th:text="${libro.numero_pagina}">Numero de Paginas</td>
+					<td th:text="${libro.year_publicacion}">Año de Publicacion</td>
+					<td th:text="${libro.disponible}">Disponible</td>
+					<td>
+					  <a th:href="@{/inicio/libros/editar/{id}(id=${libro.id})}" class="btn btn-info">Editar</a>
+					  <a th:href="@{/inicio/libros/{id}(id=${libro.id})}" class="btn btn-danger">Eliminar</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>
