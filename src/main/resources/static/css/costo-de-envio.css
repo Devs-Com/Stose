@@ -1,13 +1,13 @@
 .texto1{
     position:relative;
-    top: -250px;
+    top: -450px;
     right: -100px;
 
 }
 
 .texto2{
     position:relative;
-    top: -120px;
+    top: -320px;
     width: 50%;
     left: 6%;
 }
@@ -25,6 +25,31 @@
 .titulo1{
 	position: relative;
 	left: 10%;
+}
+
+@media screen and (max-width: 1900px){
+ #imagen1{
+  width: 40%;
+ }
+}
+
+@media screen and (max-width: 500px){
+	#imagen1{
+	width: 50%;
+	left: 80px;		
+	}
+	.texto1{
+	position: flex;
+	top: 50px;
+	left: 40px;
+	width: 80%;
+	}
+	.texto2{
+	flex-direction: column;
+	top: 70px;
+	width: 80%;
+	}
+	
 }
 
 
