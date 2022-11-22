@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>.Stose | Login</title>
     <link rel="shortcut icon" href="./assets/images_readme/logo/logoWhite.png">
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="/css/login.css">
 
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link
@@ -46,7 +46,7 @@
                         </div>
                         <div class="right">
                             <ul class="flexitem main-links">
-                                <li><a href="#">Registrate</a></li>
+                                <li><a href="/inicio/registrar">Registrate</a></li>
                                 <li><a href="#">Mi Cuenta</a></li>
                                 <li><a href="#">Revision de Pedidos</a></li>
                             </ul>
@@ -64,10 +64,10 @@
                             <div class="logo"><a href="./index.html"><span class="circle"></span>.Stose</a></div>
                             <nav class="mobile-hide">
                                 <ul class="flexitem second-links">
-                                    <li><a href="./index.html">Inicio</a></li>
-                                    <li><a href="./tienda.html">Tienda</a></li>
-                                    <li><a href="#">Costos de envío</a></li>
-                                    <li><a href="#">Nosotros</a></li>
+                                    <li><a href="/inicio/">Inicio</a></li>
+                                    <li><a href="/inicio/tienda">Tienda</a></li>
+                                    <li><a href="/inicio/costos-de-envio">Costos de envío</a></li>
+                                    <li><a href="/inicio/nosotros">Nosotros</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -183,16 +183,16 @@
                 <h1 class="title">Iniciar sesión</h1>
                 <div class="social-login">
                 <div class="social-login-element">
-                    <img src="assets/images/logo-google.png" alt="google-img">
+                    <img src="/assets/logo-google.png" alt="google-img">
                     <span>Google</span>
                 </div>
                 <div class="social-login-element" id="face">
-                    <img src="assets/images/logo-facebook.png" alt="google-img">
+                    <img src="/assets/logo-facebook.png" alt="google-img">
                     <span>Facebook</span>
                 </div>
              </div>
              <div class="social-login-element-admin" onclick="loginAdmin()">
-                <a href="login-admin.html"></a><img src="assets/images/logo-admin2.png" alt="google-img"></a>
+                <a href="login-admin.html"></a><img src="/assets/logo-admin2.png" alt="google-img"></a>
                 <a href="login-admin.html"><span>MODO ADMIN</span></a>
             </div>
                 <p>or</p>
@@ -202,7 +202,7 @@
                     <span id="icon-form-6" class="material-symbols-outlined">Password</span>          <input class="input" placeholder="Password" type="password"  id="pass3">
                     <p>Olvidaste tu contraseña? <span class="span">Clic aquí</span></p>              
                     <button class="btn-login" type="submit">Login</button>
-                    <p>No tienes una cuenta? <a href="Registrar.html" class="span">Registrate</a></p>
+                    <p>No tienes una cuenta? <a href="/inicio/registrar" class="span">Registrate</a></p>
 
                 </form>
                 <div id="container-warnings">
@@ -211,7 +211,7 @@
 
                    </div>
             </div>
-            <img class="imagen-contenedor" src="assets/images/imagen-login.svg" alt="login">
+            <img class="imagen-contenedor" src="/assets/imagen-login.png" alt="login">
         </div>
 
         </main>
@@ -363,10 +363,10 @@
 
         </footer>
     </div>
-    <script src="js/validacion-login.js"></script>
-    <script src="js/navegacion.js"></script>
-    <script src="js/validacion-login.js"></script>
+    <script src="/js/validacion-login.js"></script>
+    <script src="/js/navegacion.js"></script>
+    <script src="/js/validacion-login.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script src="./js/index.js"></script>
+    <script src="/js/index.js"></script>
 </body>
 </html>

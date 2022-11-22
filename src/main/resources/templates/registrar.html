@@ -46,7 +46,7 @@
                         </div>
                         <div class="right">
                             <ul class="flexitem main-links">
-                                <li><a href="#">Registrate</a></li>
+                                <li><a href="/inicio/registrar">Registrate</a></li>
                                 <li><a href="#">Mi Cuenta</a></li>
                                 <li><a href="#">Revision de Pedidos</a></li>
                             </ul>
@@ -64,10 +64,10 @@
                             <div class="logo"><a href="./index.html"><span class="circle"></span>.Stose</a></div>
                             <nav class="mobile-hide">
                                 <ul class="flexitem second-links">
-                                    <li><a href="./index.html">Inicio</a></li>
-                                    <li><a href="./tienda.html">Tienda</a></li>
-                                    <li><a href="#">Costos de envío</a></li>
-                                    <li><a href="#">Nosotros</a></li>
+                                    <li><a href="/inicio/">Inicio</a></li>
+                                    <li><a href="/inicio/tienda">Tienda</a></li>
+                                    <li><a href="/inicio/costos-de-envio">Costos de envío</a></li>
+                                    <li><a href="/inicio/nosotros">Nosotros</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -182,22 +182,22 @@
                 <h1 class="title">REGISTRATE</h1>
                 <div class="social-login">
                 <div class="social-login-element">
-                    <img src="assets/images/logo-google.png" alt="google-img">
+                    <img src="/assets/logo-google.png" alt="google-img">
                     <span>Google</span>
                 </div>
                 <div class="social-login-element">
-                    <img src="assets/images/logo-facebook.png" alt="google-img">
+                    <img src="/assets//logo-facebook.png" alt="google-img">
                     <span>Facebook</span>
                 </div>
              </div>
              <br>
                 <form class="inputs-container" id="form">
                     <span id="icon-form-1" class="material-symbols-outlined">alternate_email</span>   <input class="input" placeholder="E-mail" type="text" id="email"> 
-                    <span id="icon-form-2" class="material-symbols-outlined">person_filled</span>     <input class="input"input type="text" class="input-link" placeholder="NAME" id="nombre">
+                    <span id="icon-form-2" class="material-symbols-outlined">person_filled</span>     <input class="input" type="text" placeholder="Name" id="nombre">
                     <span id="icon-form-3" class="material-symbols-outlined">Password</span>          <input class="input" placeholder="Password" type="password" id="pass1">
                     <span id="icon-form-4" class="material-symbols-outlined">Password</span>           <input class="input" placeholder="Repita password" type="password" id="pass2">
                     <br>
-                    <p>Ya tienes una cuenta? <a href="login.html" class="span">Clic aquí</a></p>
+                    <p>Ya tienes una cuenta? <a href="/inicio/login" class="span">Clic aquí</a></p>
                     <button class="btn-login" type="submit" id="registrar" onclick="guardar()">Registrar</button>
                 </form>
                 
@@ -362,8 +362,8 @@
 
         </footer>
     </div>
-    <script src="js/validacion-registrar.js"></script>
-    <script src="js/navegacion.js"></script>
+    <script src="/js/validacion-registrar.js"></script>
+    <script src="/js/navegacion.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="/js/index.js"></script>
     
@@ -371,5 +371,5 @@
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-<script src="js/configuracion.js" ></script>
+<script src="/js/configuracion.js" ></script>
 </html>
