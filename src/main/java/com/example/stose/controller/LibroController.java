@@ -56,6 +56,7 @@ public class LibroController {
 			Model modelo) {
 		Libro libroExistente = servicio.obtenerLibroPorId(id);
 		libroExistente.setId(id);
+		libroExistente.setImg(libro.getImg());
 		libroExistente.setTitulo(libro.getTitulo());
 		libroExistente.setAutor(libro.getAutor());
 		libroExistente.setId_editorial(libro.getId_editorial());

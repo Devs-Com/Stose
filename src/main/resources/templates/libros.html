@@ -45,7 +45,7 @@
 			</thead>
 			<tbody>
 				<tr th:each="libro : ${libros}">
-					<td><img th:src="${libro.img}"></td>
+					<td><img th:src="${libro.img}" width="100" height="100"></td>
 					<td th:text="${libro.titulo}">Titulo</td>
 					<td th:text="${libro.autor}">Autor</td>
 					<td th:text="${libro.id_editorial}">Id Editorial</td>
