@@ -27,6 +27,12 @@
               <h1 class="text-center">Registro de libro</h1>
               <div class="card-body">
                  <form th:action="@{/inicio/libros}" th:object="${libro}" method="POST">
+                 
+                 <div class="form-group">
+                       <label>Imagen : </label>
+                       <input type="text" name="img" th:field="*{img}" class="form-control" placeholder="Digite el enlace de la imagen : " required>
+                    </div>
+                 
                     <div class="form-group">
                        <label>Titulo : </label>
                        <input type="text" name="titulo" th:field="*{titulo}" class="form-control" placeholder="Digite el titulo : " required>

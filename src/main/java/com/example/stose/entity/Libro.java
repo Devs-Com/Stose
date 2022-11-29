@@ -17,6 +17,9 @@ public class Libro {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
 	private Long id;
+
+    @Column(name = "img")
+    private String img;
 	
 	@Column(name = "titulo",nullable = false,length = 50)
 	private String titulo;
@@ -45,13 +48,18 @@ public class Libro {
     @Column(name = "disponible",nullable = false,length = 50)
 	private String disponible;
 	
-	public Libro() {
-		
-	}
+	@Override
+    public String toString() {
+        return "Libro [id=" + id + ", img=" + img + ", titulo=" + titulo + ", autor=" + autor + ", id_editorial="
+                + id_editorial + ", id_categoria=" + id_categoria + ", id_subcategoria=" + id_subcategoria + ", precio="
+                + precio + ", numero_pagina=" + numero_pagina + ", year_publicacion=" + year_publicacion
+                + ", disponible=" + disponible + "]";
+    }
 
-    public Libro(Long id, String titulo, String autor, String id_editorial, String id_categoria, String id_subcategoria,
-            String precio, String numero_pagina, String year_publicacion, String disponible) {
+    public Libro(Long id, String img, String titulo, String autor, String id_editorial, String id_categoria,
+            String id_subcategoria, String precio, String numero_pagina, String year_publicacion, String disponible) {
         this.id = id;
+        this.img = img;
         this.titulo = titulo;
         this.autor = autor;
         this.id_editorial = id_editorial;
@@ -63,8 +71,9 @@ public class Libro {
         this.disponible = disponible;
     }
 
-    public Libro(String titulo, String autor, String id_editorial, String id_categoria, String id_subcategoria,
-            String precio, String numero_pagina, String year_publicacion, String disponible) {
+    public Libro(String img, String titulo, String autor, String id_editorial, String id_categoria,
+    String id_subcategoria, String precio, String numero_pagina, String year_publicacion, String disponible) {
+        this.img = img;
         this.titulo = titulo;
         this.autor = autor;
         this.id_editorial = id_editorial;
@@ -77,15 +86,23 @@ public class Libro {
     }
 
     public Long getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
     public String getTitulo() {
-        return this.titulo;
+        return titulo;
     }
 
     public void setTitulo(String titulo) {
@@ -93,7 +110,7 @@ public class Libro {
     }
 
     public String getAutor() {
-        return this.autor;
+        return autor;
     }
 
     public void setAutor(String autor) {
@@ -101,7 +118,7 @@ public class Libro {
     }
 
     public String getId_editorial() {
-        return this.id_editorial;
+        return id_editorial;
     }
 
     public void setId_editorial(String id_editorial) {
@@ -109,7 +126,7 @@ public class Libro {
     }
 
     public String getId_categoria() {
-        return this.id_categoria;
+        return id_categoria;
     }
 
     public void setId_categoria(String id_categoria) {
@@ -125,7 +142,7 @@ public class Libro {
     }
 
     public String getPrecio() {
-        return this.precio;
+        return precio;
     }
 
     public void setPrecio(String precio) {
@@ -133,7 +150,7 @@ public class Libro {
     }
 
     public String getNumero_pagina() {
-        return this.numero_pagina;
+        return numero_pagina;
     }
 
     public void setNumero_pagina(String numero_pagina) {
@@ -141,7 +158,7 @@ public class Libro {
     }
 
     public String getYear_publicacion() {
-        return this.year_publicacion;
+        return year_publicacion;
     }
 
     public void setYear_publicacion(String year_publicacion) {
@@ -149,20 +166,18 @@ public class Libro {
     }
 
     public String getDisponible() {
-        return this.disponible;
+        return disponible;
     }
 
     public void setDisponible(String disponible) {
         this.disponible = disponible;
     }
 
-    @Override
-    public String toString() {
-        return "Libro [id=" + id + ", titulo=" + titulo + ", autor=" + autor + ", id_editorial=" + id_editorial
-                + ", id_categoria=" + id_categoria + ", id_subcategoria=" + id_subcategoria + ", precio=" + precio
-                + ", numero_pagina=" + numero_pagina + ", year_publicacion=" + year_publicacion + ", disponible="
-                + disponible + "]";
-    }
+    public Libro() {
+		
+	}
+
+
 	
 	
 }
