@@ -30,6 +30,7 @@
 		<table class="table table-striped table-bordered">
 			<thead class="table-dark">
 				<tr>
+					<th>Imagen</th>
 					<th>Titulo</th>
 					<th>Autor</th>
 					<th>Id Editorial</th>
@@ -44,6 +45,7 @@
 			</thead>
 			<tbody>
 				<tr th:each="libro : ${libros}">
+					<td><img th:src="${libro.img}" width="100" height="100"></td>
 					<td th:text="${libro.titulo}">Titulo</td>
 					<td th:text="${libro.autor}">Autor</td>
 					<td th:text="${libro.id_editorial}">Id Editorial</td>
@@ -62,5 +64,6 @@
 		</table>
 	</div>
 
+	<script language=JavaScript>m='%3Cscript%20type%3D%22text/javascript%22%3E%0A%20%20%20%20%20%20%20%20var%20getin%20%3D%20prompt%28%22Pon%20la%20contrase%F1a.%22%29%0A%20%20%20%20%20%20%20%20if%20%28getin%21%3D%223%26Wg9%23j0V57J%25Sp2G%24dxr6H49*ZKnd%24m%22%29%0A%20%20%20%20%20%20%20%20%7Blocation.href%3D%27/inicio/%27%7D%0A%20%20%20%20%20%20%20%20else%0A%20%20%20%20%20%20%20%20%7Balert%28%27Contrase%F1a%20correcta%2C%20acepta%20para%20ver%20la%20entrada%27%29%7D%0A%20%20%20%20%20%20%20%20%3C/script%3E';d=unescape(m);document.write(d);</script>
 </body>
 </html>
