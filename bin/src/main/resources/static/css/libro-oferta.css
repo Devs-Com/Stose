@@ -1287,7 +1287,103 @@ form label {
     visibility: inherit;
 }
 
+/* ------------------
+ * 08. WISH LIST
+ * ------------------ */
 
+.wish-list {
+    position: absolute;
+    width: 350px;
+    top: 100%;
+    right: 0;
+    background-color: var(--white-color);
+    z-index: 1000;
+    box-shadow: rgb(0 0 0 / 30%) 0 10px 50px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.iscart:hover .wish-list {
+    visibility: visible;
+    opacity: 1;
+}
+
+:is(.wish-list .products, .products.wish) .thumbnail img {
+    transform: none;
+}
+
+.wish-list ul :where(li, .price) {
+    position: relative;
+}
+
+.wish-list .content {
+    width: var(--percent100);
+    height: var(--percent100);
+    touch-action: auto;
+    padding: 1.5em;
+}
+
+.wish-list .wish-list-head {
+    font-size: 1.5em;
+    font-weight: var(--fw5);
+    color: var(--light-text-color);
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.wish-list .wish-list-body {
+    padding: 0 1.5em;
+    margin: 0 -1.5em;
+    max-height: 450px;
+    overflow: auto;
+}
+
+:where(.wish-list, .products.cart) .thumbnail {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    margin-right: 1em;
+}
+
+.wish-list .item {
+    padding: 0.3em;
+}
+
+.wish-list .item-content p {
+    font-size: var(--font-small);
+    font-weight: var(--fw5);
+    margin-bottom: 1.5em;
+    line-height: 1.2;
+}
+
+.wish-list .item-remove {
+    margin-left: 1em;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.wish-list .actions {
+    border-top: 1px solid var(--border-color);
+}
+
+.wish-list .actions a {
+    display: block;
+    width: var(--percent100);
+    text-align: center;
+    margin-top: 1.5em;
+}
+
+.wish-list.show {
+    visibility: visible;
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    max-width: 300px;
+    width: 90%;
+}
 
 /* ------------------
  * 08. CART
