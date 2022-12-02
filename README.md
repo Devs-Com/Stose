@@ -119,7 +119,7 @@ We would like to add a list of resources that we found useful for the developmen
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/badge/CONTRIBUTORS-5-green?style=for-the-badge
+[contributors-shield]: https://img.shields.io/badge/CONTRIBUTORS-6-green?style=for-the-badge
 [contributors-url]: https://github.com/Devs-Com/Stose/graphs/contributors
 [architech-screenshot]: .github/images_readme/architech/threeLevelArchitecture.png
 [mockups-screenshot]: .github/images_readme/mockups/allMockups.png
