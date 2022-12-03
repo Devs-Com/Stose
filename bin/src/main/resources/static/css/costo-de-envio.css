@@ -1,20 +1,30 @@
 .texto1{
-    position:absolute;
-    top: 370px;
-    right: 750px;
+    position:relative;
+    top: -250px;
+    right: -100px;
 
 }
 
 .texto2{
     position:relative;
-    top: 100px;
+    top: -120px;
     width: 50%;
-    left: 10%;
+    left: 6%;
 }
 
 .pie-web{
     position: relative;
     top: 100px;
+}
+
+#imagen1{
+	position: relative;
+	left: 60%;
+}
+
+.titulo1{
+	position: relative;
+	left: 10%;
 }
 
 
