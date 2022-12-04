@@ -36,7 +36,9 @@
 					<th>Id Editorial</th>
 					<th>Id Categoria</th>
 					<th>Id Subcategoria</th>
-					<th>Precio</th>
+					<th>Precio Original</th>
+					<th>Precio Descuento</th>
+					<th>Porcentaje Descuento</th>
 					<th>Numero de Paginas</th>
 					<th>Año de Publicacion</th>
 					<th>Disponible</th>
@@ -51,7 +53,9 @@
 					<td th:text="${libro.id_editorial}">Id Editorial</td>
 					<td th:text="${libro.id_categoria}">Id Categoria</td>
 					<td th:text="${libro.id_subcategoria}">Id Subcategoria</td>
-					<td th:text="${libro.precio}">Precio</td>
+					<td th:text="${libro.precio_original}">Precio Original</td>
+					<td th:text="${libro.precio_descuento}">Precio con Descuento</td>
+					<td th:text="${libro.porcentaje_descuento}">Porcentaje del Descuento</td>
 					<td th:text="${libro.numero_pagina}">Numero de Paginas</td>
 					<td th:text="${libro.year_publicacion}">Año de Publicacion</td>
 					<td th:text="${libro.disponible}">Disponible</td>

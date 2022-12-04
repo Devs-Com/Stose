@@ -13,51 +13,59 @@ import org.springframework.data.annotation.CreatedBy;
 @Table(name = "tb_libro")
 public class Libro {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-	private Long id;
+    private Long id;
 
     @Column(name = "img")
     private String img;
-	
-	@Column(name = "titulo",nullable = false,length = 50)
-	private String titulo;
-	
-	@Column(name = "autor",nullable = false,length = 50)
-	private String autor;
-	
-	@Column(name = "id_editorial",nullable = false,length = 50)
-	private String id_editorial;
 
-    @Column(name = "id_categoria",nullable = false,length = 50)
-	private String id_categoria;
-    
-    @Column(name = "id_subcategoria",nullable = false,length = 50)
-	private String id_subcategoria;
+    @Column(name = "titulo", nullable = false, length = 50)
+    private String titulo;
 
-    @Column(name = "precio",nullable = false,length = 50)
-	private String precio;
+    @Column(name = "autor", nullable = false, length = 50)
+    private String autor;
 
-    @Column(name = "numero_pagina",nullable = false,length = 50)
-	private String numero_pagina;
+    @Column(name = "id_editorial", nullable = false, length = 50)
+    private String id_editorial;
 
-    @Column(name = "year_publicacion",nullable = false,length = 50)
-	private String year_publicacion;
+    @Column(name = "id_categoria", nullable = false, length = 50)
+    private String id_categoria;
 
-    @Column(name = "disponible",nullable = false,length = 50)
-	private String disponible;
-	
-	@Override
+    @Column(name = "id_subcategoria", nullable = false, length = 50)
+    private String id_subcategoria;
+
+    @Column(name = "precio_original", nullable = false, length = 50)
+    private String precio_original;
+
+    @Column(name = "precio_descuento", nullable = false, length = 50)
+    private String precio_descuento;
+
+    @Column(name = "porcentaje_descuento", nullable = false, length = 50)
+    private String porcentaje_descuento;
+
+    @Column(name = "numero_pagina", nullable = false, length = 50)
+    private String numero_pagina;
+
+    @Column(name = "year_publicacion", nullable = false, length = 50)
+    private String year_publicacion;
+
+    @Column(name = "disponible", nullable = false, length = 50)
+    private String disponible;
+
+    @Override
     public String toString() {
         return "Libro [id=" + id + ", img=" + img + ", titulo=" + titulo + ", autor=" + autor + ", id_editorial="
-                + id_editorial + ", id_categoria=" + id_categoria + ", id_subcategoria=" + id_subcategoria + ", precio="
-                + precio + ", numero_pagina=" + numero_pagina + ", year_publicacion=" + year_publicacion
-                + ", disponible=" + disponible + "]";
+                + id_editorial + ", id_categoria=" + id_categoria + ", id_subcategoria=" + id_subcategoria
+                + ", precio_original=" + precio_original + ", precio_descuento=" + precio_descuento
+                + ", porcentaje_descuento=" + porcentaje_descuento + ", numero_pagina=" + numero_pagina
+                + ", year_publicacion=" + year_publicacion + ", disponible=" + disponible + "]";
     }
 
     public Libro(Long id, String img, String titulo, String autor, String id_editorial, String id_categoria,
-            String id_subcategoria, String precio, String numero_pagina, String year_publicacion, String disponible) {
+            String id_subcategoria, String precio_original, String precio_descuento, String porcentaje_descuento,
+            String numero_pagina, String year_publicacion, String disponible) {
         this.id = id;
         this.img = img;
         this.titulo = titulo;
@@ -65,21 +73,26 @@ public class Libro {
         this.id_editorial = id_editorial;
         this.id_categoria = id_categoria;
         this.id_subcategoria = id_subcategoria;
-        this.precio = precio;
+        this.precio_original = precio_original;
+        this.precio_descuento = precio_descuento;
+        this.porcentaje_descuento = porcentaje_descuento;
         this.numero_pagina = numero_pagina;
         this.year_publicacion = year_publicacion;
         this.disponible = disponible;
     }
 
     public Libro(String img, String titulo, String autor, String id_editorial, String id_categoria,
-    String id_subcategoria, String precio, String numero_pagina, String year_publicacion, String disponible) {
+            String id_subcategoria, String precio_original, String precio_descuento, String porcentaje_descuento,
+            String numero_pagina, String year_publicacion, String disponible) {
         this.img = img;
         this.titulo = titulo;
         this.autor = autor;
         this.id_editorial = id_editorial;
         this.id_categoria = id_categoria;
         this.id_subcategoria = id_subcategoria;
-        this.precio = precio;
+        this.precio_original = precio_original;
+        this.precio_descuento = precio_descuento;
+        this.porcentaje_descuento = porcentaje_descuento;
         this.numero_pagina = numero_pagina;
         this.year_publicacion = year_publicacion;
         this.disponible = disponible;
@@ -141,12 +154,28 @@ public class Libro {
         this.id_subcategoria = id_subcategoria;
     }
 
-    public String getPrecio() {
-        return precio;
+    public String getPrecio_original() {
+        return precio_original;
     }
 
-    public void setPrecio(String precio) {
-        this.precio = precio;
+    public void setPrecio_original(String precio_original) {
+        this.precio_original = precio_original;
+    }
+
+    public String getPrecio_descuento() {
+        return precio_descuento;
+    }
+
+    public void setPrecio_descuento(String precio_descuento) {
+        this.precio_descuento = precio_descuento;
+    }
+
+    public String getPorcentaje_descuento() {
+        return porcentaje_descuento;
+    }
+
+    public void setPorcentaje_descuento(String porcentaje_descuento) {
+        this.porcentaje_descuento = porcentaje_descuento;
     }
 
     public String getNumero_pagina() {
@@ -174,10 +203,7 @@ public class Libro {
     }
 
     public Libro() {
-		
-	}
 
+    }
 
-	
-	
 }
