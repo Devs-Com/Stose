@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title th:text="${TituloPagina}"></title>
-    <link rel="shortcut icon" href="./assets/images_readme/logo/logoWhite.png">
-    <link rel="stylesheet" href="/css/libro-oferta.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="shortcut icon" type="img/png" th:href="@{./assets/images_readme/logo/logoWhite.png}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/libro-oferta.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css}">
 </head>
 <body>
     <div id="page" class="site">
@@ -15,7 +15,7 @@
         <aside class="site-off desktop-hide">
             <div class="off-canvas">
                 <div class="canvas-head flexitem">
-                    <div class="logo"><a href="/inicio/"><span class="circle"></span>.Stose</a></div>
+                    <div class="logo"><a th:href="@{/inicio/}"><span class="circle"></span>.Stose</a></div>
                     <a href="#" class="t-close flexcenter"><i class="ri-close-line"></i></a>
                 </div>
                 <div class="categories"></div>
@@ -32,10 +32,10 @@
                         <div class="left">
                             <ul class="flexitem main-links">
                                <li class="links">
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="/inicio/lista-de-deseos">Lista de deseos</a></li>
-                                <li><a href="/inicio/crearblog">Crear Blog</a></li>
-                                <li><a href="/inicio/libros">Gestionar Libros</a></li>
+	                                <li><a href="#">Blog</a></li>
+	                                <li><a th:href="@{/inicio/lista-de-deseos}">Lista de deseos</a></li>
+	                                <li><a th:href="@{/inicio/crearblog}">Crear Blog</a></li>
+	                                <li><a th:href="@{/inicio/libros}">Gestionar Libros</a></li>
                                 </li>
                             </ul>
                         </div>
@@ -56,13 +56,13 @@
                     <div class="wrapper flexitem">
                         <a href="#" class="trigger desktop-hide"><span class="i ri-menu-2-line"></span></a>
                         <div class="left flexitem">
-                            <div class="logo"><a href="/inicio/"><span class="circle"></span>.Stose</a></div>
+                            <div class="logo"><a th:href="@{/inicio/}"><span class="circle"></span>.Stose</a></div>
                             <nav class="mobile-hide">
                                 <ul class="flexitem second-links">
-                                    <li><a href="/inicio/">Inicio</a></li>
-                                    <li><a href="/inicio/tienda">Tienda</a></li>
-                                    <li><a href="/inicio/costos-de-envio">Costos de envío</a></li>
-                                    <li><a href="/inicio/nosotros">Nosotros</a></li>
+                                    <li><a th:href="@{/inicio/}">Inicio</a></li>
+                                    <li><a th:href="@{/inicio/tienda}">Tienda</a></li>
+                                    <li><a th:href="@{/inicio/costos-de-envio}">Costos de envío</a></li>
+                                    <li><a th:href="@{/inicio/nosotros}">Nosotros</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -145,7 +145,7 @@
 
                                                 <div class="actions">
 
-                                                    <a href="/inicio/lista-de-deseos" class="secondary-button">Ver Lista
+                                                    <a th:href="@{/inicio/lista-de-deseos}" class="secondary-button">Ver Lista
                                                         de Deseos</a>
                                                 </div>
                                             </div>
@@ -230,8 +230,8 @@
                                                 <p><strong>$0.00</strong></p>
                                             </div>
                                             <div class="actions">
-                                                <a href="/inicio/revision-pedido" class="primary-button">Verificar</a>
-                                                <a href="/inicio/carrito-compras" class="secondary-button">Ver Carrito</a></div>
+                                                <a th:href="@{/inicio/revision-pedido}" class="primary-button">Verificar</a>
+                                                <a th:href="@{/inicio/carrito-compras}" class="secondary-button">Ver Carrito</a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -449,8 +449,8 @@
                     <div class="wrapper">
                         <div class="breadcrumb">
                             <ul class="flexitem">
-                                <li><a href="/inicio/">Inicio</a></li>
-                                <li><a href="/inicio/tienda/">Tienda</a></li>
+                                 <li><a th:href="@{/inicio/}">Inicio</a></li>
+                                <li><a th:href="@{/inicio/tienda/}">Tienda</a></li>
                                 <li>**Nombre del libro**</li>
                             </ul>
                         </div>
@@ -632,7 +632,7 @@
                         <div class="sectop flexitem">
                             <h2><span class="circle"></span><span>Libros Relacionados</span></h2>
                             <div class="second-links">
-                                <a href="/inicio/tienda" class="view-all">Ver más<i class="ri-arrow-right-line"></i></a>
+                                <a th:href="@{/inicio/tienda}" class="view-all">Ver más<i class="ri-arrow-right-line"></i></a>
                             </div>
                         </div>
                         <div class="column">
@@ -640,7 +640,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                             <a th:href="@{/inicio/detalle-libro}">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -656,7 +656,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                          <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado1}"></a></h3>
+                                          <h3 th:each="Lista : ${LibroR}"><a th:href="@{/app/detalle-libro}" th:text="${Lista.LibroRelacionado1}"></a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -666,7 +666,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a th:href="@{/inicio/detalle-libro}">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -682,7 +682,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                       <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado2}"></a></h3>
+                                       <h3 th:each="Lista : ${LibroR}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroRelacionado2}"></a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -692,7 +692,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a th:href="@{/inicio/detalle-libro}">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -708,7 +708,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                        <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado3}"></a></h3>
+                                        <h3 th:each="Lista : ${LibroR}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroRelacionado3}"></a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -718,7 +718,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a th:href="@{/inicio/detalle-libro}">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -734,7 +734,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                        <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado4}"></a></h3>
+                                        <h3 th:each="Lista : ${LibroR}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroRelacionado4}"></a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -744,7 +744,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a th:href="@{/inicio/detalle-libro}">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -760,7 +760,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                         <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado5}"></a></h3>
+                                         <h3 th:each="Lista : ${LibroR}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroRelacionado5}"></a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -770,7 +770,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a th:href="@{/inicio/detalle-libro}">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -786,7 +786,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                        <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado6}"></a></h3>
+                                        <h3 th:each="Lista : ${LibroR}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroRelacionado6}"></a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -796,7 +796,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a th:href="@{/inicio/detalle-libro}">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -812,7 +812,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                        <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado7}"></a></h3>
+                                        <h3 th:each="Lista : ${LibroR}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroRelacionado7}"></a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -822,7 +822,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a th:href="@{/inicio/detalle-libro}">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -838,7 +838,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                         <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado8}"></a></h3>
+                                         <h3 th:each="Lista : ${LibroR}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroRelacionado8}"></a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -939,14 +939,14 @@
                     <div class="wrapper">
                         <div class="flexcol">
                             <div class="logo">
-                                <a href="/inicio/"><span class="circle"></span>.Stose</a>
+                                <a th:href="@{/inicio/}"><span class="circle"></span>.Stose</a>
                             </div>
                             <div class="socials">
                                 <ul class="flexitem">
-                                    <li><a href="https://twitter.com/StoseOficial" target="_blank"><i class="ri-twitter-line"></i></a></li>
-                                    <li><a href="https://www.facebook.com/profile.php?id=100087639915317&sk=about" target="_blank"><i class="ri-facebook-line"></i></a></li>
-                                    <li><a href="https://www.instagram.com/stose_oficial_la/" target="_blank"><i class="ri-instagram-line"></i></a></li>
-                                    <li><a href="https://www.youtube.com/channel/UClqy7a7vzpY-vwNqyAVb2eA" target="_blank"><i class="ri-youtube-line"></i></a></li>
+                                    <li><a th:href="@{https://twitter.com/StoseOficial}" target="_blank"><i class="ri-twitter-line"></i></a></li>
+                                    <li><a th:href="@{https://www.facebook.com/profile.php?id=100087639915317&sk=about}" target="_blank"><i class="ri-facebook-line"></i></a></li>
+                                    <li><a th:href="@{https://www.instagram.com/stose_oficial_la/}" target="_blank"><i class="ri-instagram-line"></i></a></li>
+                                    <li><a th:href="@{https://www.youtube.com/channel/UClqy7a7vzpY-vwNqyAVb2eA}" target="_blank"><i class="ri-youtube-line"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1022,6 +1022,6 @@
 
         </footer>
     </div>
-    <script src="/js/libro-oferta.js"></script>
+    <script th:src="@{/js/libro-oferta.js}"></script>
 </body>
 </html>

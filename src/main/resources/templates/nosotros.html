@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title th:text="${TituloPagina}"></title>
-    <link rel="shortcut icon" href="./assets/images_readme/logo/logoWhite.png">
-    <link rel="stylesheet" href="/css/nosotros.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="shortcut icon" type="img/png" th:href="@{./assets/images_readme/logo/logoWhite.png}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/nosotros.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css}">
 </head>
 <body>
     <div id="page" class="site">
@@ -15,7 +15,7 @@
         <aside class="site-off desktop-hide">
             <div class="off-canvas">
                 <div class="canvas-head flexitem">
-                    <div class="logo"><a href="/inicio/"><span class="circle"></span>.Stose</a></div>
+                    <div class="logo"><a th:href="@{/inicio/}"><span class="circle"></span>.Stose</a></div>
                     <a href="#" class="t-close flexcenter"><i class="ri-close-line"></i></a>
                 </div>
                 <div class="categories"></div>
@@ -32,10 +32,10 @@
                         <div class="left">
                             <ul class="flexitem main-links">
                                 <li class="links">
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="/inicio/lista-de-deseos">Lista de deseos</a></li>
-                                <li><a href="/inicio/crearblog">Crear Blog</a></li>
-                                <li><a href="/inicio/libros">Gestionar Libros</a></li>
+	                                <li><a href="#">Blog</a></li>
+	                                <li><a th:href="@{/inicio/lista-de-deseos}">Lista de deseos</a></li>
+                                    <li><a th:href="@{/inicio/crearblog}">Crear Blog</a></li>
+                                    <li><a th:href="@{/inicio/libros}">Gestionar Libros</a></li>
                                 </li>
                             </ul>
                         </div>
@@ -56,14 +56,14 @@
                     <div class="wrapper flexitem">
                         <a href="#" class="trigger desktop-hide"><span class="i ri-menu-2-line"></span></a>
                         <div class="left flexitem">
-                            <div class="logo"><a href="/inicio/"><span class="circle"></span>.Stose</a></div>
+                            <div class="logo"><a th:href="@{/inicio/}"><span class="circle"></span>.Stose</a></div>
                             <nav class="mobile-hide">
                                 <ul class="flexitem second-links">
-                                    <li><a href="/inicio/">Inicio</a></li>
-                                    <li><a href="/inicio/tienda">Tienda</a></li>
-                                    <li><a href="/inicio/costos-de-envio">Costos de envío</a></li>
-                                    <li><a href="/inicio/nosotros">Nosotros</a></li>
-                                    <li><a href="/inicio/crearblog">Crear Blog</a></li>
+                                    <li><a th:href="@{/inicio/}">Inicio</a></li>
+                                    <li><a th:href="@{/inicio/tienda}">Tienda</a></li>
+                                    <li><a th:href="@{/inicio/costos-de-envio}">Costos de envío</a></li>
+                                    <li><a th:href="@{/inicio/nosotros}">Nosotros</a></li>
+                                    <li><a th:href="@{/inicio/crearblog}">Crear Blog</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -146,7 +146,7 @@
 
                                                 <div class="actions">
 
-                                                    <a href="/inicio/lista-de-deseos" class="secondary-button">Ver Lista
+                                                    <a th:href="@{/inicio/lista-de-deseos}" class="secondary-button">Ver Lista
                                                         de Deseos</a>
                                                 </div>
                                             </div>
@@ -231,8 +231,8 @@
                                                 <p><strong>$0.00</strong></p>
                                             </div>
                                             <div class="actions">
-                                                <a href="/inicio/revision-pedido"  class="primary-button">Verificar</a>
-                                                <a href="/inicio/carrito-compras" class="secondary-button">Ver Carrito</a></div>
+                                                <a th:href="@{/inicio/revision-pedido}" class="primary-button">Verificar</a>
+                                                <a th:href="@{/inicio/carrito-compras}" class="secondary-button">Ver Carrito</a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -447,7 +447,7 @@
             
             <center>
             <div class="container">
-                <img src="https://kinsta.com/es/wp-content/uploads/sites/8/2021/12/about-us-page-1024x512.png" style="opacity: 0.4; height: 570px; width: 1500px;">
+                <img th:src="@{https://kinsta.com/es/wp-content/uploads/sites/8/2021/12/about-us-page-1024x512.png}" style="opacity: 0.4; height: 570px; width: 1500px;">
                 <div class="centrado"><h1>Sobre Nosotros</h1>
                     
                     <br>
@@ -552,15 +552,15 @@
                 <div class="wrapper">
                     <div class="flexcol">
                         <div class="logo">
-                            <a href="/inicio/"><span class="circle"></span>.Stose</a>
+                            <a th:href="@{/inicio/}"><span class="circle"></span>.Stose</a>
                         </div>
                         <div class="socials">
                             <ul class="flexitem">
-                                <li><a href="https://twitter.com/StoseOficial" target="_blank"><i class="ri-twitter-line"></i></a></li>
-                                <li><a href="https://www.facebook.com/profile.php?id=100087639915317&sk=about" target="_blank"><i class="ri-facebook-line"></i></a></li>
-                                <li><a href="https://www.instagram.com/stose_oficial_la/" target="_blank"><i class="ri-instagram-line"></i></a></li>
-                                <li><a href="https://www.youtube.com/channel/UClqy7a7vzpY-vwNqyAVb2eA" target="_blank"><i class="ri-youtube-line"></i></a></li>
-                            </ul>
+                                <li><a th:href="@{https://twitter.com/StoseOficial}" target="_blank"><i class="ri-twitter-line"></i></a></li>
+                                <li><a th:href="@{https://www.facebook.com/profile.php?id=100087639915317&sk=about}" target="_blank"><i class="ri-facebook-line"></i></a></li>
+                                <li><a th:href="@{https://www.instagram.com/stose_oficial_la/}" target="_blank"><i class="ri-instagram-line"></i></a></li>
+                                <li><a th:href="@{https://www.youtube.com/channel/UClqy7a7vzpY-vwNqyAVb2eA}" target="_blank"><i class="ri-youtube-line"></i></a></li>
+                           	</ul>
                         </div>
                     </div>
                     <p class="mini-text">Copyright 2022 © .Stose. Todos los derechos reservados.</p>
@@ -635,6 +635,6 @@
 
         </footer>
     </div>
-    <script src="./js/nosotros.js"></script>
+    <script th:src="@{/js/nosotros.js}"></script>
 </body>
 </html>

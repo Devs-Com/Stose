@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title th:text="${TituloPagina}"></title>
-    <link rel="shortcut icon" href="./assets/images_readme/logo/logoWhite.png">
-    <link rel="stylesheet" href="/css/index.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link
-    rel="stylesheet"
-    href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
-    />
+    <link rel="shortcut icon" type="img/png" th:href="@{./assets/images_readme/logo/logoWhite.png}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/index.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{https://unpkg.com/swiper@8/swiper-bundle.min.css}">
 </head>
 <body>
     <div id="page" class="site">
@@ -19,7 +16,7 @@
         <aside class="site-off desktop-hide">
             <div class="off-canvas">
                 <div class="canvas-head flexitem">
-                    <div class="logo"><a href="/inicio/"><span class="circle"></span>.Stose</a></div>
+                    <div class="logo"><a th:href="@{/inicio/}"><span class="circle"></span>.Stose</a></div>
                     <a href="#" class="t-close flexcenter"><i class="ri-close-line"></i></a>
                 </div>
                 <div class="categories"></div>
@@ -37,9 +34,9 @@
                             <ul class="flexitem main-links">
                                 <li class="links">
                                     <li><a href="#">Blog</a></li>
-                                    <li><a href="/inicio/lista-de-deseos">Lista de deseos</a></li>
-                                    <li><a href="/inicio/crearblog">Crear Blog</a></li>
-                                    <li><a href="/inicio/libros">Gestionar Libros</a></li>
+                                    <li><a th:href="@{/inicio/lista-de-deseos}">Lista de deseos</a></li>
+                                    <li><a th:href="@{/inicio/crearblog}">Crear Blog</a></li>
+                                    <li><a th:href="@{/inicio/libros}">Gestionar Libros</a></li>
                                 </li>
                             </ul>
                         </div>
@@ -60,13 +57,13 @@
                     <div class="wrapper flexitem">
                         <a href="#" class="trigger desktop-hide"><span class="i ri-menu-2-line"></span></a>
                         <div class="left flexitem">
-                            <div class="logo"><a href="/inicio/"><span class="circle"></span>.Stose</a></div>
+                            <div class="logo"><a th:href="@{/inicio/}"><span class="circle"></span>.Stose</a></div>
                             <nav class="mobile-hide">
                                 <ul class="flexitem second-links">
-                                    <li><a href="/inicio/">Inicio</a></li>
-                                    <li><a href="/inicio/tienda">Tienda</a></li>
-                                    <li><a href="/inicio/costos-de-envio">Costos de envío</a></li>
-                                    <li><a href="/inicio/nosotros">Nosotros</a></li>
+                                    <li><a th:href="@{/inicio/}">Inicio</a></li>
+                                    <li><a th:href="@{/inicio/tienda}">Tienda</a></li>
+                                    <li><a th:href="@{/inicio/costos-de-envio}">Costos de envío</a></li>
+                                    <li><a th:href="@{/inicio/nosotros}">Nosotros</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -85,7 +82,7 @@
                                                 <ul class="products wish">
                                                     <li class="item">
                                                         <div class="thumbnail object-cover">
-                                                            <a href="#"><img src="./assets/images/ejemplo.png"
+                                                            <a href="#"><img th:src="@{./assets/images/ejemplo.png}"
                                                                     alt=""></a>
                                                         </div>
                                                         <div class="item-content">
@@ -100,7 +97,7 @@
                                                     </li>
                                                     <li class="item">
                                                         <div class="thumbnail object-cover">
-                                                            <a href="#"><img src="./assets/images/ejemplo.png"
+                                                            <a href="#"><img th:src="@{./assets/images/ejemplo.png}"
                                                                     alt=""></a>
                                                         </div>
                                                         <div class="item-content">
@@ -115,7 +112,7 @@
                                                     </li>
                                                     <li class="item">
                                                         <div class="thumbnail object-cover">
-                                                            <a href="#"><img src="./assets/images/ejemplo.png"
+                                                            <a href="#"><img th:src="@{./assets/images/ejemplo.png}"
                                                                     alt=""></a>
                                                         </div>
                                                         <div class="item-content">
@@ -130,7 +127,7 @@
                                                     </li>
                                                     <li class="item">
                                                         <div class="thumbnail object-cover">
-                                                            <a href="#"><img src="./assets/images/ejemplo.png"
+                                                            <a href="#"><img th:src="@{./assets/images/ejemplo.png}"
                                                                     alt=""></a>
                                                         </div>
                                                         <div class="item-content">
@@ -149,7 +146,7 @@
 
                                                 <div class="actions">
 
-                                                    <a href="/inicio/lista-de-deseos" class="secondary-button">Ver Lista
+                                                    <a th:href="@{/inicio/lista-de-deseos}" class="secondary-button">Ver Lista
                                                         de Deseos</a>
                                                 </div>
                                             </div>
@@ -176,7 +173,7 @@
                                             <ul class="products mini" th:each="Lista : ${CarritoC}">
                                                 <li class="item">
                                                     <div class="thumbnail object-cover">
-                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
+                                                        <a href="#"><img th:src="@{./assets/images/ejemplo.png}" alt=""></a>
                                                     </div>
                                                     <div class="item-content">
                                                         <p><a href="#" th:text="${Lista.CarritoCompras1}"></a></p>
@@ -189,7 +186,7 @@
                                                 </li>
                                                 <li class="item">
                                                     <div class="thumbnail object-cover">
-                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
+                                                        <a href="#"><img th:src="@{./assets/images/ejemplo.png}" alt=""></a>
                                                     </div>
                                                     <div class="item-content">
                                                         <p><a href="#" th:text="${Lista.CarritoCompras2}"></a></p>
@@ -202,7 +199,7 @@
                                                 </li>
                                                 <li class="item">
                                                     <div class="thumbnail object-cover">
-                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
+                                                        <a href="#"><img th:src="@{./assets/images/ejemplo.png}" alt=""></a>
                                                     </div>
                                                     <div class="item-content">
                                                         <p><a href="#" th:text="${Lista.CarritoCompras3}"></a></p>
@@ -215,7 +212,7 @@
                                                 </li>
                                                 <li class="item">
                                                     <div class="thumbnail object-cover">
-                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
+                                                        <a href="#"><img th:src="@{./assets/images/ejemplo.png}" alt=""></a>
                                                     </div>
                                                     <div class="item-content">
                                                         <p><a href="#" th:text="${Lista.CarritoCompras4}"></a></p>
@@ -234,8 +231,8 @@
                                                 <p><strong>$0.00</strong></p>
                                             </div>
                                             <div class="actions">
-                                                <a href="/inicio/revision-pedido" class="primary-button">Verificar</a>
-                                                <a href="/inicio/carrito-compras" class="secondary-button">Ver Carrito</a></div>
+                                                <a th:href="@{/inicio/revision-pedido}" class="primary-button">Verificar</a>
+                                                <a th:href="@{/inicio/carrito-compras}" class="secondary-button">Ver Carrito</a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -451,48 +448,48 @@
                                 <div class="swiper-slide">
                                     <div class="item">
                                         <div class="image object-cover">
-                                            <img src="https://www.latercera.com/resizer/dkIFXgXfBpqd9XAWcb61tXdJJV4=/900x600/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/T2UWMIPGINDILCXIZOHAAFKSRA.jpg" alt="">
+                                            <img th:src="@{https://www.latercera.com/resizer/dkIFXgXfBpqd9XAWcb61tXdJJV4=/900x600/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/T2UWMIPGINDILCXIZOHAAFKSRA.jpg}" alt="">
                                         </div>
                                         <div class="text-content flexcol">
                                             <h4>Los mejores libros</h4>
                                             <h2><span>Ven y encuentra</span><br>tu libro ideal</h2>
-                                            <a href="/inicio/tienda" class="primary-button">Comprar ahora</a>
+                                            <a th:href="@{/inicio/tienda}" class="primary-button">Comprar ahora</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="item">
                                         <div class="image object-cover">
-                                            <img src="https://img.freepik.com/psd-gratis/libro-maqueta-tapa-dura-tres-vistas_125540-226.jpg?w=2000">
+                                            <img th:src="@{https://img.freepik.com/psd-gratis/libro-maqueta-tapa-dura-tres-vistas_125540-226.jpg?w=2000}">
                                         </div>
                                         <div class="text-content flexcol">
                                             <h4>Tendencias</h4>
                                             <h2><span>Consigue los libros</span><br>mas buscados</h2>
-                                            <a href="/inicio/tienda" class="primary-button">Comprar ahora</a>
+                                            <a th:href="@{/inicio/tienda}" class="primary-button">Comprar ahora</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="item">
                                         <div class="image object-cover">
-                                            <img src="https://mymodernmet.com/wp/wp-content/uploads/2022/02/how-to-draw-a-book-1.jpg">
+                                            <img th:src="@{https://mymodernmet.com/wp/wp-content/uploads/2022/02/how-to-draw-a-book-1.jpg}">
                                         </div>
                                         <div class="text-content flexcol">
                                             <h4>Pedidos</h4>
                                             <h2><span>Te lo llevamos</span><br>directo a tu casa</h2>
-                                            <a href="/inicio/tienda" class="primary-button">Comprar ahora</a>
+                                            <a th:href="@{/inicio/tienda}" class="primary-button">Comprar ahora</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="item">
                                         <div class="image object-cover">
-                                            <img src="https://images.vexels.com/media/users/3/297371/raw/53fe0bf23834bfdbd2a6883fc26f73a7-maqueta-de-taza-de-caf-y-portada-de-libro.jpg">
+                                            <img th:src="@{https://images.vexels.com/media/users/3/297371/raw/53fe0bf23834bfdbd2a6883fc26f73a7-maqueta-de-taza-de-caf-y-portada-de-libro.jpg}">
                                         </div>
                                         <div class="text-content flexcol">
                                             <h4>Comunidad</h4>
                                             <h2><span>Ayúdanos a</span><br>seguir creciendo</h2>
-                                            <a href="/inicio/tienda" class="primary-button">Comprar ahora</a>
+                                            <a th:href="@{/inicio/tienda}" class="primary-button">Comprar ahora</a>
                                         </div>
                                     </div>
                                 </div>
@@ -509,32 +506,32 @@
                     <div class="wrapper flexitem">
                         <div class="item">
                             <a href="#0">
-                                <img src="./assets/brands/logo1.png" alt="">
+                                <img th:src="@{./assets/brands/logo1.png}" alt="">
                             </a>
                         </div>
                         <div class="item">
                             <a href="#0">
-                                <img src="./assets/brands/logo2.png" alt="">
+                                <img th:src="@{./assets/brands/logo2.png}" alt="">
                             </a>
                         </div>
                         <div class="item">
                             <a href="#0">
-                                <img src="./assets/brands/logo3.png" alt="">
+                                <img th:src="@{./assets/brands/logo3.png}" alt="">
                             </a>
                         </div>
                         <div class="item">
                             <a href="#0">
-                                <img src="./assets/brands/logo4.png" alt="">
+                                <img th:src="@{./assets/brands/logo4.png}" alt="">
                             </a>
                         </div>
                         <div class="item">
                             <a href="#0">
-                                <img src="./assets/brands/logo5.png" alt="">
+                                <img th:src="@{./assets/brands/logo5.png}" alt="">
                             </a>
                         </div>
                         <div class="item">
                             <a href="#0">
-                                <img src="./assets/brands/logo6.png" alt="">
+                                <img th:src="@{./assets/brands/logo6.png}" alt="">
                             </a>
                         </div>
                     </div>
@@ -557,8 +554,8 @@
                                         </div>
                                         <div class="media">
                                             <div class="image">
-                                                <a href="/inicio/libro-oferta">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
+                                                <a th:href="@{/inicio/libro-oferta}">
+                                                    <img th:src="@{./assets/products/apparel4.jpg}" alt="">
                                                 </a>
                                             </div>
                                             <div class="hoverable">
@@ -573,7 +570,7 @@
                                                 <div class="stars"></div>
                                                 <span class="mini-text">(248)</span>
                                             </div>
-                                            <h3 class="main-links" th:each="Lista : ${LibroO}"><a href="/inicio/libro-oferta" th:text="${Lista.libroOferta}"></a></h3>
+                                            <h3 class="main-links" th:each="Lista : ${LibroO}"><a th:href="@{/inicio/libro-oferta}" th:text="${Lista.libroOferta}"></a></h3>
                                             <div class="price">
                                                 <span class="current">$42.40</span>
                                                 <span class="normal mini-text">$52.99</span>
@@ -585,8 +582,8 @@
                                     <div class="item">
                                         <div class="media">
                                             <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
+                                                <a th:href="@{/inicio/detalle-libro}">
+                                                    <img th:src="@{./assets/products/apparel4.jpg}" alt="">
                                                 </a>
                                             </div>
                                             <div class="hoverable">
@@ -615,8 +612,8 @@
                                     <div class="item">
                                         <div class="media">
                                             <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
+                                                <a th:href="@{/inicio/detalle-libro}">
+                                                    <img th:src="@{./assets/products/apparel4.jpg}" alt="">
                                                 </a>
                                             </div>
                                             <div class="hoverable">
@@ -645,8 +642,8 @@
                                     <div class="item">
                                         <div class="media">
                                             <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
+                                                <a th:href="@{/inicio/detalle-libro}">
+                                                    <img th:src="@{./assets/products/apparel4.jpg}" alt="">
                                                 </a>
                                             </div>
                                             <div class="hoverable">
@@ -675,8 +672,8 @@
                                     <div class="item">
                                         <div class="media">
                                             <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
+                                                <a th:href="@{/inicio/detalle-libro}">
+                                                    <img th:src="@{./assets/products/apparel4.jpg}" alt="">
                                                 </a>
                                             </div>
                                             <div class="hoverable">
@@ -707,8 +704,8 @@
                                     <div class="item">
                                         <div class="media">
                                             <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
+                                                <a th:href="@{/inicio/detalle-libro}">
+                                                    <img th:src="@{./assets/products/apparel4.jpg}" alt="">
                                                 </a>
                                             </div>
                                             <div class="hoverable">
@@ -736,8 +733,8 @@
                                     <div class="item">
                                         <div class="media">
                                             <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
+                                                <a th:href="@{/inicio/detalle-libro}">
+                                                    <img th:src="@{./assets/products/apparel4.jpg}" alt="">
                                                 </a>
                                             </div>
                                             <div class="hoverable">
@@ -766,8 +763,8 @@
                                     <div class="item">
                                         <div class="media">
                                             <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
+                                                <a th:href="@{/inicio/detalle-libro}">
+                                                    <img th:src="@{./assets/products/apparel4.jpg}" alt="">
                                                 </a>
                                             </div>
                                             <div class="hoverable">
@@ -796,8 +793,8 @@
                                     <div class="item">
                                         <div class="media">
                                             <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
+                                                <a th:href="@{/inicio/detalle-libro}">
+                                                    <img th:src="@{./assets/products/apparel4.jpg}" alt="">
                                                 </a>
                                             </div>
                                             <div class="hoverable">
@@ -837,7 +834,7 @@
                         <div class="sectop flexitem">
                             <h2><span class="circle"></span><span>Libros Destacados</span></h2>
                             <div class="second-links">
-                                <a href="/inicio/tienda" class="view-all">Ver más<i class="ri-arrow-right-line"></i></a>
+                                <a th:href="@{/inicio/tienda}" class="view-all">Ver más<i class="ri-arrow-right-line"></i></a>
                             </div>
                         </div>
                         <div class="column">
@@ -845,8 +842,8 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
+                                            <a th:href="@{/inicio/detalle-libro}">
+                                                <img th:src="@{./assets/images/romeo_y_julieta_libro_1.jpg}" alt="">
                                             </a>
                                         </div>
                                         <div class="hoverable">
@@ -861,7 +858,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(156)</span>
                                         </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro" th:text="${Lista.LibroDestacado1}"></a></h3>
+                                        <h3 th:each="Lista : ${LibroD}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroDestacado1}"></a></h3>
                                         <div class="price">
                                             <div class="current">$46.50</div>
                                             <div class="normal mini-text">$65.50</div>
@@ -871,8 +868,8 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
+                                            <a th:href="@{/inicio/detalle-libro}">
+                                                <img th:src="@{./assets/images/romeo_y_julieta_libro_1.jpg}" alt="">
                                             </a>
                                         </div>
                                         <div class="hoverable">
@@ -887,7 +884,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(156)</span>
                                         </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro" th:text="${Lista.LibroDestacado2}"></a></h3>
+                                        <h3 th:each="Lista : ${LibroD}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroDestacado2}"></a></h3>
                                         <div class="price">
                                             <div class="current">$46.50</div>
                                             <div class="normal mini-text">$65.50</div>
@@ -897,8 +894,8 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
+                                            <a th:href="@{/inicio/detalle-libro}">
+                                                <img th:src="@{./assets/images/romeo_y_julieta_libro_1.jpg}" alt="">
                                             </a>
                                         </div>
                                         <div class="hoverable">
@@ -913,7 +910,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(156)</span>
                                         </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro" th:text="${Lista.LibroDestacado3}"></a></h3>
+                                        <h3 th:each="Lista : ${LibroD}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroDestacado3}"></a></h3>
                                         <div class="price">
                                             <div class="current">$46.50</div>
                                             <div class="normal mini-text">$65.50</div>
@@ -923,8 +920,8 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
+                                            <a th:href="@{/inicio/detalle-libro}">
+                                                <img th:src="@{./assets/images/romeo_y_julieta_libro_1.jpg}" alt="">
                                             </a>
                                         </div>
                                         <div class="hoverable">
@@ -939,7 +936,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(156)</span>
                                         </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro" th:text="${Lista.LibroDestacado4}"></a></h3>
+                                        <h3 th:each="Lista : ${LibroD}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroDestacado4}"></a></h3>
                                         <div class="price">
                                             <div class="current">$46.50</div>
                                             <div class="normal mini-text">$65.50</div>
@@ -949,8 +946,8 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
+                                            <a th:href="@{/inicio/detalle-libro}">
+                                                <img th:src="@{./assets/images/romeo_y_julieta_libro_1.jpg}" alt="">
                                             </a>
                                         </div>
                                         <div class="hoverable">
@@ -965,7 +962,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(156)</span>
                                         </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro" th:text="${Lista.LibroDestacado5}"></a></h3>
+                                        <h3 th:each="Lista : ${LibroD}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroDestacado5}"></a></h3>
                                         <div class="price">
                                             <div class="current">$46.50</div>
                                             <div class="normal mini-text">$65.50</div>
@@ -975,8 +972,8 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
+                                            <a th:href="@{/inicio/detalle-libro}">
+                                                <img th:src="@{./assets/images/romeo_y_julieta_libro_1.jpg}" alt="">
                                             </a>
                                         </div>
                                         <div class="hoverable">
@@ -991,7 +988,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(156)</span>
                                         </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro" th:text="${Lista.LibroDestacado6}"></a></h3>
+                                        <h3 th:each="Lista : ${LibroD}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroDestacado6}"></a></h3>
                                         <div class="price">
                                             <div class="current">$46.50</div>
                                             <div class="normal mini-text">$65.50</div>
@@ -1001,8 +998,8 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
+                                            <a th:href="@{/inicio/detalle-libro}">
+                                                <img th:src="@{./assets/images/romeo_y_julieta_libro_1.jpg}" alt="">
                                             </a>
                                         </div>
                                         <div class="hoverable">
@@ -1017,7 +1014,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(156)</span>
                                         </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro" th:text="${Lista.LibroDestacado7}"></a></h3>
+                                        <h3 th:each="Lista : ${LibroD}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroDestacado7}"></a></h3>
                                         <div class="price">
                                             <div class="current">$46.50</div>
                                             <div class="normal mini-text">$65.50</div>
@@ -1027,8 +1024,8 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
+                                            <a th:href="@{/inicio/detalle-libro}">
+                                                <img th:src="@{./assets/images/romeo_y_julieta_libro_1.jpg}" alt="">
                                             </a>
                                         </div>
                                         <div class="hoverable">
@@ -1043,7 +1040,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(156)</span>
                                         </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro" th:text="${Lista.LibroDestacado8}"></a></h3>
+                                        <h3 th:each="Lista : ${LibroD}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroDestacado8}"></a></h3>
                                         <div class="price">
                                             <div class="current">$46.50</div>
                                             <div class="normal mini-text">$65.50</div>
@@ -1145,14 +1142,14 @@
                     <div class="wrapper">
                         <div class="flexcol">
                             <div class="logo">
-                                <a href="/inicio/"><span class="circle"></span>.Stose</a>
+                                <a th:href="@{/inicio/}"><span class="circle"></span>.Stose</a>
                             </div>
                             <div class="socials">
                                 <ul class="flexitem">
-                                    <li><a href="https://twitter.com/StoseOficial" target="_blank"><i class="ri-twitter-line"></i></a></li>
-                                    <li><a href="https://www.facebook.com/profile.php?id=100087639915317&sk=about" target="_blank"><i class="ri-facebook-line"></i></a></li>
-                                    <li><a href="https://www.instagram.com/stose_oficial_la/" target="_blank"><i class="ri-instagram-line"></i></a></li>
-                                    <li><a href="https://www.youtube.com/channel/UClqy7a7vzpY-vwNqyAVb2eA" target="_blank"><i class="ri-youtube-line"></i></a></li>
+                                    <li><a th:href="@{https://twitter.com/StoseOficial}" target="_blank"><i class="ri-twitter-line"></i></a></li>
+                                    <li><a th:href="@{https://www.facebook.com/profile.php?id=100087639915317&sk=about}" target="_blank"><i class="ri-facebook-line"></i></a></li>
+                                    <li><a th:href="@{https://www.instagram.com/stose_oficial_la/}" target="_blank"><i class="ri-instagram-line"></i></a></li>
+                                    <li><a th:href="@{https://www.youtube.com/channel/UClqy7a7vzpY-vwNqyAVb2eA}" target="_blank"><i class="ri-youtube-line"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1228,7 +1225,7 @@
 
         </footer>
     </div>
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script src="/js/index.js"></script>
+    <script th:src="@{https://unpkg.com/swiper@8/swiper-bundle.min.js}"></script>
+    <script th:src="@{/js/index.js}"></script>
 </body>
 </html>
