@@ -607,12 +607,16 @@
                                             </div>
                                         </div>
                                     </div>
+                                    
+                                    
                                     <div class="products main flexwrap">
+                                    
+                                    
                                         <div class="item">
                                             <div class="media">
                                                 <div class="thumbnail object-cover">
                                                     <a href="#">
-                                                        <img src="./assets/images/ejemplo.png" alt="">
+                                                        <img  th:each="lista:${libros}"  th:src="${lista.img}" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="hoverable">
@@ -620,20 +624,24 @@
                                                         <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
                                                     </ul>
                                                 </div>
-                                                <div class="discount circle flexcenter"><span>0%</span></div>
+                                                <div class="discount circle flexcenter" th:each="lista:${libros}"><span th:text="${lista.porcentaje_descuento}"></span></div>
                                             </div>
                                             <div class="content">
                                                 <div class="rating">
                                                     <div class="stars"></div>
                                                     <span class="mini-text">(#)</span>
                                                 </div>
-                                                <h3><a href="#">/*Nombre de libro*/</a></h3>
+                                                <h3><a th:each="lista:${libros}" href="#" th:text="${lista.titulo}"></a></h3>
                                                 <div class="price">
-                                                    <div class="current">$0.00</div>
-                                                    <div class="normal mini-text">$0.00</div>
+                                                    <div class="current" th:each="lista:${libros}" th:text="${lista.precio_descuento}"></div>
+                                                    <div class="normal mini-text" th:each="lista:${libros}" th:text="${lista.precio_original}"></div>
                                                 </div>
                                             </div>
                                         </div>
+                                        
+                                        
+                                        
+                                        
                                         <div class="item">
                                             <div class="media">
                                                 <div class="thumbnail object-cover">
