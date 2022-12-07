@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.stose.model.indexModel;
-import com.example.stose.services.LibroService;
+import com.example.stose.services.TendenciaLeftServicio;
+import com.example.stose.services.TendenciaRightServicio;
 
 
 
@@ -23,12 +24,17 @@ public class indexController {
 	private String TitlePage;
 
 	@Autowired
-	private LibroService servicio;
+	private TendenciaRightServicio servicio;
+
+	@Autowired
+	private TendenciaLeftServicio service;
     
 	@GetMapping({ "/inicio", "/", "Inicio" })
     public String ControllerIndex(Model model) {
 		
-		model.addAttribute("libros", servicio.listarTodosLosLibros());
+		model.addAttribute("tendencia_left", service.listarTodosLosLibros());
+
+		model.addAttribute("tendencia_right", servicio.listarTodosLosLibros());
 
 		model.addAttribute("TituloPagina", TitlePage);
 
