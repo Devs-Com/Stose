@@ -8,12 +8,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.stose.entity.Carrito;
 import com.example.stose.model.indexModel;
 import com.example.stose.services.CarritoServicio;
 
@@ -236,24 +233,10 @@ public class indexController {
         return "index";
     }
 
-	@PostMapping("/inicio/{id}")
-	public String actualizarLibro(@PathVariable Long id, @ModelAttribute("carrito") Carrito carrito,
-			Model modelo) {
-		Carrito libroExistente = servicio.obtenerLibroPorId(id);
-		libroExistente.setId(id);
-		libroExistente.setImg(carrito.getImg());
-		libroExistente.setTitulo(carrito.getTitulo());
-		libroExistente.setCantidad(carrito.getCantidad());
-		libroExistente.setPrecio(carrito.getPrecio());
-
-		servicio.actualizarLibro(libroExistente);
-		return "redirect:/inicio/";
-	}
-
-	@GetMapping("/inicio/{id}")
+	@GetMapping("/{id}")
 	public String eliminarLibro(@PathVariable Long id) {
 		servicio.eliminarLibro(id);
-		return "redirect:/inicio";
+		return "redirect:/inicio/";
 	}
 
 }
