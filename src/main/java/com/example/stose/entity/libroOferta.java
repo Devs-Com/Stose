@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_destacados")
-public class destacados {
+@Table(name = "tb_librooferta")
+public class libroOferta {
 	    @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    @Column(name = "id")
@@ -155,7 +155,7 @@ public class destacados {
 	        this.disponible = disponible;
 	    }
 
-	    public destacados(Long id, String img, String titulo, String autor, String id_editorial, String id_categoria,
+	    public libroOferta(Long id, String img, String titulo, String autor, String id_editorial, String id_categoria,
 	            String id_subcategoria, String precio_original, String precio_descuento, String porcentaje_descuento,
 	            String numero_pagina, String year_publicacion, String disponible) {
 	        this.id = id;
@@ -173,7 +173,7 @@ public class destacados {
 	        this.disponible = disponible;
 	    }
 
-	    public destacados(String img, String titulo, String autor, String id_editorial, String id_categoria,
+	    public libroOferta(String img, String titulo, String autor, String id_editorial, String id_categoria,
 	            String id_subcategoria, String precio_original, String precio_descuento, String porcentaje_descuento,
 	            String numero_pagina, String year_publicacion, String disponible) {
 	        this.img = img;
@@ -199,7 +199,7 @@ public class destacados {
 	                + ", year_publicacion=" + year_publicacion + ", disponible=" + disponible + "]";
 	    }
 
-	    public destacados() {
+	    public libroOferta() {
 	        
 	    }
 }

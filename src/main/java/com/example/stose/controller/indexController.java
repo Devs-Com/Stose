@@ -14,6 +14,7 @@ import com.example.stose.model.indexModel;
 import com.example.stose.services.DestacadosServicio;
 import com.example.stose.services.TendenciaLeftServicio;
 import com.example.stose.services.TendenciaRightServicio;
+import com.example.stose.services.libroOfertaServicio;
 
 
 
@@ -32,6 +33,9 @@ public class indexController {
 	
 	@Autowired
 	private DestacadosServicio servicio2;
+	
+	@Autowired
+	private libroOfertaServicio servicio3;
     
 	@GetMapping({ "/inicio", "/", "Inicio" })
     public String ControllerIndex(Model model) {
@@ -41,6 +45,8 @@ public class indexController {
 		model.addAttribute("tendencia_right", servicio.listarTodosLosLibros());
 		
 		model.addAttribute("destacados", servicio2.listarTodosLosLibros());
+		
+		model.addAttribute("oferta", servicio3.listarTodosLosLibros());
 
 		model.addAttribute("TituloPagina", TitlePage);
 
