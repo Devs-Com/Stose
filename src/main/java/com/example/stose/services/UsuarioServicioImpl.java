@@ -2,11 +2,14 @@ package com.example.stose.services;
 
 import java.util.Arrays;
 
+import org.springframework.stereotype.Service;
+
 import com.example.stose.dto.UsuarioRegistroDTO;
 import com.example.stose.model.Usuario;
 import com.example.stose.model.Rol;
 import com.example.stose.repositories.UsuarioRepositorio;
 
+@Service
 public class UsuarioServicioImpl implements UsuarioServicio{
 	
 	private UsuarioRepositorio usuarioRepositorio;
