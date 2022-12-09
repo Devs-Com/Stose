@@ -69,6 +69,7 @@ public class LibroController {
 		libroExistente.setId_editorial(libro.getId_editorial());
 		libroExistente.setId_categoria(libro.getId_categoria());
 		libroExistente.setId_subcategoria(libro.getId_subcategoria());
+		libroExistente.setDescripcion(libro.getDescripcion());
 		libroExistente.setPrecio_original(libro.getPrecio_original());
 		libroExistente.setPrecio_descuento(libro.getPrecio_descuento());
 		libroExistente.setPorcentaje_descuento(libro.getPorcentaje_descuento());
