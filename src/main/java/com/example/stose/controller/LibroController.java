@@ -31,6 +31,13 @@ public class LibroController {
 
 		return "libros";
 	}
+	
+	@GetMapping({ "/inicio/info/{id}"})
+	public String infoLibros(Model modelo) {
+		modelo.addAttribute("libroinfo", servicio.listarTodosLosLibros());
+
+		return "detalle-libro";
+	}
 
 	@GetMapping("/libros/nuevo")
 	public String mostrarFormularioDeRegistrarLibro(Model modelo) {
