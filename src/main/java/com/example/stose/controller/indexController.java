@@ -8,11 +8,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.stose.model.indexModel;
-import com.example.stose.services.CarritoServicio;
+import com.example.stose.services.DestacadosServicio;
+import com.example.stose.services.TendenciaLeftServicio;
+import com.example.stose.services.TendenciaRightServicio;
+import com.example.stose.services.libroOfertaServicio;
 
 
 
@@ -24,31 +26,46 @@ public class indexController {
 	private String TitlePage;
 
 	@Autowired
-	private CarritoServicio servicio;
+	private TendenciaRightServicio servicio;
+
+	@Autowired
+	private TendenciaLeftServicio service;
+	
+	@Autowired
+	private DestacadosServicio servicio2;
+	
+	@Autowired
+	private libroOfertaServicio servicio3;
     
 	@GetMapping({ "/inicio", "/", "Inicio" })
     public String ControllerIndex(Model model) {
+		
+		model.addAttribute("tendencia_left", service.listarTodosLosLibros());
 
-		model.addAttribute("carrito", servicio.listarTodosLosLibros());
+		model.addAttribute("tendencia_right", servicio.listarTodosLosLibros());
+		
+		model.addAttribute("destacados", servicio2.listarTodosLosLibros());
+		
+		model.addAttribute("oferta", servicio3.listarTodosLosLibros());
 
 		model.addAttribute("TituloPagina", TitlePage);
-		
+
 		//SECCION Carrito de compras
 				indexModel CarritoC = new indexModel();
-				CarritoC.setCarritoCompras1("/*Nombre de carrito*/");
-				CarritoC.setCarritoCompras2("/*Nombre de carrito*/");
-				CarritoC.setCarritoCompras3("/*Nombre de carrito*/");
-				CarritoC.setCarritoCompras4("/*Nombre de carrito*/");
+				CarritoC.setCarritoCompras1("/*Nombre de libro*/");
+				CarritoC.setCarritoCompras2("/*Nombre de libro*/");
+				CarritoC.setCarritoCompras3("/*Nombre de libro*/");
+				CarritoC.setCarritoCompras4("/*Nombre de libro*/");
 				
 				List<indexModel> ListCarritoC = new ArrayList<>();
 				ListCarritoC.add(CarritoC);
 				
 				//SECCION Lista de Deseos
 				indexModel LibrosDeseados = new indexModel();
-				LibrosDeseados.setLibroDeseado1("/*Nombre de carrito*/");
-				LibrosDeseados.setLibroDeseado2("/*Nombre de carrito*/");
-				LibrosDeseados.setLibroDeseado3("/*Nombre de carrito*/");
-				LibrosDeseados.setLibroDeseado4("/*Nombre de carrito*/");
+				LibrosDeseados.setLibroDeseado1("/*Nombre de libro*/");
+				LibrosDeseados.setLibroDeseado2("/*Nombre de libro*/");
+				LibrosDeseados.setLibroDeseado3("/*Nombre de libro*/");
+				LibrosDeseados.setLibroDeseado4("/*Nombre de libro*/");
 				List<indexModel> ListLibrosDeseados = new ArrayList<>();
 				ListLibrosDeseados.add(LibrosDeseados);
 				
@@ -56,23 +73,23 @@ public class indexController {
 				
 
 				//SECCION Libros en Tendencia
-				//Carrito en Oferta
+				//Libro en Oferta
 				indexModel LibroO = new indexModel();
-				LibroO.setLibroOferta("/*Nombre de carrito*/");
+				LibroO.setLibroOferta("/*Nombre de libro*/");
 				
 				List<indexModel> ListLibroO = new ArrayList<>();
 				ListLibroO.add(LibroO);
 
 				//Libros en Tendencia
 				indexModel LibroT = new indexModel();
-				LibroT.setLibroTendencia1("/*Nombre de carrito*/");
-				LibroT.setLibroTendencia2("/*Nombre de carrito*/");
-				LibroT.setLibroTendencia3("/*Nombre de carrito*/");
-				LibroT.setLibroTendencia4("/*Nombre de carrito*/");
-				LibroT.setLibroTendencia5("/*Nombre de carrito*/");
-				LibroT.setLibroTendencia6("/*Nombre de carrito*/");
-				LibroT.setLibroTendencia7("/*Nombre de carrito*/");
-				LibroT.setLibroTendencia8("/*Nombre de carrito*/");
+				LibroT.setLibroTendencia1("/*Nombre de libro*/");
+				LibroT.setLibroTendencia2("/*Nombre de libro*/");
+				LibroT.setLibroTendencia3("/*Nombre de libro*/");
+				LibroT.setLibroTendencia4("/*Nombre de libro*/");
+				LibroT.setLibroTendencia5("/*Nombre de libro*/");
+				LibroT.setLibroTendencia6("/*Nombre de libro*/");
+				LibroT.setLibroTendencia7("/*Nombre de libro*/");
+				LibroT.setLibroTendencia8("/*Nombre de libro*/");
 				
 				List<indexModel> ListLibroT = new ArrayList<>();
 				ListLibroT.add(LibroT);
@@ -81,14 +98,14 @@ public class indexController {
 				//SECCION LIBROS DESTACADOS
 				//Libros Destacados
 				indexModel LibroD = new indexModel();
-				LibroD.setLibroDestacado1("/*Nombre de carrito*/");
-				LibroD.setLibroDestacado2("/*Nombre de carrito*/");
-				LibroD.setLibroDestacado3("/*Nombre de carrito*/");
-				LibroD.setLibroDestacado4("/*Nombre de carrito*/");
-				LibroD.setLibroDestacado5("/*Nombre de carrito*/");
-				LibroD.setLibroDestacado6("/*Nombre de carrito*/");
-				LibroD.setLibroDestacado7("/*Nombre de carrito*/");
-				LibroD.setLibroDestacado8("/*Nombre de carrito*/");
+				LibroD.setLibroDestacado1("/*Nombre de libro*/");
+				LibroD.setLibroDestacado2("/*Nombre de libro*/");
+				LibroD.setLibroDestacado3("/*Nombre de libro*/");
+				LibroD.setLibroDestacado4("/*Nombre de libro*/");
+				LibroD.setLibroDestacado5("/*Nombre de libro*/");
+				LibroD.setLibroDestacado6("/*Nombre de libro*/");
+				LibroD.setLibroDestacado7("/*Nombre de libro*/");
+				LibroD.setLibroDestacado8("/*Nombre de libro*/");
 
 				List<indexModel> ListLibroD = new ArrayList<>();
 				ListLibroD.add(LibroD);
@@ -232,11 +249,4 @@ public class indexController {
 		
         return "index";
     }
-
-	@GetMapping("/{id}")
-	public String eliminarLibro(@PathVariable Long id) {
-		servicio.eliminarLibro(id);
-		return "redirect:/inicio/";
-	}
-
 }
