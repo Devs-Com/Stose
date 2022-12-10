@@ -558,7 +558,7 @@
                                             <p>Libro en Oferta</p>
                                         </div>
                                         <div class="media">
-                                            <div class="image">
+                                            <div class="image" th:href="@{/inicio/libros/info/{id}(id=${lista.id})}">
                                                     <img th:src="${o.img}" alt="">
                                             </div>
                                             <div class="hoverable">
@@ -583,7 +583,7 @@
                                     <div class="item" th:each="tendencia_left : ${tendencia_left}">
                                         <div class="media">
                                             <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
+                                                <a th:href="@{/inicio/libros/info/{id}(id=${lista.id})}">
                                                     <img th:src="${tendencia_left.img}" alt="">
                                                 </a>
                                             </div>
@@ -612,7 +612,7 @@
                                     <div class="item" th:each="tendencia_right : ${tendencia_right}">
                                         <div class="media">
                                             <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
+                                                <a th:href="@{/inicio/libros/info/{id}(id=${lista.id})}">
                                                     <img th:src="${tendencia_right.img}" alt="">
                                                 </a>
                                             </div>
@@ -659,7 +659,7 @@
                                  <div class="item" th:each="d : ${destacados}">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a th:href="@{/inicio/libros/info/{id}(id=${lista.id})}">
                                                 <img th:src="${d.img}" alt="">
                                             </a>
                                         </div>
