@@ -558,8 +558,10 @@
                                             <p>Libro en Oferta</p>
                                         </div>
                                         <div class="media">
-                                            <div class="image" th:href="@{/inicio/libros/info/{id}(id=${lista.id})}">
-                                                    <img th:src="${o.img}" alt="">
+                                            <div class="image" >
+                                            <a th:href="@{/inicio/libros/info/{id}(id=${o.id})}">
+                                               <img th:src="${o.img}" alt="">
+                                            </a>       
                                             </div>
                                             <div class="hoverable">
                                                 <ul>
@@ -583,7 +585,7 @@
                                     <div class="item" th:each="tendencia_left : ${tendencia_left}">
                                         <div class="media">
                                             <div class="thumbnail object-cover">
-                                                <a th:href="@{/inicio/libros/info/{id}(id=${lista.id})}">
+                                                <a th:href="@{/inicio/libros/info/{id}(id=${tendencia_left.id})}">
                                                     <img th:src="${tendencia_left.img}" alt="">
                                                 </a>
                                             </div>
@@ -612,7 +614,7 @@
                                     <div class="item" th:each="tendencia_right : ${tendencia_right}">
                                         <div class="media">
                                             <div class="thumbnail object-cover">
-                                                <a th:href="@{/inicio/libros/info/{id}(id=${lista.id})}">
+                                                <a th:href="@{/inicio/libros/info/{id}(id=${tendencia_right.id})}">
                                                     <img th:src="${tendencia_right.img}" alt="">
                                                 </a>
                                             </div>
@@ -659,7 +661,7 @@
                                  <div class="item" th:each="d : ${destacados}">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a th:href="@{/inicio/libros/info/{id}(id=${lista.id})}">
+                                            <a th:href="@{/inicio/libros/info/{id}(id=${d.id})}">
                                                 <img th:src="${d.img}" alt="">
                                             </a>
                                         </div>
