@@ -49,9 +49,7 @@
                                 <li><a class="logged-in" href="#">Mi Cuenta</a></li>
                                 <li>  <a class="logged-in" id="loguot" href="#">Cerrar Sesión </a></li>   
                                 <li><a class="logged-out" href="#" onclick="AbrirModal2()" >Iniciar sesión</a></li> 
-                                <li><a class="logged-out" href="#" onclick="AbrirModal()">Registrar</a></li> 
-                                <li><a class="logged-out" href="#" >Administrador</a></li>                                           
-                                
+                                <li><a class="logged-out" href="#" onclick="AbrirModal()">Registrar</a></li>                                            
                             </ul>
                         </div>
                     </div>
@@ -93,6 +91,44 @@
         </a>
 </div>
   <!-- ----- VENTANA MODAL DE REGISTRO ------ -->
+
+
+  <!-- -----------VENTANA MODAL DE LOGIN ------------ -->
+  <div id="modal" class="modal-login">
+    <div class="login-container">
+     <div class="login-info-container-login">
+        <h1 class="title">Iniciar sesión</h1>
+        <div class="social-login">
+        <div class="social-login-element" id="btnGoogle2">
+            <img id="btnGoogle" src="assets/images/logo-google.png" alt="google-img">
+            <span id="btnGoogle" >Google</span>
+        </div>
+        <div class="social-login-element" id="btnFacebook2">
+            <img src="assets/images/logo-facebook.png" alt="google-img">
+            <span>Facebook</span>
+        </div>
+     </div>
+        <p>or</p>
+        
+        <form id="form2" class="inputs-container" >
+            <span id="icon-form-5" class="material-symbols-outlined">alternate_email</span>  <input class="input" placeholder="E-mail" type="text" id="email2">
+            <span id="icon-form-6" class="material-symbols-outlined">Password</span>          <input class="input" placeholder="Password" type="password"  id="pas2">
+            <p>Olvidaste tu contraseña? <span class="span">Clic aquí</span></p>              
+            <button class="btn-login" type="submit">Login</button>
+        </form>
+        <div id="container-warnings">
+            <p id="error6"></p>
+            <p id="error7"></p>
+
+           </div>
+    </div>
+    <img class="imagen-contenedor-login" src="assets/images/imagen-login.png" alt="login">
+</div>
+        <a href="#0" class="t-close modalclose2 flexcenter">
+            <i class="ri-close-line"></i>
+        </a>
+</div>
+  <!-- -----------VENTANA MODAL DE LOGIN ------------ -->
 
 
 <!-- ---- VENTANAS MODALES -------- -->
