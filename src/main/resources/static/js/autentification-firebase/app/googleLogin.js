@@ -13,7 +13,7 @@ const provider = new GoogleAuthProvider()
 try {
     const credentials =  await signInWithPopup(auth , provider)
     console.log(credentials)
-    showMessage("Welcome " + credentials.user.displayName);
+    alert("Welcome " + credentials.user.displayName);
 } catch (error) {
     console.log(error)
 }
@@ -29,7 +29,7 @@ googleButton2.addEventListener("click" , async () =>{
     try {
         const credentials =  await signInWithPopup(auth , provider)
         console.log(credentials)
-        showMessage("Welcome " + credentials.user.displayName);
+        alert("Welcome " + credentials.user.displayName);
     } catch (error) {
         console.log(error)
     }

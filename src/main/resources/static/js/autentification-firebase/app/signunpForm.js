@@ -32,14 +32,14 @@ signupForm.addEventListener("submit",async (e)=>{
 //si el nombre no es valido , se interrumpe la acción de registrar en la BD y autentificacón
 if(!regnomnbre.test(nombre_au)){
     alert("Nombre invalido")
-    showMessage("Nombre invalido","error")
-    showMessage("El nombre solo contempla letras de 3 a 40 cifras","error")
+    alert("Nombre invalido","error")
+    alert("El nombre solo contempla letras de 3 a 40 cifras","error")
     intervalo()
  }
 
  if(!regntelefono.test(number_au)){
-    showMessage("Número telefónico","error")
-    showMessage("El número telefónico solo contempla 9 cifras ","error")
+    alert("Número telefónico","error")
+    alert("El número telefónico solo contempla 9 cifras ","error")
     intervalo()
 }
  //-------------------------
@@ -57,12 +57,12 @@ if(!regnomnbre.test(nombre_au)){
     
 })
 .then((docRef) => {
-    showMessage(email_au)
-    showMessage("Bienvenido "+nombre_au ,"success")
-    showMessage("Registro exitoso" , "success")
+    alert(email_au)
+    alert("Bienvenido "+nombre_au ,"success")
+    alert("Registro exitoso" , "success")
 })
 .catch((error) => {
-    showMessage("ERROR EN EL REGISTRO","error")
+    alert("ERROR EN EL REGISTRO","error")
 });
 
 //catch
@@ -72,21 +72,21 @@ if(!regnomnbre.test(nombre_au)){
 
     
    if(error.code ==="auth/email-already-in-use"){
-    showMessage("El correo ya esta registrado","error")
+    alert("El correo ya esta registrado","error")
 
    }else if(error.code ==="auth/invalid-email"){
-    showMessage("El correo no es valido","error")
+    alert("El correo no es valido","error")
    }
 
    else if(error.code ==="auth/internal-error"){
-    showMessage("Falta contraseña","error")
+    alert("Falta contraseña","error")
 
    }else if(error.code ==="auth/weak-password"){
-    showMessage("La contraseña es muy corta","error")
-    showMessage("La contraseña debe tener mímino 6 cifras","error")
+    alert("La contraseña es muy corta","error")
+    alert("La contraseña debe tener mímino 6 cifras","error")
     
    }else if(error.code){
-    showMessage("Algo salio mal","error")
+    alert("Algo salio mal","error")
    }
    }
 

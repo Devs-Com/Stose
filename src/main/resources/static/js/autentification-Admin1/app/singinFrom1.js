@@ -18,7 +18,7 @@ try {
     if(error.code === "auth/wrong-password")
     alert("La contraseña es invalida","error")
  else if(error.code === "auth/user-not-found"){
-    showMessage("Correo no fue encontrado","error")
+    alert("Correo no fue encontrado","error")
 } else{
     alert("Algo salió mal","error")
 }
