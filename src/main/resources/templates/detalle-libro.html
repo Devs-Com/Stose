@@ -670,24 +670,52 @@
         </main>
 
         <footer>
-            <!-- newsletter -->
-            <div class="newsletter">
-                <div class="container">
-                    <div class="wrapper">
-                        <div class="box">
-                            <div class="content">
-                                <h3>Suscríbete a nuestro boletín</h3>
-                                <p>Recibe actualizaciones por correo electrónico sobre nuestros libros más recientes y <strong> ofertas especiales</strong></p>
-                            </div>
-                            <form action="" class="search">
-                                <span class="icon-large"><i class="ri-mail-line"></i></span>
-                                <input type="mail" placeholder="Correo electrónico" required>
-                                <button type="submit">Registrarse</button>
-                            </form>
+          <!-- newsletter -->
+          <div class="newsletter">
+            <div class="container">
+                <div class="wrapper">
+                    <div class="box" id="mc_embed_signup">
+                        <div class="content">
+                            <h3>Suscríbete a nuestro boletín</h3>
+                            <p>Recibe actualizaciones por correo electrónico sobre nuestros libros más recientes y
+                                <strong> ofertas especiales</strong>
+                            </p>
                         </div>
+                        <form
+                            action="https://gmail.us21.list-manage.com/subscribe/post?u=6f7b243471f92673c6bf7b363&amp;id=505742f9f7&amp;f_id=0095c3e1f0"
+                            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                            class="search" target="_blank" novalidate>
+                            <div class="mc-field-group">
+                                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required></span>
+                                <br>
+                                <br>
+                                <input type="submit" value="Subscribete" name="subscribe" id="mc-embedded-subscribe" class="button">
+                                <br>
+                                <span><i class="ri-mail-line"></i>
+                                
+                                <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+                            </div>
+                            <div id="mce-responses" class="clear foot">
+                                <div class="response" id="mce-error-response" style="display:none"></div>
+                                <div class="response" id="mce-success-response" style="display:none"></div>
+                                
+                            </div>
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                name="b_6f7b243471f92673c6bf7b363_505742f9f7" tabindex="-1" value=""></div>
+                            <div class="optionalParent">
+                                <div class="clear foot">
+                                    
+    
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+            </form>
+        </div>
 
             <!-- widgets -->
            <div class="widgets">
@@ -840,5 +868,29 @@
         </footer>
     </div>
     <script src="/js/detalle-libro.js"></script>
+    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='NAME';ftypes[1]='text'; /*
+        * Translated default messages for the $ validation plugin.
+        * Locale: ES
+        */
+       $.extend($.validator.messages, {
+         required: "Este campo es obligatorio.",
+         remote: "Por favor, rellena este campo.",
+         email: "Por favor, escribe una dirección de correo válida",
+         url: "Por favor, escribe una URL válida.",
+         date: "Por favor, escribe una fecha válida.",
+         dateISO: "Por favor, escribe una fecha (ISO) válida.",
+         number: "Por favor, escribe un número entero válido.",
+         digits: "Por favor, escribe sólo dígitos.",
+         creditcard: "Por favor, escribe un número de tarjeta válido.",
+         equalTo: "Por favor, escribe el mismo valor de nuevo.",
+         accept: "Por favor, escribe un valor con una extensión aceptada.",
+         maxlength: $.validator.format("Por favor, no escribas más de {0} caracteres."),
+         minlength: $.validator.format("Por favor, no escribas menos de {0} caracteres."),
+         rangelength: $.validator.format("Por favor, escribe un valor entre {0} y {1} caracteres."),
+         range: $.validator.format("Por favor, escribe un valor entre {0} y {1}."),
+         max: $.validator.format("Por favor, escribe un valor menor o igual a {0}."),
+         min: $.validator.format("Por favor, escribe un valor mayor o igual a {0}.")
+       });}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+       <!--End mc_embed_signup-->
 </body>
 </html>
