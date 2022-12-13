@@ -15,13 +15,20 @@
       // messagingSenderId: "319298742086",
       // appId: "1:319298742086:web:1ff1c55ec06342937e2747"
 
+      //CUENTA STOSE
+      apiKey: "AIzaSyDqWbRxb2rMRcOGafgnWpAQVkx7HEtPjgY",
+      authDomain: "authentication-admin-stose.firebaseapp.com",
+      projectId: "authentication-admin-stose",
+      storageBucket: "authentication-admin-stose.appspot.com",
+      messagingSenderId: "740637801443",
+      appId: "1:740637801443:web:37dddbb012de9f22c3fed6"
       //CUENTA DE CERTUS
-      apiKey: "AIzaSyAXkcOqBs65qpvfJs4lcmxVs3KPY2VjDZA",
-      authDomain: "registro-administrador-stose.firebaseapp.com",
-      projectId: "registro-administrador-stose",
-      storageBucket: "registro-administrador-stose.appspot.com",
-      messagingSenderId: "435802184488",
-      appId: "1:435802184488:web:d89f2498f7bb26b241ce1d"
+      // apiKey: "AIzaSyAXkcOqBs65qpvfJs4lcmxVs3KPY2VjDZA",
+      // authDomain: "registro-administrador-stose.firebaseapp.com",
+      // projectId: "registro-administrador-stose",
+      // storageBucket: "registro-administrador-stose.appspot.com",
+      // messagingSenderId: "435802184488",
+      // appId: "1:435802184488:web:d89f2498f7bb26b241ce1d"
     };
   
     // Initialize Firebase
