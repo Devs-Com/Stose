@@ -6,7 +6,6 @@
     text-decoration: none;
 
 }
-
 .contenedor-admin{
     margin-left: 1110px;
     padding: 5px;
@@ -14,6 +13,7 @@
     border-radius: 5px;
 }
 
-.cerrar03{
-margin-left: -100px;
+.div-mostrarInfo{
+margin-top: 280px;
+margin-left: 150px;
 }
