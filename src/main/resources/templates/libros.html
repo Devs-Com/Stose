@@ -8,6 +8,9 @@
 <!-- CSS only -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="/css/libros.css">
+<link rel="stylesheet" href="/css/modalesIndex.css">
+
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
 
@@ -15,11 +18,30 @@
 	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
 		<a class="navbar-brand" href="/inicio/">Volver al Inicio</a>
 		<div class="contenedor-admin">
-		<a class="estilosadmin" href=""  onclick="AbrirModal3()">Iniciar sesión Administrados</a>
+		<a class="estilosadmin" onclick="AbrirModal3()" href="#">Iniciar sesión Administrados</a>
 	     </div> 
 	</nav>
-
-
+            <!-- LOGIN ADMINISTRADOR -->
+<div class="site">
+            <div id="modal" class="modal-login-admin">
+                <div class="login-container-admin">
+                 <div class="login-info-container-admin">
+                    <h1 class="title-admin">Login </h1>
+                    <h1 class="title1-admin"> Administrador</h1>
+                    <form class="inputs-container" id="form3">
+                        <span id="icon-form-7" class="material-symbols-outlined iconss ">alternate_email</span>   <input class="input" placeholder="E-mail Administrador" type="text" id="email3">
+                        <span id="icon-form-8" class="material-symbols-outlined iconss ">Password</span>          <input class="input" placeholder="Contraseña Master" type="password" id="pass3" >
+                        <p>Olvidaste tu contraseña? <span class="span">Click quí</span></p>
+                        <button class="btn-login" type="submit">Login</button>
+                    </form>
+                </div>
+                <img class="imagen-contenedor-admin" src="https://img.freepik.com/vector-premium/apuesto-hombre-negocios-traje-vector-premium_598748-144.jpg?w=740" alt="login">
+			</div>
+			<a href="#0" class="t-close modalclose3 flexcenter">
+				<i class="ri-close-line"></i>
+			</a>
+	</div>
+		</div>
 	<div class="container">
 		<br>
 		<div class="row">
@@ -71,5 +93,5 @@
 			</tbody>
 		</table>
 	</div>
-
+<script src="/js/modal-admin.js"></script>
 </html>
