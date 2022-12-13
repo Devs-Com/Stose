@@ -3,6 +3,7 @@ package com.example.stose.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +11,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.stose.model.indexModel;
+import com.example.stose.services.DestacadosServicio;
+import com.example.stose.services.TendenciaLeftServicio;
+import com.example.stose.services.TendenciaRightServicio;
+import com.example.stose.services.libroOfertaServicio;
 
 
 
@@ -19,10 +24,32 @@ public class indexController {
 	
 	@Value("${title.index}")
 	private String TitlePage;
+
+	@Autowired
+	private TendenciaRightServicio servicio;
+
+	@Autowired
+	private TendenciaLeftServicio service;
+	
+	@Autowired
+	private DestacadosServicio servicio2;
+	
+	@Autowired
+	private libroOfertaServicio servicio3;
     
 	@GetMapping({ "/inicio", "/", "Inicio" })
     public String ControllerIndex(Model model) {
 		
+		model.addAttribute("tendencia_left", service.listarTodosLosLibros());
+
+		model.addAttribute("tendencia_right", servicio.listarTodosLosLibros());
+		
+		model.addAttribute("destacados", servicio2.listarTodosLosLibros());
+		
+		model.addAttribute("oferta", servicio3.listarTodosLosLibros());
+
+		model.addAttribute("TituloPagina", TitlePage);
+
 		//SECCION Carrito de compras
 				indexModel CarritoC = new indexModel();
 				CarritoC.setCarritoCompras1("/*Nombre de libro*/");
