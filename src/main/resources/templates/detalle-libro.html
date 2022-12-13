@@ -478,14 +478,9 @@
                                             <h1 th:text="*{titulo}"></h1><br>
                                             <h3 th:text="*{autor}"></h3>
                                             <div class="content">
-                                                <div class="rating">
-                                                    <div class="stars"></div>
-                                                    <a href="#" class="mini-text"># reseñas</a>
-                                                    <a href="" class="add-review mini-text">Agrega tu reseña</a>
-                                                </div>
                                                 <div class="stock-sku">
-                                                    <span class="available">En Stock</span>
-                                                    <span class="sku mini-text">SKU-###</span>
+                                                    <span class="available" th:text="*{'disponible:' + ' ' + disponible}"></span>
+                                                    <span class="sku mini-text" th:text="*{'SKU-' + id}"></span>
                                                 </div>
                                                 <div class="price">
                                                     <span class="current" th:text="*{'S/.' + precio_descuento}"></span>
@@ -634,11 +629,11 @@
                         </div>
                         <div class="column">
                             <div class="products main flexwrap">
-                                <div class="item">
+                                <div class="item" th:each="d : ${destacados}">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/ejemplo.png" alt="">
+                                            <a th:href="@{/inicio/libros/info/{id}(id=${d.id})}">
+                                                <img th:src="${d.img}" alt="">
                                             </a>
                                         </div>
                                         <div class="hoverable">
@@ -646,17 +641,13 @@
                                                 <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
                                             </ul>
                                         </div>
-                                        <div class="discount circle flexcenter"><span>0%</span></div>
+                                        <div class="discount circle flexcenter" th:text="${d.porcentaje_descuento}"><span></span></div>
                                     </div>
                                     <div class="content">
-                                        <div class="rating">
-                                            <div class="stars"></div>
-                                            <span class="mini-text">(#)</span>
-                                        </div>
-                                          <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado1}"></a></h3>
+                                          <h3><a href="#" th:text="${d.titulo}"></a></h3>
                                         <div class="price">
-                                            <div class="current">$0.00</div>
-                                            <div class="normal mini-text">$0.00</div>
+                                            <div class="current" th:text="${'S/.' + d.precio_descuento}"></div>
+                                            <div class="normal mini-text" th:text="${'S/.' + d.precio_original}"></div>
                                         </div>
                                     </div>
                                 </div>
