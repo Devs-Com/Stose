@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title th:text="${TituloPagina}"></title>
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="shortcut icon" href="./assets/images_readme/logo/logoWhite.png">
     <link rel="stylesheet" href="/css/index.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+    />
 </head>
-
 <body>
     <div id="page" class="site">
 
@@ -35,11 +37,10 @@
                         <div class="left">
                             <ul class="flexitem main-links">
                                 <li class="links">
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="/inicio/lista-de-deseos">Lista de deseos</a></li>
-                                <li><a href="/inicio/crearblog">Crear Blog</a></li>
-                                <li><a href="/inicio/libros">Gestionar Libros</a></li>
-                                </li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="/inicio/lista-de-deseos">Lista de deseos</a></li>
+                                    <li><a href="/inicio/crearblog">Crear Blog</a></li>
+                                    <li><a href="/inicio/libros">Gestionar Libros</a></li>
                             </ul>
                         </div>
                         <div class="right">
@@ -88,8 +89,7 @@
                                                                     alt=""></a>
                                                         </div>
                                                         <div class="item-content">
-                                                            <p th:each="Lista : ${LibrosDeseados}"><a href="#"
-                                                                    th:text="${Lista.LibroDeseado1}"></a></p>
+                                                            <p th:each="Lista : ${LibrosDeseados}"><a href="#" th:text="${Lista.LibroDeseado1}"></a></p>
                                                             <span class="price">
                                                                 <span>$0.00</span>
 
@@ -104,8 +104,7 @@
                                                                     alt=""></a>
                                                         </div>
                                                         <div class="item-content">
-                                                            <p th:each="Lista : ${LibrosDeseados}"><a href="#"
-                                                                    th:text="${Lista.LibroDeseado2}"></a></p>
+                                                            <p th:each="Lista : ${LibrosDeseados}"><a href="#" th:text="${Lista.LibroDeseado2}"></a></p>
                                                             <span class="price">
                                                                 <span>$0.00</span>
 
@@ -120,8 +119,7 @@
                                                                     alt=""></a>
                                                         </div>
                                                         <div class="item-content">
-                                                            <p th:each="Lista : ${LibrosDeseados}"><a href="#"
-                                                                    th:text="${Lista.LibroDeseado3}"></a></p>
+                                                            <p th:each="Lista : ${LibrosDeseados}"><a href="#" th:text="${Lista.LibroDeseado3}"></a></p>
                                                             <span class="price">
                                                                 <span>$0.00</span>
 
@@ -136,8 +134,7 @@
                                                                     alt=""></a>
                                                         </div>
                                                         <div class="item-content">
-                                                            <p th:each="Lista : ${LibrosDeseados}"><a href="#"
-                                                                    th:text="${Lista.LibroDeseado4}"></a></p>
+                                                            <p th:each="Lista : ${LibrosDeseados}"><a href="#" th:text="${Lista.LibroDeseado4}"></a></p>
                                                             <span class="price">
                                                                 <span>$0.00</span>
 
@@ -160,99 +157,88 @@
                                     </div>
                                 </li>
                                 <li class="iscart"><a href="#">
-                                        <div class="icon-large">
-                                            <i class="ri-shopping-cart-line"></i>
-                                            <div class="fly-item"><span class="item-number">#</span></div>
-                                        </div>
-                                        <div class="icon-text">
-                                            <div class="mini-text">Total</div>
-                                            <div class="cart-total">$0.00</div>
-                                        </div>
-                                    </a>
+                                    <div class="icon-large">
+                                        <i class="ri-shopping-cart-line"></i>
+                                        <div class="fly-item"><span class="item-number">#</span></div>
+                                    </div>
+                                    <div class="icon-text">
+                                        <div class="mini-text">Total</div>
+                                        <div class="cart-total">$0.00</div>
+                                    </div>
+                                </a>
 
-                                    <div class="mini-cart">
-                                        <div class="content">
-                                            <div class="cart-head">
-                                                # libros en el carrito
+                                <div class="mini-cart">
+                                    <div class="content">
+                                        <div class="cart-head">
+                                            # libros en el carrito
+                                        </div>
+                                        <div class="cart-body">
+                                            <ul class="products mini" th:each="Lista : ${CarritoC}">
+                                                <li class="item">
+                                                    <div class="thumbnail object-cover">
+                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
+                                                    </div>
+                                                    <div class="item-content">
+                                                        <p><a href="#" th:text="${Lista.CarritoCompras1}"></a></p>
+                                                        <span class="price">
+                                                            <span>$0.00</span>
+                                                            <span class="fly-item"><span>1x</span></span>
+                                                        </span>
+                                                    </div>
+                                                    <a href="#" class="item-remove"><i class="ri-close-line"></i></a>
+                                                </li>
+                                                <li class="item">
+                                                    <div class="thumbnail object-cover">
+                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
+                                                    </div>
+                                                    <div class="item-content">
+                                                        <p><a href="#" th:text="${Lista.CarritoCompras2}"></a></p>
+                                                        <span class="price">
+                                                            <span>$0.00</span>
+                                                            <span class="fly-item"><span>1x</span></span>
+                                                        </span>
+                                                    </div>
+                                                    <a href="#" class="item-remove"><i class="ri-close-line"></i></a>
+                                                </li>
+                                                <li class="item">
+                                                    <div class="thumbnail object-cover">
+                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
+                                                    </div>
+                                                    <div class="item-content">
+                                                        <p><a href="#" th:text="${Lista.CarritoCompras3}"></a></p>
+                                                        <span class="price">
+                                                            <span>$0.00</span>
+                                                            <span class="fly-item"><span>1x</span></span>
+                                                        </span>
+                                                    </div>
+                                                    <a href="#" class="item-remove"><i class="ri-close-line"></i></a>
+                                                </li>
+                                                <li class="item">
+                                                    <div class="thumbnail object-cover">
+                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
+                                                    </div>
+                                                    <div class="item-content">
+                                                        <p><a href="#" th:text="${Lista.CarritoCompras4}"></a></p>
+                                                        <span class="price">
+                                                            <span>$0.00</span>
+                                                            <span class="fly-item"><span>1x</span></span>
+                                                        </span>
+                                                    </div>
+                                                    <a href="#" class="item-remove"><i class="ri-close-line"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="cart-footer">
+                                            <div class="subtotal">
+                                                <p>Subtotal</p>
+                                                <p><strong>$0.00</strong></p>
                                             </div>
-                                            <div class="cart-body">
-                                                <ul class="products mini" th:each="Lista : ${CarritoC}">
-                                                    <li class="item">
-                                                        <div class="thumbnail object-cover">
-                                                            <a href="#"><img src="./assets/images/ejemplo.png"
-                                                                    alt=""></a>
-                                                        </div>
-                                                        <div class="item-content">
-                                                            <p><a href="#" th:text="${Lista.CarritoCompras1}"></a></p>
-                                                            <span class="price">
-                                                                <span>$0.00</span>
-                                                                <span class="fly-item"><span>1x</span></span>
-                                                            </span>
-                                                        </div>
-                                                        <a href="#" class="item-remove"><i
-                                                                class="ri-close-line"></i></a>
-                                                    </li>
-                                                    <li class="item">
-                                                        <div class="thumbnail object-cover">
-                                                            <a href="#"><img src="./assets/images/ejemplo.png"
-                                                                    alt=""></a>
-                                                        </div>
-                                                        <div class="item-content">
-                                                            <p><a href="#" th:text="${Lista.CarritoCompras2}"></a></p>
-                                                            <span class="price">
-                                                                <span>$0.00</span>
-                                                                <span class="fly-item"><span>1x</span></span>
-                                                            </span>
-                                                        </div>
-                                                        <a href="#" class="item-remove"><i
-                                                                class="ri-close-line"></i></a>
-                                                    </li>
-                                                    <li class="item">
-                                                        <div class="thumbnail object-cover">
-                                                            <a href="#"><img src="./assets/images/ejemplo.png"
-                                                                    alt=""></a>
-                                                        </div>
-                                                        <div class="item-content">
-                                                            <p><a href="#" th:text="${Lista.CarritoCompras3}"></a></p>
-                                                            <span class="price">
-                                                                <span>$0.00</span>
-                                                                <span class="fly-item"><span>1x</span></span>
-                                                            </span>
-                                                        </div>
-                                                        <a href="#" class="item-remove"><i
-                                                                class="ri-close-line"></i></a>
-                                                    </li>
-                                                    <li class="item">
-                                                        <div class="thumbnail object-cover">
-                                                            <a href="#"><img src="./assets/images/ejemplo.png"
-                                                                    alt=""></a>
-                                                        </div>
-                                                        <div class="item-content">
-                                                            <p><a href="#" th:text="${Lista.CarritoCompras4}"></a></p>
-                                                            <span class="price">
-                                                                <span>$0.00</span>
-                                                                <span class="fly-item"><span>1x</span></span>
-                                                            </span>
-                                                        </div>
-                                                        <a href="#" class="item-remove"><i
-                                                                class="ri-close-line"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="cart-footer">
-                                                <div class="subtotal">
-                                                    <p>Subtotal</p>
-                                                    <p><strong>$0.00</strong></p>
-                                                </div>
-                                                <div class="actions">
-                                                    <a href="/inicio/revision-pedido"
-                                                        class="primary-button">Verificar</a>
-                                                    <a href="/inicio/carrito-compras" class="secondary-button">Ver
-                                                        Carrito</a>
-                                                </div>
-                                            </div>
+                                            <div class="actions">
+                                                <a href="/inicio/revision-pedido" class="primary-button">Verificar</a>
+                                                <a href="/inicio/carrito-compras" class="secondary-button">Ver Carrito</a></div>
                                         </div>
                                     </div>
+                                </div>
                                 </li>
                             </ul>
                         </div>
@@ -271,240 +257,174 @@
                                     <div class="mini-text mobile-hide">Total # libros</div>
                                 </div>
                                 <div class="ctg-menu">
-                                    <ul class="second-links">
-                                        <li class="has-child arte">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Arte
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria1}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria2}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria3}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria4}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria5}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria6}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria7}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria8}"></a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-child biografia">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Biografías
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria9}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria10}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria11}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria12}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria13}"></a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-child ciencia">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Ciencias
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria14}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria15}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria16}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria17}"></a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-child computacion">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Computación
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria18}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria19}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria20}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria21}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria22}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria23}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria24}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria25}"></a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-child deporte">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Deportes
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria26}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria27}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria28}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria29}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria30}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoriao31}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria32}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria33}"></a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-child derecho">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Derecho
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria34}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria35}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria36}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria37}"></a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-child economia">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Economía
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria38}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria39}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria40}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria41}"></a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-child estilo-de-vida">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Estilos de Vida
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria42}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria43}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria44}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria45}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria46}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria47}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria48}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria49}"></a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-child ficcion">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Ficción
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria50}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria51}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria52}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria53}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria54}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria55}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria56}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria57}"></a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-child filosofia-religion">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Filosofía y Religión
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria58}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria59}"></a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-child infantil-juvenil">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Infantiles y Juveniles
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria60}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria61}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria62}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria63}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria64}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria65}"></a></li>
-                                                <li th:each="Lista : ${SubCategoria}"><a href="#"
-                                                        th:text="${Lista.SubCategoria66}"></a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <ul class="second-links">
+                                    <li class="has-child arte">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Arte
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria1}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria2}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria3}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria4}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria5}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria6}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria7}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria8}"></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-child biografia">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Biografías
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria9}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria10}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria11}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria12}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria13}"></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-child ciencia">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Ciencias
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria14}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria15}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria16}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria17}"></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-child computacion">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Computación
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria18}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria19}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria20}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria21}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria22}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria23}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria24}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria25}"></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-child deporte">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Deportes
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria26}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria27}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria28}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria29}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria30}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoriao31}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria32}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria33}"></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-child derecho">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Derecho
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria34}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria35}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria36}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria37}"></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-child economia">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Economía
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria38}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria39}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria40}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria41}"></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-child estilo-de-vida">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Estilos de Vida
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria42}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria43}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria44}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria45}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria46}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria47}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria48}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria49}"></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-child ficcion">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Ficción
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria50}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria51}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria52}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria53}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria54}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria55}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria56}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria57}"></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-child filosofia-religion">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Filosofía y Religión
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria58}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria59}"></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-child infantil-juvenil">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Infantiles y Juveniles
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria60}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria61}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria62}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria63}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria64}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria65}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria66}"></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                             </div>
                         </div>
                         <div class="right">
@@ -531,8 +451,7 @@
                                 <div class="swiper-slide">
                                     <div class="item">
                                         <div class="image object-cover">
-                                            <img src="https://www.latercera.com/resizer/dkIFXgXfBpqd9XAWcb61tXdJJV4=/900x600/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/T2UWMIPGINDILCXIZOHAAFKSRA.jpg"
-                                                alt="">
+                                            <img src="https://www.latercera.com/resizer/dkIFXgXfBpqd9XAWcb61tXdJJV4=/900x600/smart/cloudfront-us-east-1.images.arcpublishing.com/copesa/T2UWMIPGINDILCXIZOHAAFKSRA.jpg" alt="">
                                         </div>
                                         <div class="text-content flexcol">
                                             <h4>Los mejores libros</h4>
@@ -544,8 +463,7 @@
                                 <div class="swiper-slide">
                                     <div class="item">
                                         <div class="image object-cover">
-                                            <img
-                                                src="https://img.freepik.com/psd-gratis/libro-maqueta-tapa-dura-tres-vistas_125540-226.jpg?w=2000">
+                                            <img src="https://img.freepik.com/psd-gratis/libro-maqueta-tapa-dura-tres-vistas_125540-226.jpg?w=2000">
                                         </div>
                                         <div class="text-content flexcol">
                                             <h4>Tendencias</h4>
@@ -557,8 +475,7 @@
                                 <div class="swiper-slide">
                                     <div class="item">
                                         <div class="image object-cover">
-                                            <img
-                                                src="https://mymodernmet.com/wp/wp-content/uploads/2022/02/how-to-draw-a-book-1.jpg">
+                                            <img src="https://mymodernmet.com/wp/wp-content/uploads/2022/02/how-to-draw-a-book-1.jpg">
                                         </div>
                                         <div class="text-content flexcol">
                                             <h4>Pedidos</h4>
@@ -570,8 +487,7 @@
                                 <div class="swiper-slide">
                                     <div class="item">
                                         <div class="image object-cover">
-                                            <img
-                                                src="https://images.vexels.com/media/users/3/297371/raw/53fe0bf23834bfdbd2a6883fc26f73a7-maqueta-de-taza-de-caf-y-portada-de-libro.jpg">
+                                            <img src="https://images.vexels.com/media/users/3/297371/raw/53fe0bf23834bfdbd2a6883fc26f73a7-maqueta-de-taza-de-caf-y-portada-de-libro.jpg">
                                         </div>
                                         <div class="text-content flexcol">
                                             <h4>Comunidad</h4>
@@ -632,296 +548,90 @@
                         <div class="sectop flexitem">
                             <h2><span class="circle"></span><span>Libros en Tendencia</span></h2>
                         </div>
+                        
                         <div class="column">
                             <div class="flexwrap">
-                                <div class="row products big">
+                            
+                                <div class="row products big" th:each="o : ${oferta}">
                                     <div class="item">
                                         <div class="ofter">
                                             <p>Libro en Oferta</p>
                                         </div>
                                         <div class="media">
-                                            <div class="image">
-                                                <a href="/inicio/libro-oferta">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
-                                                </a>
+                                            <div class="image" >
+                                            <a th:href="@{/inicio/libros/info/{id}(id=${o.id})}">
+                                               <img th:src="${o.img}" alt="">
+                                            </a>       
                                             </div>
                                             <div class="hoverable">
                                                 <ul>
-                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a>
-                                                    </li>
+                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <div class="discount circle flexcenter"><span>20%</span></div>
+                                            <div class="discount circle flexcenter"><span th:text="${o.porcentaje_descuento}"></span></div>
                                         </div>
                                         <div class="content">
-                                            <div class="rating">
-                                                <div class="stars"></div>
-                                                <span class="mini-text">(248)</span>
-                                            </div>
-                                            <h3 class="main-links" th:each="Lista : ${LibroO}"><a
-                                                    href="/inicio/libro-oferta" th:text="${Lista.libroOferta}"></a></h3>
+                                            <h3 class="main-links"><a th:text="${o.titulo}"></a></h3>
                                             <div class="price">
-                                                <span class="current">$42.40</span>
-                                                <span class="normal mini-text">$52.99</span>
+                                                <span class="current" th:text="${'S/.' + o.precio_descuento}"></span>
+                                                <span class="normal mini-text" th:text="${'S/.' + o.precio_original}"></span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                
+                                <!-- contenedor de libro tendencia left -->
                                 <div class="row products mini-trending">
-                                    <div class="item">
+                                    <div class="item" th:each="tendencia_left : ${tendencia_left}">
                                         <div class="media">
                                             <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
+                                                <a th:href="@{/inicio/libros/info/{id}(id=${tendencia_left.id})}">
+                                                    <img th:src="${tendencia_left.img}" alt="">
                                                 </a>
                                             </div>
                                             <div class="hoverable">
                                                 <ul>
-                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a>
-                                                    </li>
+                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <div class="discount circle flexcenter"><span>32%</span></div>
+                                            <div class="discount circle flexcenter"><span th:text=${tendencia_left.porcentaje_descuento}></span></div>
                                         </div>
                                         <div class="content">
-                                            <h3 class="main-links" th:each="Lista : ${LibroT}"><a href="#"
-                                                    th:text="${Lista.libroTendencia1}"></a></h3>
-                                            <div class="rating">
-                                                <div class="stars"></div>
-                                                <span class="mini-text">(125)</span>
-                                            </div>
+                                            <h3 class="main-links"><a href="#" th:text="${tendencia_left.titulo}"></a></h3>
                                             <div class="price">
-                                                <span class="current">$129.99</span>
-                                                <span class="normal mini-text">$189.99</span>
+                                                <span class="current" th:text="${'S/.' + tendencia_left.precio_descuento}"></span>
+                                                <span class="normal mini-text" th:text="${'S/.' + tendencia_left.precio_original}"></span>
                                             </div>
                                             <div class="mini-text">
-                                                <p>123 vendidos</p>
-                                                <p>Envió gratis</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="media">
-                                            <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="hoverable">
-                                                <ul>
-                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="discount circle flexcenter"><span>32%</span></div>
-                                        </div>
-                                        <div class="content">
-                                            <h3 class="main-links" th:each="Lista : ${LibroT}"><a href="#"
-                                                    th:text="${Lista.libroTendencia2}"></a></h3>
-                                            <div class="rating">
-                                                <div class="stars"></div>
-                                                <span class="mini-text">(125)</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="current">$129.99</span>
-                                                <span class="normal mini-text">$189.99</span>
-                                            </div>
-                                            <div class="mini-text">
-                                                <p>123 vendidos</p>
-                                                <p>Envió gratis</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="media">
-                                            <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="hoverable">
-                                                <ul>
-                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="discount circle flexcenter"><span>32%</span></div>
-                                        </div>
-                                        <div class="content">
-                                            <h3 class="main-links" th:each="Lista : ${LibroT}"><a href="#"
-                                                    th:text="${Lista.libroTendencia3}"></a></h3>
-                                            <div class="rating">
-                                                <div class="stars"></div>
-                                                <span class="mini-text">(125)</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="current">$129.99</span>
-                                                <span class="normal mini-text">$189.99</span>
-                                            </div>
-                                            <div class="mini-text">
-                                                <p>123 vendidos</p>
-                                                <p>Envió gratis</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="media">
-                                            <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="hoverable">
-                                                <ul>
-                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="discount circle flexcenter"><span>32%</span></div>
-                                        </div>
-                                        <div class="content">
-                                            <h3 class="main-links" th:each="Lista : ${LibroT}"><a href="#"
-                                                    th:text="${Lista.libroTendencia4}"></a></h3>
-                                            <div class="rating">
-                                                <div class="stars"></div>
-                                                <span class="mini-text">(125)</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="current">$129.99</span>
-                                                <span class="normal mini-text">$189.99</span>
-                                            </div>
-                                            <div class="mini-text">
-                                                <p>123 vendidos</p>
                                                 <p>Envió gratis</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                
+                               <!--  contenedor de libro tendencia right -->
                                 <div class="row products mini-trending">
-                                    <div class="item">
+                                    <div class="item" th:each="tendencia_right : ${tendencia_right}">
                                         <div class="media">
                                             <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
+                                                <a th:href="@{/inicio/libros/info/{id}(id=${tendencia_right.id})}">
+                                                    <img th:src="${tendencia_right.img}" alt="">
                                                 </a>
                                             </div>
                                             <div class="hoverable">
                                                 <ul>
-                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a>
-                                                    </li>
+                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <div class="discount circle flexcenter"><span>32%</span></div>
+                                            <div class="discount circle flexcenter"><span th:text=${tendencia_right.porcentaje_descuento}></span></div>
                                         </div>
                                         <div class="content">
-                                            <h3 class="main-links" th:each="Lista : ${LibroT}"><a href="#"
-                                                    th:text="${Lista.LibroTendencia5}"></a></h3>
-                                            <div class="rating">
-                                                <div class="stars"></div>
-                                                <span class="mini-text">(125)</span>
-                                            </div>
+                                            <h3 class="main-links"><a href="#" th:text="${tendencia_right.titulo}"></a></h3>
                                             <div class="price">
-                                                <span class="current">$129.99</span>
-                                                <span class="normal mini-text">$189.99</span>
+                                                <span class="current" th:text="${'S/.' + tendencia_right.precio_descuento}"></span>
+                                                <span class="normal mini-text" th:text="${'S/.' + tendencia_right.precio_original}"></span>
                                             </div>
                                             <div class="mini-text">
-                                                <p>123 vendidos</p>
-                                                <p>Envió gratis</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="media">
-                                            <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="hoverable">
-                                                <ul>
-                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="discount circle flexcenter"><span>32%</span></div>
-                                        </div>
-                                        <div class="content">
-                                            <h3 class="main-links" th:each="Lista : ${LibroT}"><a href="#"
-                                                    th:text="${Lista.LibroTendencia6}"></a></h3>
-                                            <div class="rating">
-                                                <div class="stars"></div>
-                                                <span class="mini-text">(125)</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="current">$129.99</span>
-                                                <span class="normal mini-text">$189.99</span>
-                                            </div>
-                                            <div class="mini-text">
-                                                <p>123 vendidos</p>
-                                                <p>Envió gratis</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="media">
-                                            <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="hoverable">
-                                                <ul>
-                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="discount circle flexcenter"><span>32%</span></div>
-                                        </div>
-                                        <div class="content">
-                                            <h3 class="main-links" th:each="Lista : ${LibroT}"><a href="#"
-                                                    th:text="${Lista.LibroTendencia7}"></a></h3>
-                                            <div class="rating">
-                                                <div class="stars"></div>
-                                                <span class="mini-text">(125)</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="current">$129.99</span>
-                                                <span class="normal mini-text">$189.99</span>
-                                            </div>
-                                            <div class="mini-text">
-                                                <p>123 vendidos</p>
-                                                <p>Envió gratis</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="media">
-                                            <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="hoverable">
-                                                <ul>
-                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <div class="discount circle flexcenter"><span>32%</span></div>
-                                        </div>
-                                        <div class="content">
-                                            <h3 class="main-links" th:each="Lista : ${LibroT}"><a href="#"
-                                                    th:text="${Lista.LibroTendencia8}"></a></h3>
-                                            <div class="rating">
-                                                <div class="stars"></div>
-                                                <span class="mini-text">(125)</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="current">$129.99</span>
-                                                <span class="normal mini-text">$189.99</span>
-                                            </div>
-                                            <div class="mini-text">
-                                                <p>123 vendidos</p>
                                                 <p>Envió gratis</p>
                                             </div>
                                         </div>
@@ -945,11 +655,14 @@
                         </div>
                         <div class="column">
                             <div class="products main flexwrap">
-                                <div class="item">
+                            
+                            
+                   <!-- contenedor de libro destacado -->
+                                 <div class="item" th:each="d : ${destacados}">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
+                                            <a th:href="@{/inicio/libros/info/{id}(id=${d.id})}">
+                                                <img th:src="${d.img}" alt="">
                                             </a>
                                         </div>
                                         <div class="hoverable">
@@ -957,216 +670,25 @@
                                                 <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
                                             </ul>
                                         </div>
-                                        <div class="discount circle flexcenter"><span>15%</span></div>
+                                        <div class="discount circle flexcenter" th:text="${d.porcentaje_descuento}"><span></span></div>
                                     </div>
                                     <div class="content">
-                                        <div class="rating">
-                                            <div class="stars"></div>
-                                            <span class="mini-text">(156)</span>
-                                        </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro"
-                                                th:text="${Lista.LibroDestacado1}"></a></h3>
+                                        <h3><a href="/app/detalle-libro" th:text="${d.titulo}"></a></h3>
                                         <div class="price">
-                                            <div class="current">$46.50</div>
-                                            <div class="normal mini-text">$65.50</div>
+                                            <div class="current" th:text="${'S/.' + d.precio_descuento}"></div>
+                                            <div class="normal mini-text" th:text="${'S/.' + d.precio_original}"></div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="item">
-                                    <div class="media">
-                                        <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="hoverable">
-                                            <ul>
-                                                <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="discount circle flexcenter"><span>15%</span></div>
-                                    </div>
-                                    <div class="content">
-                                        <div class="rating">
-                                            <div class="stars"></div>
-                                            <span class="mini-text">(156)</span>
-                                        </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro"
-                                                th:text="${Lista.LibroDestacado2}"></a></h3>
-                                        <div class="price">
-                                            <div class="current">$46.50</div>
-                                            <div class="normal mini-text">$65.50</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="media">
-                                        <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="hoverable">
-                                            <ul>
-                                                <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="discount circle flexcenter"><span>15%</span></div>
-                                    </div>
-                                    <div class="content">
-                                        <div class="rating">
-                                            <div class="stars"></div>
-                                            <span class="mini-text">(156)</span>
-                                        </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro"
-                                                th:text="${Lista.LibroDestacado3}"></a></h3>
-                                        <div class="price">
-                                            <div class="current">$46.50</div>
-                                            <div class="normal mini-text">$65.50</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="media">
-                                        <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="hoverable">
-                                            <ul>
-                                                <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="discount circle flexcenter"><span>15%</span></div>
-                                    </div>
-                                    <div class="content">
-                                        <div class="rating">
-                                            <div class="stars"></div>
-                                            <span class="mini-text">(156)</span>
-                                        </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro"
-                                                th:text="${Lista.LibroDestacado4}"></a></h3>
-                                        <div class="price">
-                                            <div class="current">$46.50</div>
-                                            <div class="normal mini-text">$65.50</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="media">
-                                        <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="hoverable">
-                                            <ul>
-                                                <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="discount circle flexcenter"><span>15%</span></div>
-                                    </div>
-                                    <div class="content">
-                                        <div class="rating">
-                                            <div class="stars"></div>
-                                            <span class="mini-text">(156)</span>
-                                        </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro"
-                                                th:text="${Lista.LibroDestacado5}"></a></h3>
-                                        <div class="price">
-                                            <div class="current">$46.50</div>
-                                            <div class="normal mini-text">$65.50</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="media">
-                                        <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="hoverable">
-                                            <ul>
-                                                <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="discount circle flexcenter"><span>15%</span></div>
-                                    </div>
-                                    <div class="content">
-                                        <div class="rating">
-                                            <div class="stars"></div>
-                                            <span class="mini-text">(156)</span>
-                                        </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro"
-                                                th:text="${Lista.LibroDestacado6}"></a></h3>
-                                        <div class="price">
-                                            <div class="current">$46.50</div>
-                                            <div class="normal mini-text">$65.50</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="media">
-                                        <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="hoverable">
-                                            <ul>
-                                                <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="discount circle flexcenter"><span>15%</span></div>
-                                    </div>
-                                    <div class="content">
-                                        <div class="rating">
-                                            <div class="stars"></div>
-                                            <span class="mini-text">(156)</span>
-                                        </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro"
-                                                th:text="${Lista.LibroDestacado7}"></a></h3>
-                                        <div class="price">
-                                            <div class="current">$46.50</div>
-                                            <div class="normal mini-text">$65.50</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="media">
-                                        <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="hoverable">
-                                            <ul>
-                                                <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="discount circle flexcenter"><span>15%</span></div>
-                                    </div>
-                                    <div class="content">
-                                        <div class="rating">
-                                            <div class="stars"></div>
-                                            <span class="mini-text">(156)</span>
-                                        </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro"
-                                                th:text="${Lista.LibroDestacado8}"></a></h3>
-                                        <div class="price">
-                                            <div class="current">$46.50</div>
-                                            <div class="normal mini-text">$65.50</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                </div> 
+                          <!-- fin del contenedor de libro destacado -->      
+                                
+                              
+                            </div>    
                         </div>
                     </div>
                 </div>
             </div>
-
+           
         </main>
 
         <footer>
@@ -1174,90 +696,20 @@
             <div class="newsletter">
                 <div class="container">
                     <div class="wrapper">
-                        <div class="box" id="mc_embed_signup">
+                        <div class="box">
                             <div class="content">
                                 <h3>Suscríbete a nuestro boletín</h3>
-                                <p>Recibe actualizaciones por correo electrónico sobre nuestros libros más recientes y
-                                    <strong> ofertas especiales</strong>
-                                </p>
+                                <p>Recibe actualizaciones por correo electrónico sobre nuestros libros más recientes y <strong> ofertas especiales</strong></p>
                             </div>
-                            <form
-                                action="https://gmail.us21.list-manage.com/subscribe/post?u=6f7b243471f92673c6bf7b363&amp;id=505742f9f7&amp;f_id=0095c3e1f0"
-                                method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
-                                class="search" target="_blank" novalidate>
-                                <div class="mc-field-group">
-                                    <span><i class="ri-mail-line"></i><input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required></span>
-                                    
-                                    <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
-                                </div>
-                                <div id="mce-responses" class="clear foot">
-                                    <div class="response" id="mce-error-response" style="display:none"></div>
-                                    <div class="response" id="mce-success-response" style="display:none"></div>
-                                </div>
-                                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
-                                    name="b_6f7b243471f92673c6bf7b363_505742f9f7" tabindex="-1" value=""></div>
-                                <div class="optionalParent">
-                                    <div class="clear foot">
-                                        <input type="submit" value="Subscribete" name="subscribe" id="mc-embedded-subscribe"
-                                            class="button">
-        
-                                    </div>
-                                </div>
+                            <form action="" class="search">
+                                <span class="icon-large"><i class="ri-mail-line"></i></span>
+                                <input type="mail" placeholder="Correo electrónico" required>
+                                <button type="submit">Registrarse</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-
-            <!-- Begin Mailchimp Signup Form
-            <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
-            <style type="text/css">
-                #mc_embed_signup {
-                    background: #fff;
-                    clear: left;
-                    font: 14px Helvetica, Arial, sans-serif;
-                    width: 600px;
-                }
-
-                /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-                   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-            </style> -->
-            <!-- <div id="mc_embed_signup">
-                <form
-                    action="https://gmail.us21.list-manage.com/subscribe/post?u=6f7b243471f92673c6bf7b363&amp;id=505742f9f7&amp;f_id=0095c3e1f0"
-                    method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
-                    target="_blank" novalidate>
-                    <div id="mc_embed_signup_scroll"> -->
-                        <!-- <h2>Subscribe</h2> -->
-
-                        <!-- <div class="mc-field-group">
-                            <label for="mce-EMAIL">Correo Electonico <span class="asterisk">*</span>
-                            </label>
-                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required>
-                            <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
-                        </div> -->
-                        <!-- <div hidden="true"><input type="hidden" name="tags" value="756"></div> -->
-                        <!-- <div id="mce-responses" class="clear foot">
-                            <div class="response" id="mce-error-response" style="display:none"></div>
-                            <div class="response" id="mce-success-response" style="display:none"></div>
-                        </div> -->
-                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                        <!-- <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
-                                name="b_6f7b243471f92673c6bf7b363_505742f9f7" tabindex="-1" value=""></div>
-                        <div class="optionalParent">
-                            <div class="clear foot">
-                                <input type="submit" value="Subscribete" name="subscribe" id="mc-embedded-subscribe"
-                                    class="button">
-
-                            </div>
-                        </div> -->
-                    </div>
-                </form>
-            </div>
-
 
             <!-- widgets -->
             <div class="widgets">
@@ -1330,14 +782,10 @@
                             </div>
                             <div class="socials">
                                 <ul class="flexitem">
-                                    <li><a href="https://twitter.com/StoseOficial" target="_blank"><i
-                                                class="ri-twitter-line"></i></a></li>
-                                    <li><a href="https://www.facebook.com/profile.php?id=100087639915317&sk=about"
-                                            target="_blank"><i class="ri-facebook-line"></i></a></li>
-                                    <li><a href="https://www.instagram.com/stose_oficial_la/" target="_blank"><i
-                                                class="ri-instagram-line"></i></a></li>
-                                    <li><a href="https://www.youtube.com/channel/UClqy7a7vzpY-vwNqyAVb2eA"
-                                            target="_blank"><i class="ri-youtube-line"></i></a></li>
+                                    <li><a href="https://twitter.com/StoseOficial" target="_blank"><i class="ri-twitter-line"></i></a></li>
+                                    <li><a href="https://www.facebook.com/profile.php?id=100087639915317&sk=about" target="_blank"><i class="ri-facebook-line"></i></a></li>
+                                    <li><a href="https://www.instagram.com/stose_oficial_la/" target="_blank"><i class="ri-instagram-line"></i></a></li>
+                                    <li><a href="https://www.youtube.com/channel/UClqy7a7vzpY-vwNqyAVb2eA" target="_blank"><i class="ri-youtube-line"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1413,35 +861,8 @@
 
         </footer>
     </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="/js/index.js"></script>
-    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-    <script type='text/javascript'>(function ($) {
-            window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'NAME'; ftypes[1] = 'text'; /*
- * Translated default messages for the $ validation plugin.
- * Locale: ES
- */
-            $.extend($.validator.messages, {
-                required: "Este campo es obligatorio.",
-                remote: "Por favor, rellena este campo.",
-                email: "Por favor, escribe una dirección de correo válida",
-                url: "Por favor, escribe una URL válida.",
-                date: "Por favor, escribe una fecha válida.",
-                dateISO: "Por favor, escribe una fecha (ISO) válida.",
-                number: "Por favor, escribe un número entero válido.",
-                digits: "Por favor, escribe sólo dígitos.",
-                creditcard: "Por favor, escribe un número de tarjeta válido.",
-                equalTo: "Por favor, escribe el mismo valor de nuevo.",
-                accept: "Por favor, escribe un valor con una extensión aceptada.",
-                maxlength: $.validator.format("Por favor, no escribas más de {0} caracteres."),
-                minlength: $.validator.format("Por favor, no escribas menos de {0} caracteres."),
-                rangelength: $.validator.format("Por favor, escribe un valor entre {0} y {1} caracteres."),
-                range: $.validator.format("Por favor, escribe un valor entre {0} y {1}."),
-                max: $.validator.format("Por favor, escribe un valor menor o igual a {0}."),
-                min: $.validator.format("Por favor, escribe un valor mayor o igual a {0}.")
-            });
-        }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
-    <!--End mc_embed_signup-->
 </body>
-
 </html>

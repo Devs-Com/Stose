@@ -59,8 +59,18 @@
                   </div>
 
                   <div class="form-group">
-                     <label>Precio : </label>
-                     <input type="number" name="precio" th:field="*{precio}" class="form-control" placeholder="Digite el precio : " required>
+                     <label>Precio Original : </label>
+                     <input type="number" name="precio_original" th:field="*{precio_original}" class="form-control" placeholder="Digite el precio original : " required>
+                  </div>
+
+                  <div class="form-group">
+                     <label>Precio Descuento : </label>
+                     <input type="number" name="precio_descuento" th:field="*{precio_descuento}" class="form-control" placeholder="Digite el precio descuento : " required>
+                  </div>
+
+                  <div class="form-group">
+                     <label>Porcentaje Descuento : </label>
+                     <input type="text" name="porcentaje_descuento" th:field="*{porcentaje_descuento}" class="form-control" placeholder="Digite el porcentaje descuento : " required>
                   </div>
                   
                   <div class="form-group">
