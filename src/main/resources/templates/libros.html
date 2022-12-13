@@ -13,12 +13,15 @@
 
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 <script type="module" src="/js/autentification-Admin1/main-admin1.js"></script>
+
+<!-- agregando -->
+<link rel="stylesheet" type="text/css" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css}" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 
 
 	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-		<a class="navbar-brand" href="/inicio/">Volver al Inicio</a>
+		<a class="navbar-brand" th:href="@{/inicio/}">Volver al Inicio</a>
 		<div class="contenedor-admin">
 		<a class="estilosadmin logged-out1" onclick="AbrirModal3()" href="#">Iniciar sesión Administrador</a>
 		<a class="estilosadmin logged-in1" id="loguot-admin1" href="#">Cerrar sesion</a>
