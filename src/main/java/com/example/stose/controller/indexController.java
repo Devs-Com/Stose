@@ -8,9 +8,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.stose.model.indexModel;
+import com.example.stose.services.CarritoServicio;
 import com.example.stose.services.DestacadosServicio;
 import com.example.stose.services.TendenciaLeftServicio;
 import com.example.stose.services.TendenciaRightServicio;
@@ -36,6 +38,9 @@ public class indexController {
 	
 	@Autowired
 	private libroOfertaServicio servicio3;
+
+	@Autowired
+	private CarritoServicio servicio4;
     
 	@GetMapping({ "/inicio", "/", "Inicio" })
     public String ControllerIndex(Model model) {
@@ -47,6 +52,8 @@ public class indexController {
 		model.addAttribute("destacados", servicio2.listarTodosLosLibros());
 		
 		model.addAttribute("oferta", servicio3.listarTodosLosLibros());
+		
+		model.addAttribute("carrito", servicio4.listarTodosLosLibros());
 
 		model.addAttribute("TituloPagina", TitlePage);
 
@@ -249,4 +256,10 @@ public class indexController {
 		
         return "index";
     }
+
+	@GetMapping("/index/{id}")
+	public String eliminarLibro(@PathVariable Long id) {
+		servicio4.eliminarLibro(id);
+		return "redirect:/inicio";
+	}
 }

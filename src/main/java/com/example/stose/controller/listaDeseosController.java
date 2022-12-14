@@ -3,14 +3,17 @@ package com.example.stose.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.stose.model.indexModel;
 import com.example.stose.model.listaDeseosModel;
+import com.example.stose.services.CarritoServicio;
 
 
 @Controller
@@ -20,8 +23,13 @@ public class listaDeseosController {
 	@Value("${title.listadeseos}")
 	private String TitlePage;
 	
+	@Autowired
+	private CarritoServicio servicio;
+
 	@GetMapping({ "/inicio", "/lista-de-deseos" })
     public String ControllerIndex(Model model) {
+
+		model.addAttribute("carrito", servicio.listarTodosLosLibros());
 		
 		//SECCION Carrito de compras
 		indexModel CarritoC = new indexModel();
@@ -200,5 +208,11 @@ public class listaDeseosController {
 		model.addAttribute("SubCategoria", ListSubCategoria);
 		
 		return "lista-de-deseos";
+	}
+
+	@GetMapping("/lista-de-deseos/{id}")
+	public String eliminarLibro(@PathVariable Long id) {
+		servicio.eliminarLibro(id);
+		return "redirect:/inicio/lista-de-deseos";
 	}
 }
