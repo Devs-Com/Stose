@@ -12,6 +12,9 @@
     rel="stylesheet"
     href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
     />
+     <link rel="stylesheet" href="/css/modalesIndex.css"> 
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
 </head>
 <body>
     <div id="page" class="site">
@@ -38,21 +41,99 @@
                                 <li class="links">
                                     <li><a href="#">Blog</a></li>
                                     <li><a href="/inicio/lista-de-deseos">Lista de deseos</a></li>
-                                    <li><a href="/inicio/crearblog">Crear Blog</a></li>
-                                    <li><a href="/inicio/libros">Gestionar Libros</a></li>
+                                    <li><a href="/inicio/crearblog" class="logged-out" >Crear Blog</a></li>
+                                    <li><a href="/inicio/libros" class="logged-out">Gestionar Libros</a></li>
                             </ul>
                         </div>
                         <div class="right">
                             <ul class="flexitem main-links">
-                                <li><a href="#">Registrate</a></li>
-                                <li><a href="#">Mi Cuenta</a></li>
-                                <li><a href="#">Revision de Pedidos</a></li>
+                                <li><a class="logged-in" href="#">Mi Cuenta</a></li>
+                               
+                                <li><a class="logged-out" href="#" onclick="AbrirModal2()" >Iniciar sesión</a></li> 
+                                <li><a class="logged-out" href="#" onclick="AbrirModal()">Registrar</a></li>                                            
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
+       <a class="logged-in masespacio" id="loguot" href="#">Cerrar Sesión </a>
+<!-- ---- VENTANAS MODALES -------- -->
 
+  <!-- ----- VENTANA MODAL DE REGISTRO ------ -->
+
+  <div id="modal" class="modal-registro">
+    <div class="login-container">
+     <div class="login-info-container-registro">
+        <h1 class="title">REGISTRATE</h1>
+        <div class="social-login">
+        <div class="social-login-element" id="btnGoogle" >
+            <img src="https://rotulosmatesanz.com/wp-content/uploads/2017/09/2000px-Google_G_Logo.svg_.png" alt="google-img">
+            <span>Google</span>
+        </div>
+        <div class="social-login-element" id="btnFacebook">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="google-img">
+            <span>Facebook</span>
+        </div>
+     </div>
+        <form class="inputs-container" id="form">
+            <br>
+            <span id="icon-form-1" class="material-symbols-outlined">alternate_email</span>   <input class="input" placeholder="E-mail" type="text" id="email"> 
+            <span id="icon-form-2" class="material-symbols-outlined">person_filled</span>     <input class="input" type="text" placeholder="Name" id="nombre">
+            <span id="icon-form-4" class="material-symbols-outlined">call</span>           <input class="input" placeholder="Phone number" type="text" id="phono">
+            <span id="icon-form-3" class="material-symbols-outlined">Password</span>          <input class="input" placeholder="Password" type="password" id="pass">
+
+            <br>
+            <button class="btn-login" type="submit" id="registrar" >Registrar</button>
+        </form>
+    </div>
+    <img class="imagen-contenedor-registrar" src="https://cdn-icons-png.flaticon.com/512/3534/3534139.png" alt="login">
+</div>
+        <a href="#0" class="t-close modalclose flexcenter">
+            <i class="ri-close-line" onclick="cerrar()"></i>
+        </a>
+</div>
+  <!-- ----- VENTANA MODAL DE REGISTRO ------ -->
+
+
+  <!-- -----------VENTANA MODAL DE LOGIN ------------ -->
+  <div id="modal" class="modal-login">
+    <div class="login-container">
+     <div class="login-info-container-login">
+        <h1 class="title">Iniciar sesión</h1>
+        <div class="social-login">
+        <div class="social-login-element" id="btnGoogle2">
+            <img src="https://rotulosmatesanz.com/wp-content/uploads/2017/09/2000px-Google_G_Logo.svg_.png" alt="google-img">
+            <span id="btnGoogle" >Google</span>
+        </div>
+        <div class="social-login-element" id="btnFacebook2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="google-img">
+            <span>Facebook</span>
+        </div>
+     </div>
+        <p>or</p>
+        
+        <form id="form2" class="inputs-container" >
+            <span id="icon-form-5" class="material-symbols-outlined">alternate_email</span>  <input class="input" placeholder="E-mail" type="text" id="email2">
+            <span id="icon-form-6" class="material-symbols-outlined">Password</span>          <input class="input" placeholder="Password" type="password"  id="pas2">
+            <p>Olvidaste tu contraseña? <span class="span">Clic aquí</span></p>              
+            <button class="btn-login" type="submit">Login</button>
+        </form>
+        <div id="container-warnings">
+            <p id="error6"></p>
+            <p id="error7"></p>
+
+           </div>
+    </div>
+    <img class="imagen-contenedor-login" src="https://cdn-icons-png.flaticon.com/512/3534/3534139.png" alt="login">
+</div>
+        <a href="#0" class="t-close modalclose2 flexcenter">
+            <i class="ri-close-line"></i>
+        </a>
+</div>
+  <!-- -----------VENTANA MODAL DE LOGIN ------------ -->
+
+
+<!-- ---- VENTANAS MODALES -------- -->
             <!-- header-nav -->
             <div class="header-nav">
                 <div class="container">
@@ -691,52 +772,49 @@
         </main>
 
         <footer>
-           <!-- newsletter -->
-           <div class="newsletter">
-            <div class="container">
-                <div class="wrapper">
-                    <div class="box" id="mc_embed_signup">
-                        <div class="content">
-                            <h3>Suscríbete a nuestro boletín</h3>
-                            <p>Recibe actualizaciones por correo electrónico sobre nuestros libros más recientes y
-                                <strong> ofertas especiales</strong>
-                            </p>
-                        </div>
-                        <form
-                            action="https://gmail.us21.list-manage.com/subscribe/post?u=6f7b243471f92673c6bf7b363&amp;id=505742f9f7&amp;f_id=0095c3e1f0"
-                            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
-                            class="search" target="_blank" novalidate>
-                            <div class="mc-field-group">
-                                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required></span>
-                                <br>
-                                <br>
-                                <input type="submit" value="Subscribete" name="subscribe" id="mc-embedded-subscribe" class="button">
-                                <br>
-                                <span><i class="ri-mail-line"></i>
-                                
-                                <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+            <!-- newsletter -->
+            <div class="newsletter">
+                <div class="container">
+                    <div class="wrapper">
+                        <div class="box" id="mc_embed_signup">
+                            <div class="content">
+                                <h3>Suscríbete a nuestro boletín</h3>
+                                <p>Recibe actualizaciones por correo electrónico sobre nuestros libros más recientes y
+                                    <strong> ofertas especiales</strong>
+                                </p>
                             </div>
-                            <div id="mce-responses" class="clear foot">
-                                <div class="response" id="mce-error-response" style="display:none"></div>
-                                <div class="response" id="mce-success-response" style="display:none"></div>
-                                
-                            </div>
-                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
-                                name="b_6f7b243471f92673c6bf7b363_505742f9f7" tabindex="-1" value=""></div>
-                            <div class="optionalParent">
-                                <div class="clear foot">
+                            <form
+                                action="https://gmail.us21.list-manage.com/subscribe/post?u=6f7b243471f92673c6bf7b363&amp;id=505742f9f7&amp;f_id=0095c3e1f0"
+                                method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                                class="search" target="_blank" novalidate>
+                                <div class="mc-field-group">
+                                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required></span>
+                                    <br>
+                                    <br>
+                                    <input type="submit" value="Subscribete" name="subscribe" id="mc-embedded-subscribe" class="button">
+                                    <br>
+                                    <span><i class="ri-mail-line"></i>
                                     
-    
+                                    <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
                                 </div>
-                            </div>
-                        </form>
+                                <div id="mce-responses" class="clear foot">
+                                    <div class="response" id="mce-error-response" style="display:none"></div>
+                                    <div class="response" id="mce-success-response" style="display:none"></div>
+                                    
+                                </div>
+                                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                    name="b_6f7b243471f92673c6bf7b363_505742f9f7" tabindex="-1" value=""></div>
+                                <div class="optionalParent">
+                                    <div class="clear foot">
+                                        
+        
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-            </form>
-        </div>
 
             <!-- widgets -->
             <div class="widgets">
@@ -890,29 +968,35 @@
     </div>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="/js/index.js"></script>
-    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='NAME';ftypes[1]='text'; /*
-        * Translated default messages for the $ validation plugin.
-        * Locale: ES
-        */
-       $.extend($.validator.messages, {
-         required: "Este campo es obligatorio.",
-         remote: "Por favor, rellena este campo.",
-         email: "Por favor, escribe una dirección de correo válida",
-         url: "Por favor, escribe una URL válida.",
-         date: "Por favor, escribe una fecha válida.",
-         dateISO: "Por favor, escribe una fecha (ISO) válida.",
-         number: "Por favor, escribe un número entero válido.",
-         digits: "Por favor, escribe sólo dígitos.",
-         creditcard: "Por favor, escribe un número de tarjeta válido.",
-         equalTo: "Por favor, escribe el mismo valor de nuevo.",
-         accept: "Por favor, escribe un valor con una extensión aceptada.",
-         maxlength: $.validator.format("Por favor, no escribas más de {0} caracteres."),
-         minlength: $.validator.format("Por favor, no escribas menos de {0} caracteres."),
-         rangelength: $.validator.format("Por favor, escribe un valor entre {0} y {1} caracteres."),
-         range: $.validator.format("Por favor, escribe un valor entre {0} y {1}."),
-         max: $.validator.format("Por favor, escribe un valor menor o igual a {0}."),
-         min: $.validator.format("Por favor, escribe un valor mayor o igual a {0}.")
-       });}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-       <!--End mc_embed_signup-->
+    <script src="/js/modales-index.js"></script>
+    <script type="module" src="/js/autentification-firebase/main-registro.js"></script>
 </body>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='NAME';ftypes[1]='text'; /*
+    * Translated default messages for the $ validation plugin.
+    * Locale: ES
+    */
+   $.extend($.validator.messages, {
+     required: "Este campo es obligatorio.",
+     remote: "Por favor, rellena este campo.",
+     email: "Por favor, escribe una dirección de correo válida",
+     url: "Por favor, escribe una URL válida.",
+     date: "Por favor, escribe una fecha válida.",
+     dateISO: "Por favor, escribe una fecha (ISO) válida.",
+     number: "Por favor, escribe un número entero válido.",
+     digits: "Por favor, escribe sólo dígitos.",
+     creditcard: "Por favor, escribe un número de tarjeta válido.",
+     equalTo: "Por favor, escribe el mismo valor de nuevo.",
+     accept: "Por favor, escribe un valor con una extensión aceptada.",
+     maxlength: $.validator.format("Por favor, no escribas más de {0} caracteres."),
+     minlength: $.validator.format("Por favor, no escribas menos de {0} caracteres."),
+     rangelength: $.validator.format("Por favor, escribe un valor entre {0} y {1} caracteres."),
+     range: $.validator.format("Por favor, escribe un valor entre {0} y {1}."),
+     max: $.validator.format("Por favor, escribe un valor menor o igual a {0}."),
+     min: $.validator.format("Por favor, escribe un valor mayor o igual a {0}.")
+   });}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+   <!--End mc_embed_signup-->
+<script src="/js/configuracion.js" ></script>
 </html>
