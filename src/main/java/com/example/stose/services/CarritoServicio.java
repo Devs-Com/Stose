@@ -7,10 +7,12 @@ import com.example.stose.entity.Carrito;
 public interface CarritoServicio {
 
 	public List<Carrito> listarTodosLosLibros();
+
+	public Carrito guardarLibro(Carrito libro);
 	
 	public Carrito obtenerLibroPorId(Long id);
-
-    public Carrito actualizarLibro(Carrito carrito);
 	
 	public void eliminarLibro(Long id);
+
+	public void eliminarLibroDeCarrito(Long id);
 }

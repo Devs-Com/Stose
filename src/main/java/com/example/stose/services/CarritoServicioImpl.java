@@ -20,17 +20,23 @@ public class CarritoServicioImpl implements CarritoServicio {
 	}
 
 	@Override
+	public Carrito guardarLibro(Carrito id) {
+		return repositorio.save(id);
+	}
+
+	@Override
 	public Carrito obtenerLibroPorId(Long id) {
 		return repositorio.findById(id).get();
 	}
 
 	@Override
-	public Carrito actualizarLibro(Carrito carrito) {
-		return repositorio.save(carrito);
+	public void eliminarLibro(Long id) {
+		repositorio.deleteById(id);
+
 	}
 
 	@Override
-	public void eliminarLibro(Long id) {
+	public void eliminarLibroDeCarrito(Long id) {
 		repositorio.deleteById(id);
 
 	}

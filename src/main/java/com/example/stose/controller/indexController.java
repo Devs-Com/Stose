@@ -260,6 +260,6 @@ public class indexController {
 	@GetMapping("/index/{id}")
 	public String eliminarLibro(@PathVariable Long id) {
 		servicio4.eliminarLibro(id);
-		return "redirect:/inicio/index";
+		return "redirect:/inicio";
 	}
 }
