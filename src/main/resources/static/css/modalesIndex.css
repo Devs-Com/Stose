@@ -79,13 +79,6 @@
     --image-bg: #eadbff;
 }
 
-main{
- height: 100vh;
-
- font-family: Verdana, Geneva, Tahoma, sans-serif;
- background-image: linear-gradient(to top, #674baf 0);
- left: 100rem;
-}
 .login-container{
     height: 50.75em;
     width: 60em;
@@ -455,13 +448,6 @@ font-size: 0.8rem;
     --image-bg: #eadbff;
 }
 
-main{
- height: 100vh;
-
- font-family: Verdana, Geneva, Tahoma, sans-serif;
- background-image: linear-gradient(to top, #674baf 0);
- left: 100rem;
-}
 .login-container{
     width: 60em;
     margin: 6eb auto;
@@ -852,13 +838,6 @@ font-size: 0.8rem;
     --image-bg: #eadbff;
 }
 
-main{
- height: 100vh;
-
- font-family: Verdana, Geneva, Tahoma, sans-serif;
- background-image: linear-gradient(to top, #674baf 0);
- left: 100rem;
-}
 .login-container-admin{
     height: 54em;
     width: 100em;
