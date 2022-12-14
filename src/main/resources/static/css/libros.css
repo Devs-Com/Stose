@@ -1,0 +1,19 @@
+.estilosadmin {
+    text-decoration: none;
+
+}
+.contenedor-admin a{
+    text-decoration: none;
+
+}
+.contenedor-admin{
+    margin-left: 1110px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.div-mostrarInfo{
+margin-top: 280px;
+margin-left: 150px;
+}

@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Registro de libros</title>
 <!-- CSS only -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css}" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 
 
 	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-		<a class="navbar-brand" href="/inicio/">Volver al Inicio</a>
+		<a class="navbar-brand" th:href="@{/inicio/}">Volver al Inicio</a>
 		<!-- Navbar links -->
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
@@ -27,6 +27,12 @@
               <h1 class="text-center">Registro de libro</h1>
               <div class="card-body">
                  <form th:action="@{/inicio/libros}" th:object="${libro}" method="POST">
+                 
+                 <div class="form-group">
+                       <label>Imagen : </label>
+                       <input type="text" name="img" th:field="*{img}" class="form-control" placeholder="Digite el enlace de la imagen : " required>
+                    </div>
+                 
                     <div class="form-group">
                        <label>Titulo : </label>
                        <input type="text" name="titulo" th:field="*{titulo}" class="form-control" placeholder="Digite el titulo : " required>
@@ -53,8 +59,18 @@
                   </div>
 
                   <div class="form-group">
-                     <label>Precio : </label>
-                     <input type="number" name="precio" th:field="*{precio}" class="form-control" placeholder="Digite el precio : " required>
+                     <label>Precio Original : </label>
+                     <input type="number" name="precio_original" th:field="*{precio_original}" class="form-control" placeholder="Digite el precio original : " required>
+                  </div>
+
+                  <div class="form-group">
+                     <label>Precio Descuento : </label>
+                     <input type="number" name="precio_descuento" th:field="*{precio_descuento}" class="form-control" placeholder="Digite el precio descuento : " required>
+                  </div>
+
+                  <div class="form-group">
+                     <label>Porcentaje Descuento : </label>
+                     <input type="text" name="porcentaje_descuento" th:field="*{porcentaje_descuento}" class="form-control" placeholder="Digite el porcentaje descuento : " required>
                   </div>
                   
                   <div class="form-group">

@@ -7,85 +7,118 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.data.annotation.CreatedBy;
-
 @Entity
 @Table(name = "tb_libro")
 public class Libro {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-	private Long id;
-	
-	@Column(name = "titulo",nullable = false,length = 50)
-	private String titulo;
-	
-	@Column(name = "autor",nullable = false,length = 50)
-	private String autor;
-	
-	@Column(name = "id_editorial",nullable = false,length = 50)
-	private String id_editorial;
+    private Long id;
 
-    @Column(name = "id_categoria",nullable = false,length = 50)
-	private String id_categoria;
-    
-    @Column(name = "id_subcategoria",nullable = false,length = 50)
-	private String id_subcategoria;
+    @Column(name = "img")
+    private String img;
 
-    @Column(name = "precio",nullable = false,length = 50)
-	private String precio;
+    @Column(name = "titulo", nullable = false, length = 50)
+    private String titulo;
 
-    @Column(name = "numero_pagina",nullable = false,length = 50)
-	private String numero_pagina;
+    @Column(name = "autor", nullable = false, length = 50)
+    private String autor;
 
-    @Column(name = "year_publicacion",nullable = false,length = 50)
-	private String year_publicacion;
+    @Column(name = "id_editorial", nullable = false, length = 50)
+    private String id_editorial;
 
-    @Column(name = "disponible",nullable = false,length = 50)
-	private String disponible;
-	
-	public Libro() {
-		
-	}
+    @Column(name = "id_categoria", nullable = false, length = 50)
+    private String id_categoria;
 
-    public Libro(Long id, String titulo, String autor, String id_editorial, String id_categoria, String id_subcategoria,
-            String precio, String numero_pagina, String year_publicacion, String disponible) {
+    @Column(name = "id_subcategoria", nullable = false, length = 50)
+    private String id_subcategoria;
+
+    @Column(name = "descripcion", nullable = false, length = 50)
+    private String descripcion;
+
+    @Column(name = "precio_original", nullable = false, length = 50)
+    private String precio_original;
+
+    @Column(name = "precio_descuento", nullable = false, length = 50)
+    private String precio_descuento;
+
+    @Column(name = "porcentaje_descuento", nullable = false, length = 50)
+    private String porcentaje_descuento;
+
+    @Column(name = "numero_pagina", nullable = false, length = 50)
+    private String numero_pagina;
+
+    @Column(name = "year_publicacion", nullable = false, length = 50)
+    private String year_publicacion;
+
+    @Column(name = "disponible", nullable = false, length = 50)
+    private String disponible;
+
+    @Override
+    public String toString() {
+        return "Libro [id=" + id + ", img=" + img + ", titulo=" + titulo + ", autor=" + autor + ", id_editorial="
+                + id_editorial + ", id_categoria=" + id_categoria + ", id_subcategoria=" + id_subcategoria
+                + ", descripcion=" + descripcion + ", precio_original=" + precio_original + ", precio_descuento="
+                + precio_descuento + ", porcentaje_descuento=" + porcentaje_descuento + ", numero_pagina="
+                + numero_pagina + ", year_publicacion=" + year_publicacion + ", disponible=" + disponible + "]";
+    }
+
+    public Libro(Long id, String img, String titulo, String autor, String id_editorial, String id_categoria,
+            String id_subcategoria, String descripcion, String precio_original, String precio_descuento,
+            String porcentaje_descuento, String numero_pagina, String year_publicacion, String disponible) {
         this.id = id;
+        this.img = img;
         this.titulo = titulo;
         this.autor = autor;
         this.id_editorial = id_editorial;
         this.id_categoria = id_categoria;
         this.id_subcategoria = id_subcategoria;
-        this.precio = precio;
+        this.descripcion = descripcion;
+        this.precio_original = precio_original;
+        this.precio_descuento = precio_descuento;
+        this.porcentaje_descuento = porcentaje_descuento;
         this.numero_pagina = numero_pagina;
         this.year_publicacion = year_publicacion;
         this.disponible = disponible;
     }
 
-    public Libro(String titulo, String autor, String id_editorial, String id_categoria, String id_subcategoria,
-            String precio, String numero_pagina, String year_publicacion, String disponible) {
+    public Libro(String img, String titulo, String autor, String id_editorial, String id_categoria,
+            String id_subcategoria, String descripcion, String precio_original, String precio_descuento,
+            String porcentaje_descuento, String numero_pagina, String year_publicacion, String disponible) {
+        this.img = img;
         this.titulo = titulo;
         this.autor = autor;
         this.id_editorial = id_editorial;
         this.id_categoria = id_categoria;
         this.id_subcategoria = id_subcategoria;
-        this.precio = precio;
+        this.descripcion = descripcion;
+        this.precio_original = precio_original;
+        this.precio_descuento = precio_descuento;
+        this.porcentaje_descuento = porcentaje_descuento;
         this.numero_pagina = numero_pagina;
         this.year_publicacion = year_publicacion;
         this.disponible = disponible;
     }
 
     public Long getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
 
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
     public String getTitulo() {
-        return this.titulo;
+        return titulo;
     }
 
     public void setTitulo(String titulo) {
@@ -93,7 +126,7 @@ public class Libro {
     }
 
     public String getAutor() {
-        return this.autor;
+        return autor;
     }
 
     public void setAutor(String autor) {
@@ -101,7 +134,7 @@ public class Libro {
     }
 
     public String getId_editorial() {
-        return this.id_editorial;
+        return id_editorial;
     }
 
     public void setId_editorial(String id_editorial) {
@@ -109,7 +142,7 @@ public class Libro {
     }
 
     public String getId_categoria() {
-        return this.id_categoria;
+        return id_categoria;
     }
 
     public void setId_categoria(String id_categoria) {
@@ -124,16 +157,40 @@ public class Libro {
         this.id_subcategoria = id_subcategoria;
     }
 
-    public String getPrecio() {
-        return this.precio;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setPrecio(String precio) {
-        this.precio = precio;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getPrecio_original() {
+        return precio_original;
+    }
+
+    public void setPrecio_original(String precio_original) {
+        this.precio_original = precio_original;
+    }
+
+    public String getPrecio_descuento() {
+        return precio_descuento;
+    }
+
+    public void setPrecio_descuento(String precio_descuento) {
+        this.precio_descuento = precio_descuento;
+    }
+
+    public String getPorcentaje_descuento() {
+        return porcentaje_descuento;
+    }
+
+    public void setPorcentaje_descuento(String porcentaje_descuento) {
+        this.porcentaje_descuento = porcentaje_descuento;
     }
 
     public String getNumero_pagina() {
-        return this.numero_pagina;
+        return numero_pagina;
     }
 
     public void setNumero_pagina(String numero_pagina) {
@@ -141,7 +198,7 @@ public class Libro {
     }
 
     public String getYear_publicacion() {
-        return this.year_publicacion;
+        return year_publicacion;
     }
 
     public void setYear_publicacion(String year_publicacion) {
@@ -149,20 +206,15 @@ public class Libro {
     }
 
     public String getDisponible() {
-        return this.disponible;
+        return disponible;
     }
 
     public void setDisponible(String disponible) {
         this.disponible = disponible;
     }
 
-    @Override
-    public String toString() {
-        return "Libro [id=" + id + ", titulo=" + titulo + ", autor=" + autor + ", id_editorial=" + id_editorial
-                + ", id_categoria=" + id_categoria + ", id_subcategoria=" + id_subcategoria + ", precio=" + precio
-                + ", numero_pagina=" + numero_pagina + ", year_publicacion=" + year_publicacion + ", disponible="
-                + disponible + "]";
+    public Libro() {
+
     }
-	
-	
+
 }

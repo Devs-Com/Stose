@@ -4,6 +4,9 @@ Fonts:
 - Poppins: 300, 400, 600, 700, 800
 - Rubik: 300, 400, 500, 600
 */
+.masespacio{
+    padding-left: 1230px;
+}
 
 :root {
     --primary-color: #ff6b6b;

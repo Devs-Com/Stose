@@ -3,14 +3,22 @@ package com.example.stose.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.example.stose.entity.Carrito;
+import com.example.stose.entity.Libro;
 import com.example.stose.model.detalleLibroModel;
 import com.example.stose.model.indexModel;
+import com.example.stose.services.CarritoServicio;
+import com.example.stose.services.LibroService;
 
 
 
@@ -20,6 +28,12 @@ public class detalleLibroController {
 	
 	@Value("${title.detallelibro}")
 	private String titlePage;
+
+	@Autowired
+	private LibroService servicio;
+
+	@Autowired
+	private CarritoServicio servicio2;
     
     @GetMapping({ "/detalle-libro", "Detalle-Libro" })
     public String ControllerDetalleLibro(Model model) {
@@ -231,4 +245,59 @@ public class detalleLibroController {
     	
         return "detalle-libro";
     }
+
+	@GetMapping("/libros/info/{id}")
+	public String infoLibros(@PathVariable Long id, Model modelo) {
+		modelo.addAttribute("libro", servicio.obtenerLibroPorId(id));
+
+		modelo.addAttribute("carrito", servicio2.listarTodosLosLibros());
+
+		return "detalle-libro";
+	}
+
+	// @GetMapping("/libros/nuevo/{id}")
+	// public String mostrarFormularioDeRegistrarLibro(Model modelo) {
+	// 	Libro libro = new Libro();
+	// 	modelo.addAttribute("id", libro);
+	// 	modelo.addAttribute("img", libro);
+	// 	modelo.addAttribute("titulo", libro);
+	// 	modelo.addAttribute("precio", libro);
+	// 	return "detalle-libro";
+	// }
+
+	@PostMapping("/libros/guardar")
+	public String guardarLibro(@ModelAttribute("libro") Carrito libro) {
+		servicio2.guardarLibro(libro);
+		return "redirect:/inicio/libros/info/{id}";
+	}
+
+	@PostMapping("/libros/detalle/{id}")
+	public String detalleLibro(@PathVariable Long id, @ModelAttribute("libro") Libro libro,
+			Model modelo) {
+		Libro libroExistente = servicio.obtenerLibroPorId(id);
+		libroExistente.setId(id);
+		libroExistente.setImg(libro.getImg());
+		libroExistente.setTitulo(libro.getTitulo());
+		libroExistente.setAutor(libro.getAutor());
+		libroExistente.setId_editorial(libro.getId_editorial());
+		libroExistente.setId_categoria(libro.getId_categoria());
+		libroExistente.setId_subcategoria(libro.getId_subcategoria());
+		libroExistente.setDescripcion(libro.getDescripcion());
+		libroExistente.setPrecio_original(libro.getPrecio_original());
+		libroExistente.setPrecio_descuento(libro.getPrecio_descuento());
+		libroExistente.setPorcentaje_descuento(libro.getPorcentaje_descuento());
+		libroExistente.setNumero_pagina(libro.getNumero_pagina());
+		libroExistente.setYear_publicacion(libro.getYear_publicacion());
+		libroExistente.setDisponible(libro.getDisponible());
+		libroExistente.setDisponible(libro.getDescripcion());
+
+		servicio.actualizarLibro(libroExistente);
+		return "redirect:/libros/guardar";
+	}
+
+	@GetMapping("/detalle-libro/{id}")
+	public String eliminarLibro(@PathVariable Long id) {
+		servicio2.eliminarLibro(id);
+		return "redirect:/inicio/libros/info/{id}";
+	}
 }

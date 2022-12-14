@@ -17,7 +17,7 @@
         <aside class="site-off desktop-hide">
             <div class="off-canvas">
                 <div class="canvas-head flexitem">
-                    <div class="logo"><a href="./index.html"><span class="circle"></span>.Stose</a></div>
+                    <div class="logo"><a href="/inicio/"><span class="circle"></span>.Stose</a></div>
                     <a href="#" class="t-close flexcenter"><i class="ri-close-line"></i></a>
                 </div>
                 <div class="categories"></div>
@@ -35,7 +35,7 @@
                             <ul class="flexitem main-links">
                                 <li class="links">
                                 <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Lista de deseos</a></li>
+                                    <li><a href="/inicio/lista-de-deseos">Lista de deseos</a></li>
                                     <li><a href="/inicio/crearblog">Crear Blog</a></li>
                                     <li><a href="/inicio/libros">Gestionar Libros</a></li>
                                 </li>
@@ -58,7 +58,7 @@
                     <div class="wrapper flexitem">
                         <a href="#" class="trigger desktop-hide"><span class="i ri-menu-2-line"></span></a>
                         <div class="left flexitem">
-                            <div class="logo"><a href="./index.html"><span class="circle"></span>.Stose</a></div>
+                            <div class="logo"><a href="/inicio/"><span class="circle"></span>.Stose</a></div>
                             <nav class="mobile-hide">
                                 <ul class="flexitem second-links">
                                     <li><a href="/inicio/">Inicio</a></li>
@@ -87,7 +87,7 @@
                                                                     alt=""></a>
                                                         </div>
                                                         <div class="item-content">
-                                                            <p><a href="#">/*Nombre del libro*/</a></p>
+                                                            <p th:each="Lista : ${LibrosDeseados}"><a href="#" th:text="${Lista.LibroDeseado1}"></a></p>
                                                             <span class="price">
                                                                 <span>$0.00</span>
 
@@ -102,7 +102,7 @@
                                                                     alt=""></a>
                                                         </div>
                                                         <div class="item-content">
-                                                            <p><a href="#">/*Nombre del libro*/</a></p>
+                                                            <p th:each="Lista : ${LibrosDeseados}"><a href="#" th:text="${Lista.LibroDeseado2}"></a></p>
                                                             <span class="price">
                                                                 <span>$0.00</span>
 
@@ -117,7 +117,7 @@
                                                                     alt=""></a>
                                                         </div>
                                                         <div class="item-content">
-                                                            <p><a href="#">/*Nombre del libro*/</a></p>
+                                                            <p th:each="Lista : ${LibrosDeseados}"><a href="#" th:text="${Lista.LibroDeseado3}"></a></p>
                                                             <span class="price">
                                                                 <span>$0.00</span>
 
@@ -132,7 +132,7 @@
                                                                     alt=""></a>
                                                         </div>
                                                         <div class="item-content">
-                                                            <p><a href="#">/*Nombre del libro*/</a></p>
+                                                            <p th:each="Lista : ${LibrosDeseados}"><a href="#" th:text="${Lista.LibroDeseado4}"></a></p>
                                                             <span class="price">
                                                                 <span>$0.00</span>
 
@@ -259,174 +259,174 @@
                                     </a>
                                 </div>
                                 <div class="ctg-menu">
-                                    <ul class="second-links">
-                                        <li class="has-child arte">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Arte
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li><a href="#">Arquitectura</a></li>
-                                                <li><a href="#">Artes Escénicas</a></li>
-                                                <li><a href="#">Aspectos Generales del Arte</a></li>
-                                                <li><a href="#">Diseño Industrial y Comercial</a></li>
-                                                <li><a href="#">Enfoques del Arte</a></li>
-                                                <li><a href="#">Expresiones Artísticas del Arte</a></li>
-                                                <li><a href="#">Fotografía</a></li>
-                                                <li><a href="#">Música</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-child biografia">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Biografías
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li><a href="#">Biografías</a></li>
-                                                <li><a href="#">Historia y Crítica Literaria</a></li>
-                                                <li><a href="#">Obras de Teatro</a></li>
-                                                <li><a href="#">Textos Antiguos, Clásicos y Mediavales</a></li>
-                                                <li><a href="#">Poesía</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-child ciencia">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Ciencias
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li><a href="#">Ciencias de la Tierra/Geociencias</a></li>
-                                                <li><a href="#">El Medioambiente</a></li>
-                                                <li><a href="#">Geografía</a></li>
-                                                <li><a href="#">Planificación Regional y Zonal</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-child computacion">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Computación
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li><a href="#">Bases de Datos</a></li>
-                                                <li><a href="#">Certificación Informática</a></li>
-                                                <li><a href="#">Ciencias de la Computación</a></li>
-                                                <li><a href="#">Redes y Comunicaciones</a></li>
-                                                <li><a href="#">Seguridad Informática</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-child deporte">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Deportes
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li><a href="#">Deportes con Vehículos</a></li>
-                                                <li><a href="#">Deportes de Combate y Defensa Personal</a></li>
-                                                <li><a href="#">Deportes de Invierno</a></li>
-                                                <li><a href="#">Deportes y Juegos Acuáticos</a></li>
-                                                <li><a href="#">Deportes y Juegos de Pelota</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-child derecho">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Derecho
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li><a href="#">Derecho de Países o Territorios Concretos y Áreas
-                                                        Específicas del Derecho</a></li>
-                                                <li><a href="#">Derecho Internacional</a></li>
-                                                <li><a href="#">Derecho: Guías de Estudio y Revisión</a></li>
-                                                <li><a href="#">Teoría General del Derecho</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-child economia">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Economía
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li><a href="#">Economía</a></li>
-                                                <li><a href="#">Empresa y Gestión</a></li>
-                                                <li><a href="#">Finanzas y Contabilidad</a></li>
-                                                <li><a href="#">Industria y Estudios Industriales</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-child estilo-de-vida">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Estilos de Vida
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li><a href="#">Antigüedades, Objetos De Época («Vintage») Y
-                                                        Coleccionables</a></li>
-                                                <li><a href="#">Artesanías, Artes Decorativas Y Manualidades</a></li>
-                                                <li><a href="#">Artículos De Papelería Y Miscelánea</a></li>
-                                                <li><a href="#">Cocina / Comidas Y Bebidas, Etc</a></li>
-                                                <li><a href="#">Guías De Estilos Personales Y Estilos De Vida</a></li>
-                                                <li><a href="#">Humor</a></li>
-                                                <li><a href="#">Interés Local, Historia Familiar Y Nostalgia</a></li>
-                                                <li><a href="#">Jardinería</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-child ficcion">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Ficción
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li><a href="#">Aventuras De Ficción</a></li>
-                                                <li><a href="#">Ciencia Ficción</a></li>
-                                                <li><a href="#">Fantasía</a></li>
-                                                <li><a href="#">Ficción Biográfica</a></li>
-                                                <li><a href="#">Ficción Deportiva</a></li>
-                                                <li><a href="#">Ficción Histórica</a></li>
-                                                <li><a href="#">Ficción Humorística</a></li>
-                                                <li><a href="#">Ficción Literaria</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-child filosofia-religion">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Filosofía y Religión
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li><a href="#">Filosfía</a></li>
-                                                <li><a href="#">Religión y Creencias</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="has-child infantil-juvenil">
-                                            <a href="#">
-                                                <div class="icon-large"><i class="ri-book-2-line"></i></div>
-                                                Infantiles y Juveniles
-                                                <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
-                                            </a>
-                                            <ul>
-                                                <li><a href="#">Ficción Infantil / Ficción Juvenil e Historias
-                                                        Reales</a></li>
-                                                <li><a href="#">Infantil / Juvenil: Artículos De Escritorio Y Papelería
-                                                        Y Objetos Diversos</a></li>
-                                                <li><a href="#">Infantil / Juvenil: Cuestiones Personales Y Sociales</a>
-                                                </li>
-                                                <li><a href="#">Infantil/Juvenil: Anuarios, Antologías Y Poesía</a></li>
-                                                <li><a href="#">Infantil/Juvenil: Interés General</a></li>
-                                                <li><a href="#">Libros para niños: ilustrados, de actividades y de
-                                                        primeros conceptos de aprendizaje</a></li>
-                                                <li><a href="#">Material Educativo</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <ul class="second-links">
+                                    <li class="has-child arte">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Arte
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria1}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria2}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria3}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria4}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria5}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria6}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria7}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria8}"></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-child biografia">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Biografías
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria9}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria10}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria11}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria12}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria13}"></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-child ciencia">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Ciencias
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria14}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria15}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria16}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria17}"></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-child computacion">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Computación
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria18}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria19}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria20}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria21}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria22}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria23}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria24}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria25}"></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-child deporte">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Deportes
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria26}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria27}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria28}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria29}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria30}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoriao31}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria32}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria33}"></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-child derecho">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Derecho
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria34}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria35}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria36}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria37}"></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-child economia">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Economía
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria38}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria39}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria40}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria41}"></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-child estilo-de-vida">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Estilos de Vida
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria42}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria43}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria44}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria45}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria46}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria47}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria48}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria49}"></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-child ficcion">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Ficción
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria50}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria51}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria52}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria53}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria54}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria55}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria56}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria57}"></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-child filosofia-religion">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Filosofía y Religión
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria58}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria59}"></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-child infantil-juvenil">
+                                        <a href="#">
+                                            <div class="icon-large"><i class="ri-book-2-line"></i></div>
+                                            Infantiles y Juveniles
+                                            <div class="icon-small"><i class="ri-arrow-right-s-line"></i></div>
+                                        </a>
+                                        <ul>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria60}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria61}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria62}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria63}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria64}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria65}"></a></li>
+                                            <li th:each="Lista : ${SubCategoria}"><a href="#" th:text="${Lista.SubCategoria66}"></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
                             </div>
                         </div>
                         <div class="right">

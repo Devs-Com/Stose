@@ -4,11 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>.Stose | Detalle del Libro</title>
+    <title>.Stose | Crear Blog</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="shortcut icon" href="./assets/images_readme/logo/logoWhite.png">
     <link rel="stylesheet" href="/css/detalle-libro.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/modalesIndex.css">
+<!-- agregando -->
+    <link type="text/css" th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css}" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="shortcut icon" type="img/png" th:href="@{./assets/images_readme/logo/logoWhite.png}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/detalle-libro.css}">
+    <link type="text/css" th:href="@{https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css}" rel="stylesheet">
 </head>
 <body>
     <div id="page" class="site">
@@ -40,15 +46,33 @@
                         </div>
                         <div class="right">
                             <ul class="flexitem main-links">
-                                <li><a href="#">Registrate</a></li>
-                                <li><a href="#">Mi Cuenta</a></li>
+                                <a class="estilosadmin logged-out1" onclick="AbrirModal3()" href="#">Iniciar sesión Administrador</a>
+                                <!-- <li><a href="#">Mi Cuenta</a></li> -->
                                 <li><a href="#">Revision de Pedidos</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-
+            <a class="estilosadmin1 logged-in1" id="loguot-admin1" href="#">Cerrar sesion</a>
+                <div id="modal" class="modal-login-admin">
+                    <div class="login-container-admin">
+                     <div class="login-info-container-admin">
+                        <h1 class="title-admin">Login </h1>
+                        <h1 class="title1-admin"> Administrador</h1>
+                        <form class="inputs-container" id="form3">
+                            <span id="icon-form-7" class="material-symbols-outlined iconss ">alternate_email</span>   <input class="input" placeholder="E-mail Administrador" type="text" id="email3">
+                            <span id="icon-form-8" class="material-symbols-outlined iconss ">Password</span>          <input class="input" placeholder="Contraseña Master" type="password" id="pass3" >
+                            <button class="btn-login" type="submit">Login</button>
+                        </form>
+                    </div>
+                    <img class="imagen-contenedor-admin" src="https://img.freepik.com/vector-premium/apuesto-hombre-negocios-traje-vector-premium_598748-144.jpg?w=740" alt="login">
+                </div>
+                <a href="#0" class="t-close modalclose3 flexcenter">
+                    <i class="ri-close-line"></i>
+                </a>
+        </div>
+  
             <!-- header-nav -->
             <div class="header-nav">
                 <div class="container">
@@ -68,9 +92,44 @@
                         <div class="right">
                             <ul class="flexitem second-links">
                                 <li class="mobile-hide"><a href="#">
-                                    <div class="icon-large"><i class="ri-heart-line"></i></div>
-                                    <div class="fly-item"><span class="item-number">0</span></div>
-                                </a></li>
+                                        <div class="icon-large"><i class="ri-heart-line"></i></div>
+                                        <div class="fly-item"><span class="item-number">0</span></div>
+                                    </a>
+                                    <div class="wish-list">
+                                        <div class="content">
+                                            <div class="wish-list-head">
+                                                Libros deseados
+                                            </div>
+                                            <div class="wish-list-body">
+                                                <ul class="products wish">
+                                                    <li class="item">
+                                                        <div class="thumbnail object-cover">
+                                                            <a href="#"><img src="./assets/images/ejemplo.png"
+                                                                    alt=""></a>
+                                                        </div>
+                                                        <div class="item-content">
+                                                            <p th:each="Lista : ${LibrosDeseados}"><a href="#" th:text="${Lista.LibroDeseado1}"></a></p>
+                                                            <span class="price">
+                                                                <span>$0.00</span>
+
+                                                            </span>
+                                                        </div>
+                                                        <a href="#" class="item-remove"><i
+                                                                class="ri-close-line"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="wish-list-footer">
+
+                                                <div class="actions">
+
+                                                    <a href="/inicio/lista-de-deseos" class="secondary-button">Ver Lista
+                                                        de Deseos</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
                                 <li class="iscart"><a href="#">
                                     <div class="icon-large">
                                         <i class="ri-shopping-cart-line"></i>
@@ -85,61 +144,22 @@
                                 <div class="mini-cart">
                                     <div class="content">
                                         <div class="cart-head">
-                                            # libros en el carrito
+                                            Libros en el carrito
                                         </div>
                                         <div class="cart-body">
-                                            <ul class="products mini">
+                                            <ul class="products mini" th:each="carrito : ${carrito}">
                                                 <li class="item">
                                                     <div class="thumbnail object-cover">
-                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
+                                                        <a href="#"><img th:src="${carrito.img}" width="100" height="100"></a>
                                                     </div>
                                                     <div class="item-content">
-                                                        <p><a href="#">/*Nombre del libro*/</a></p>
-                                                        <span class="price">
-                                                            <span>$0.00</span>
-                                                            <span class="fly-item"><span>1x</span></span>
+                                                        <p><a href="#" th:text="${carrito.titulo}"></a></p>
+                                                        <span class="price">$
+                                                            <span th:text="${carrito.precio}"></span>
+                                                            <span class="fly-item">x<span th:text="${carrito.cantidad}"></span></span>
                                                         </span>
                                                     </div>
-                                                    <a href="#" class="item-remove"><i class="ri-close-line"></i></a>
-                                                </li>
-                                                <li class="item">
-                                                    <div class="thumbnail object-cover">
-                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
-                                                    </div>
-                                                    <div class="item-content">
-                                                        <p><a href="#">/*Nombre del libro*/</a></p>
-                                                        <span class="price">
-                                                            <span>$0.00</span>
-                                                            <span class="fly-item"><span>1x</span></span>
-                                                        </span>
-                                                    </div>
-                                                    <a href="#" class="item-remove"><i class="ri-close-line"></i></a>
-                                                </li>
-                                                <li class="item">
-                                                    <div class="thumbnail object-cover">
-                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
-                                                    </div>
-                                                    <div class="item-content">
-                                                        <p><a href="#">/*Nombre del libro*/</a></p>
-                                                        <span class="price">
-                                                            <span>$0.00</span>
-                                                            <span class="fly-item"><span>1x</span></span>
-                                                        </span>
-                                                    </div>
-                                                    <a href="#" class="item-remove"><i class="ri-close-line"></i></a>
-                                                </li>
-                                                <li class="item">
-                                                    <div class="thumbnail object-cover">
-                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
-                                                    </div>
-                                                    <div class="item-content">
-                                                        <p><a href="#">/*Nombre del libro*/</a></p>
-                                                        <span class="price">
-                                                            <span>$0.00</span>
-                                                            <span class="fly-item"><span>1x</span></span>
-                                                        </span>
-                                                    </div>
-                                                    <a href="#" class="item-remove"><i class="ri-close-line"></i></a>
+                                                    <a th:href="@{/inicio/crearblog/{id}(id=${carrito.id})}" class="item-remove"><i class="ri-close-line"></i></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -354,8 +374,9 @@
             </div>  
         </header>
 
-        <main>
-            <div class="card text-center">
+
+        <div>
+            <div class="card text-center logged-in1">
                 <div class="card-header">
                   Bienvenido Administrador
                 </div>
@@ -368,23 +389,48 @@
                      ----------------------------------------
                 </div>
             </div>
-           
-        </main>
+        </div>
+
 
         <footer>
             <!-- newsletter -->
             <div class="newsletter">
                 <div class="container">
                     <div class="wrapper">
-                        <div class="box">
+                        <div class="box" id="mc_embed_signup">
                             <div class="content">
                                 <h3>Suscríbete a nuestro boletín</h3>
-                                <p>Recibe actualizaciones por correo electrónico sobre nuestros libros más recientes y <strong> ofertas especiales</strong></p>
+                                <p>Recibe actualizaciones por correo electrónico sobre nuestros libros más recientes y
+                                    <strong> ofertas especiales</strong>
+                                </p>
                             </div>
-                            <form action="" class="search">
-                                <span class="icon-large"><i class="ri-mail-line"></i></span>
-                                <input type="mail" placeholder="Correo electrónico" required>
-                                <button type="submit">Registrarse</button>
+                            <form
+                                action="https://gmail.us21.list-manage.com/subscribe/post?u=6f7b243471f92673c6bf7b363&amp;id=505742f9f7&amp;f_id=0095c3e1f0"
+                                method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                                class="search" target="_blank" novalidate>
+                                <div class="mc-field-group">
+                                    <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required></span>
+                                    <br>
+                                    <br>
+                                    <input type="submit" value="Subscribete" name="subscribe" id="mc-embedded-subscribe" class="button">
+                                    <br>
+                                    <span><i class="ri-mail-line"></i>
+                                    
+                                    <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+                                </div>
+                                <div id="mce-responses" class="clear foot">
+                                    <div class="response" id="mce-error-response" style="display:none"></div>
+                                    <div class="response" id="mce-success-response" style="display:none"></div>
+                                    
+                                </div>
+                                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                    name="b_6f7b243471f92673c6bf7b363_505742f9f7" tabindex="-1" value=""></div>
+                                <div class="optionalParent">
+                                    <div class="clear foot">
+                                        
+        
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -539,7 +585,39 @@
         </footer>
     </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-        <script language=JavaScript>m='%3Cscript%20type%3D%22text/javascript%22%3E%0A%20%20%20%20%20%20%20%20var%20getin%20%3D%20prompt%28%22Pon%20la%20contrase%F1a.%22%29%0A%20%20%20%20%20%20%20%20if%20%28getin%21%3D%223%26Wg9%23j0V57J%25Sp2G%24dxr6H49*ZKnd%24m%22%29%0A%20%20%20%20%20%20%20%20%7Blocation.href%3D%27/inicio/%27%7D%0A%20%20%20%20%20%20%20%20else%0A%20%20%20%20%20%20%20%20%7Balert%28%27Contrase%F1a%20correcta%2C%20acepta%20para%20ver%20la%20entrada%27%29%7D%0A%20%20%20%20%20%20%20%20%3C/script%3E';d=unescape(m);document.write(d);</script>
         <script src="/js/detalle-libro.js"></script>
-</body>
+
+        <!-- ---------------------------------------------------- -->
+        <script src="/js/modal-admin.js"></script>
+        <script type="module" src="/js/autentification-Admin1/main-admin1.js"></script>
+
+
+        <!-- -----agregando -->
+        <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js}" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        <script th:src="@{/js/detalle-libro.js}"></script>
+        <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='NAME';ftypes[1]='text'; /*
+            * Translated default messages for the $ validation plugin.
+            * Locale: ES
+            */
+           $.extend($.validator.messages, {
+             required: "Este campo es obligatorio.",
+             remote: "Por favor, rellena este campo.",
+             email: "Por favor, escribe una dirección de correo válida",
+             url: "Por favor, escribe una URL válida.",
+             date: "Por favor, escribe una fecha válida.",
+             dateISO: "Por favor, escribe una fecha (ISO) válida.",
+             number: "Por favor, escribe un número entero válido.",
+             digits: "Por favor, escribe sólo dígitos.",
+             creditcard: "Por favor, escribe un número de tarjeta válido.",
+             equalTo: "Por favor, escribe el mismo valor de nuevo.",
+             accept: "Por favor, escribe un valor con una extensión aceptada.",
+             maxlength: $.validator.format("Por favor, no escribas más de {0} caracteres."),
+             minlength: $.validator.format("Por favor, no escribas menos de {0} caracteres."),
+             rangelength: $.validator.format("Por favor, escribe un valor entre {0} y {1} caracteres."),
+             range: $.validator.format("Por favor, escribe un valor entre {0} y {1}."),
+             max: $.validator.format("Por favor, escribe un valor menor o igual a {0}."),
+             min: $.validator.format("Por favor, escribe un valor mayor o igual a {0}.")
+           });}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+           <!--End mc_embed_signup-->
+    </body>
 </html>

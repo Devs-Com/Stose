@@ -34,7 +34,7 @@
                             <ul class="flexitem main-links">
                                 <li class="links">
                                     <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Lista de deseos</a></li>
+                                    <li><a href="/inicio/lista-de-deseos">Lista de deseos</a></li>
                                     <li><a href="/inicio/crearblog">Crear Blog</a></li>
                                     <li><a href="/inicio/libros">Gestionar Libros</a></li>
                                 </li>
@@ -76,7 +76,7 @@
                                     <div class="wish-list">
                                         <div class="content">
                                             <div class="wish-list-head">
-                                                # libros deseados
+                                                Libros deseados
                                             </div>
                                             <div class="wish-list-body">
                                                 <ul class="products wish">
@@ -167,61 +167,22 @@
                                 <div class="mini-cart">
                                     <div class="content">
                                         <div class="cart-head">
-                                            # libros en el carrito
+                                            Libros en el carrito
                                         </div>
                                         <div class="cart-body">
-                                            <ul class="products mini" th:each="Lista : ${CarritoC}">
+                                            <ul class="products mini" th:each="carrito : ${carrito}">
                                                 <li class="item">
                                                     <div class="thumbnail object-cover">
-                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
+                                                        <a href="#"><img th:src="${carrito.img}" width="100" height="100"></a>
                                                     </div>
                                                     <div class="item-content">
-                                                        <p><a href="#" th:text="${Lista.CarritoCompras1}"></a></p>
-                                                        <span class="price">
-                                                            <span>$0.00</span>
-                                                            <span class="fly-item"><span>1x</span></span>
+                                                        <p><a href="#" th:text="${carrito.titulo}"></a></p>
+                                                        <span class="price">$
+                                                            <span th:text="${carrito.precio}"></span>
+                                                            <span class="fly-item">x<span th:text="${carrito.cantidad}"></span></span>
                                                         </span>
                                                     </div>
-                                                    <a href="#" class="item-remove"><i class="ri-close-line"></i></a>
-                                                </li>
-                                                <li class="item">
-                                                    <div class="thumbnail object-cover">
-                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
-                                                    </div>
-                                                    <div class="item-content">
-                                                        <p><a href="#" th:text="${Lista.CarritoCompras2}"></a></p>
-                                                        <span class="price">
-                                                            <span>$0.00</span>
-                                                            <span class="fly-item"><span>1x</span></span>
-                                                        </span>
-                                                    </div>
-                                                    <a href="#" class="item-remove"><i class="ri-close-line"></i></a>
-                                                </li>
-                                                <li class="item">
-                                                    <div class="thumbnail object-cover">
-                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
-                                                    </div>
-                                                    <div class="item-content">
-                                                        <p><a href="#" th:text="${Lista.CarritoCompras3}"></a></p>
-                                                        <span class="price">
-                                                            <span>$0.00</span>
-                                                            <span class="fly-item"><span>1x</span></span>
-                                                        </span>
-                                                    </div>
-                                                    <a href="#" class="item-remove"><i class="ri-close-line"></i></a>
-                                                </li>
-                                                <li class="item">
-                                                    <div class="thumbnail object-cover">
-                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
-                                                    </div>
-                                                    <div class="item-content">
-                                                        <p><a href="#" th:text="${Lista.CarritoCompras4}"></a></p>
-                                                        <span class="price">
-                                                            <span>$0.00</span>
-                                                            <span class="fly-item"><span>1x</span></span>
-                                                        </span>
-                                                    </div>
-                                                    <a href="#" class="item-remove"><i class="ri-close-line"></i></a>
+                                                    <a th:href="@{/inicio/carrito-compras/{id}(id=${carrito.id})}" class="item-remove"><i class="ri-close-line"></i></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -471,16 +432,16 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
+                                                <tr th:each="carrito : ${carrito}">
                                                     <td class="flexitem">
                                                         <div class="thumbnail object-cover">
-                                                            <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
+                                                            <a href="#"><img th:src="${carrito.img}" alt=""></a>
                                                         </div>
                                                         <div class="content">
-                                                            <strong th:each="Lista : ${LibroT}"><a href="#" th:text="${Lista.LibroTabla1}"></a></strong>
+                                                            <strong><a href="#" th:text="${carrito.titulo}"></a></strong>
                                                         </div>
                                                     </td>
-                                                    <td>$0.00</td>
+                                                    <td th:text="${carrito.precio}"></td>
                                                     <td>
                                                         <div class="qty-control flexitem">
                                                             <button class="minus">-</button>
@@ -489,67 +450,7 @@
                                                         </div>
                                                     </td>
                                                     <td>$0.00</td>
-                                                    <td><a href="#" class="item-remove"><i class="ri-close-line"></i></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="flexitem">
-                                                        <div class="thumbnail object-cover">
-                                                            <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
-                                                        </div>
-                                                        <div class="content">
-                                                            <strong th:each="Lista : ${LibroT}"><a href="#" th:text="${Lista.LibroTabla2}"></a></strong>
-                                                        </div>
-                                                    </td>
-                                                    <td>$0.00</td>
-                                                    <td>
-                                                        <div class="qty-control flexitem">
-                                                            <button class="minus">-</button>
-                                                            <input type="text" value="1" min="1"></input>
-                                                            <button class="plus">+</button>
-                                                        </div>
-                                                    </td>
-                                                    <td>$0.00</td>
-                                                    <td><a href="#" class="item-remove"><i class="ri-close-line"></i></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="flexitem">
-                                                        <div class="thumbnail object-cover">
-                                                            <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
-                                                        </div>
-                                                        <div class="content">
-                                                            <strong th:each="Lista : ${LibroT}"><a href="#" th:text="${Lista.LibroTabla3}"></a></strong>
-                                                        </div>
-                                                    </td>
-                                                    <td>$0.00</td>
-                                                    <td>
-                                                        <div class="qty-control flexitem">
-                                                            <button class="minus">-</button>
-                                                            <input type="text" value="1" min="1"></input>
-                                                            <button class="plus">+</button>
-                                                        </div>
-                                                    </td>
-                                                    <td>$0.00</td>
-                                                    <td><a href="#" class="item-remove"><i class="ri-close-line"></i></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="flexitem">
-                                                        <div class="thumbnail object-cover">
-                                                            <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
-                                                        </div>
-                                                        <div class="content">
-                                                            <strong th:each="Lista : ${LibroT}"><a href="#" th:text="${Lista.LibroTabla4}"></a></strong>
-                                                        </div>
-                                                    </td>
-                                                    <td>$0.00</td>
-                                                    <td>
-                                                        <div class="qty-control flexitem">
-                                                            <button class="minus">-</button>
-                                                            <input type="text" value="1" min="1"></input>
-                                                            <button class="plus">+</button>
-                                                        </div>
-                                                    </td>
-                                                    <td>$0.00</td>
-                                                    <td><a href="#" class="item-remove"><i class="ri-close-line"></i></a></td>
+                                                    <td><a href="#" th:href="@{/inicio/carrito-compras/{id}(id=${carrito.id})}" class="item-remove"><i class="ri-close-line"></i></a></td>
                                                 </tr>
                                             </tbody>
                                         </table>

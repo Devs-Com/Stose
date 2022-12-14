@@ -10,12 +10,12 @@
 
 
 	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-		<a class="navbar-brand" href="#"> Control de libros</a>
+		<a class="navbar-brand" href="/inicio/">Volver al Inicio</a>
 		<!-- Navbar links -->
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link"
-					th:href="@{/libros}">Control de libros</a></li>
+					th:href="@{/inicio/libros}">Lista de libros</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -26,7 +26,12 @@
           <div class="col-lg-18 col-md-18 col-sm-18 container justify-content-center card">
               <h1 class="text-center">Edición de libro</h1>
               <div class="card-body">
-                 <form th:action="@{/libros/{id}(id=${libro.id})}" th:object="${libro}" method="POST">
+                 <form th:action="@{/inicio/libros/{id}(id=${libro.id})}" th:object="${libro}" method="POST">
+                 <div class="form-group">
+                       <label>Imagen : </label>
+                       <input type="text" name="img" th:field="*{img}" class="form-control" placeholder="Digite el enlace de la imagen : " required>
+                    </div>
+                    
                   <div class="form-group">
                      <label>Titulo : </label>
                      <input type="text" name="titulo" th:field="*{titulo}" class="form-control" placeholder="Digite el titulo : " required>
@@ -53,8 +58,18 @@
                   </div>
 
                   <div class="form-group">
-                     <label>Precio : </label>
-                     <input type="number" name="precio" th:field="*{precio}" class="form-control" placeholder="Digite el precio : " required>
+                     <label>Precio Original : </label>
+                     <input type="number" name="precio_original" th:field="*{precio_original}" class="form-control" placeholder="Digite el precio original : " required>
+                  </div>
+
+                  <div class="form-group">
+                     <label>Precio Descuento : </label>
+                     <input type="number" name="precio_descuento" th:field="*{precio_descuento}" class="form-control" placeholder="Digite el precio descuento : " required>
+                  </div>
+
+                  <div class="form-group">
+                     <label>Porcentaje Descuento : </label>
+                     <input type="text" name="porcentaje_descuento" th:field="*{porcentaje_descuento}" class="form-control" placeholder="Digite el porcentaje descuento : " required>
                   </div>
                 
                   <div class="form-group">

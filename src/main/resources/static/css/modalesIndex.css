@@ -1,0 +1,1193 @@
+/* #################################################### REGISTRO ############################################################# */
+
+/* MODAL DE REGISTRO */
+.modal-registro {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -10;
+    max-width: 900px;
+    width: 100%;
+    height: max-content;
+    padding: 2em;
+    margin: auto;
+    text-align: center;
+    background-color: var(--light-bg-color);
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform .2s, visibility .2s, opacity .2s;
+}
+
+.showmodal .modal-registro {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 1s, visibility 1s, opacity 1s;
+}
+
+.modal-registro .image {
+    display: flex;
+    position: relative;
+    height: calc(150px + 10vw);
+    overflow: hidden;
+    max-height: 100px;
+    margin: -2em -2em 0 -2em;
+}
+
+.modal-registro .t-close {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+.modal-registro .mini-text {
+    margin-top: 2em;
+    margin-bottom: -1em;
+}
+
+
+.backtotop {
+    position: fixed;
+    bottom: 6em;
+    right: 2em;
+    text-align: center;
+    gap: 0;
+    font-size: var(--font-small);
+    padding: 3px;
+    z-index: 999;
+    background-color: var(--light-bg-color);
+    transition: var(--trans-background-color);
+}
+
+.backtotop a:hover {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
+
+
+/* ---------------- ESTILOS FORMULARIO DE REGISTRO----------------- */
+ 
+:root {
+    --login-bg: #f6efff;
+    --title-bg: #8881c8;
+    --button-bg: #674baf;
+    --light-pink: #e882e8;
+    --image-bg: #eadbff;
+}
+
+.login-container{
+    height: 50.75em;
+    width: 60em;
+    margin: 6eb auto;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;/* para centrar login */
+    overflow: hidden;      /* visible por mientras */
+    border-radius: 20px;
+    margin-bottom: 0px;
+
+
+}
+
+.login-info-container-registro{
+
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.imagen-contenedor-registro{ 
+    width: 50%;
+    height: 100%;
+    padding-top: 2rem;
+    padding: 2rem;
+    background-color:var(--button-bg);
+    box-sizing: border-box;
+}
+
+.imagen-contenedor-registrar { 
+    margin-top: 2rem;
+
+}
+
+.login-container img{ 
+    width: 50%;
+    height: 90%;
+}
+.title{
+    text-transform: capitalize;
+    font-size: 5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.social-login{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.social-login-element{
+    width: 12.5rem;
+    height: 3.75rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border-radius: 5px;
+    border: 1px solid ;
+}
+
+.social-login-element img{
+    width: 1.875rem;
+    height: 1.875rem;
+    position: relative;
+    top: 0;
+    left: -0.625rem;
+}
+
+.social-login-element:hover{
+background-color: #a19ae6;
+color: #f6efff;
+cursor: pointer;
+}
+
+.login-info-container-registro > p{
+    font-size: 2rem;
+    margin-bottom: 1.25em;
+}
+
+.parrofo1 {
+   padding-top: 50px;
+}
+.inputs-container{
+    height: 55%;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.input, .btn-login{
+    width: 90%;
+    height: 3.125rem;
+    font-size: 1em;
+
+}
+
+.input{
+    padding-left: 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    width: 25rem;
+    color: #ffffff;
+}::placeholder{
+    color: #ffffff;
+    text-align: center;
+}
+
+.input:hover{
+    border: 2px solid #3e1c96;
+}
+
+.btn-login{
+    width: 80%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 5px;
+    background-color: #674baf;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    width: 18rem;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.inputs-container p{
+    margin: 0;
+}
+
+.span{
+    color: var(--button-bg);
+    font-weight: 40;
+    cursor: pointer;
+}
+.material-symbols-outlined{
+    color: #9089cc;
+}
+#fecha-de-salida1{
+    color: white;
+    padding-top: 10px;
+    background: #0a021c;
+    margin-bottom: 48rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* .warnings{
+
+    width: 400px;
+    color: rgb(232, 39, 39);
+    text-align: center;
+    margin: auto;
+    font-size: 1rem; */
+/* } */
+#error1 ,#error2, #error3,#error4,#error5 {
+
+    width: 400px;
+    color: rgb(232, 39, 39);
+    text-align: center;
+    margin: auto;
+    font-size: 0.7rem;
+}
+
+.container-warnings {
+
+margin-top:-1.5rem;
+font-size: 0.8rem;
+}
+
+#check-cruz{
+    margin-left: 28rem;
+}
+
+/* ------------------------------------------- */
+/* RESPONSIVE */
+@media screen and (max-width:1024px ) {
+    .login-container{
+       height: 55rem;
+    }
+    #fecha-de-salida3{
+       margin-bottom: 40rem;
+    }
+    .widgets{
+        margin-top: 10rem;
+    }
+   
+   }
+@media screen and (max-width:1000px ) {
+    .imagen-contenedor{
+        display: none;
+    }
+
+    .login-container{
+        width: 70%;
+        margin-top: 3rem;
+    }
+
+    .login-info-container-registro{
+        width:100% ;
+    }
+}
+
+@media screen and (max-width:650px ) {
+    .login-container{
+        width: 90%;
+    }
+}
+
+
+@media screen and (max-width:507px ) {
+
+    .login-container{
+        height: 90%;
+        width: 90%;
+    }
+    .social-login{
+        flex-direction: column;
+        align-items: center;
+        height: 30%;
+    }
+    .login-info-container-registro > p{
+     margin: 0;
+    }
+    
+    .social-login-element {
+        margin-bottom: -100px;
+    }
+    .title{
+        margin-bottom: -90px;
+        font-size: 2.5rem;
+   }
+
+   .input::placeholder{
+    font-size: 1rem;
+    font-weight: 100;
+   }
+
+
+}
+
+@media screen and (max-width:500px ) {
+    .input{
+      width: 15rem; 
+    }
+    .btn-login{
+        width: 12rem;
+    }
+    #fecha-de-salida1{
+        margin-bottom: 41rem;
+    }
+}
+
+@media screen and (max-width:360px ) {
+    #fecha-de-salida1{
+        margin-bottom: 35rem;
+    }
+    .social-login-element{
+        margin-top: 2rem;
+
+    }
+    .title{
+        font-size: 2rem;
+    }
+    .inputs-container{
+        margin-top: 1.5rem;
+    }
+}
+/* ------------------
+ * 08. RESPONSIVE
+ * ------------------ */
+
+ /* #################################################### LOGIN ############################################################# */
+
+ /* MODAL DE REGISTRO */
+.modal-login {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 30;
+    max-width: 900px;
+    width: 100%;
+    height: max-content;
+    padding: 2em;
+    margin: auto;
+    text-align: center;
+    background-color: var(--light-bg-color);
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform .2s, visibility .2s, opacity .2s;
+}
+
+.showmodal2 .modal-login {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 1s, visibility 1s, opacity 1s;
+}
+
+.modal-login .image {
+    display: flex;
+    position: relative;
+    height: calc(150px + 10vw);
+    overflow: hidden;
+    max-height: 100px;
+    margin: -2em -2em 0 -2em;
+}
+
+.modal-login .t-close {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+.modal-login .mini-text {
+    margin-top: 2em;
+    margin-bottom: -1em;
+}
+
+
+.backtotop {
+    position: fixed;
+    bottom: 6em;
+    right: 2em;
+    text-align: center;
+    gap: 0;
+    font-size: var(--font-small);
+    padding: 3px;
+    z-index: 999;
+    background-color: var(--light-bg-color);
+    transition: var(--trans-background-color);
+}
+
+.backtotop a:hover {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
+
+
+
+
+ /* ----------------FORM DE LOGIN----------------- */
+ 
+ :root {
+    --login-bgd: #f6efff;
+    --title-bg: #8881c8;
+    --button-bg: #674baf;
+    --light-pink: #e882e8;
+    --image-bg: #eadbff;
+}
+
+.login-container{
+    width: 60em;
+    margin: 6eb auto;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;/* para centrar login */
+    overflow: hidden;      /* visible por mientras */
+    border-radius: 20px;
+    margin-top: 0px;
+
+}
+
+.login-info-container-login{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 0.5rem;
+    background-color: var(--login-bgd);
+}
+
+.imagen-contenedor-login{
+    width: 80%;
+    padding-top: 2rem;
+    padding: 2rem;
+    background-color: var(--login-bgd);
+    box-sizing: border-box;
+}
+
+.imagen-contenedor-login img{
+    width: 50%;
+    padding-top: 2rem;
+    padding: 2rem;
+    background-color: var(--image-bg);
+    box-sizing: border-box;
+}
+
+.title{
+    text-transform: capitalize;
+    font-size: 2.25rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.social-login{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.social-login-element{
+    width: 12.5rem;
+    height: 3.75rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border-radius: 5px;
+    border: 1px solid ;
+}
+
+.social-login-element img{
+    width: 1.875rem;
+    height: 1.875rem;
+    position: relative;
+    top: 0;
+    left: -0.625rem;
+}
+
+.social-login-element:hover{
+background-color: #a19ae6;
+color: #f6efff;
+cursor: pointer;
+}
+
+.social-login-element-admin{
+    width: 12.5rem;
+    height: 3.75rem;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: block;
+    justify-content: center;
+    align-items:center;
+    border-radius: 5px;
+    border: 1px solid ;
+    margin-top: 1rem;
+}
+.social-login-element-admin img{
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    top: 0.7rem;
+    left: 0;
+    border-radius: 10px;
+}
+
+.social-login-element-admin span{
+    width: 1.875rem;
+    height: 1.875rem;
+    position: relative;
+    top: 0.75rem;
+    left: 0.1.5rem;
+}
+
+.social-login-element-admin:hover{
+background: #0a021c;
+color: white;
+cursor: pointer;}
+.login-info-container-login > p{
+    font-size: 1.25em;
+    margin-top: 0.2em;
+    margin-bottom: 0.5em;
+}
+
+.inputs-container{
+    height: 55%;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.input, .btn-login{
+    width: 90%;
+    height: 3.125rem;
+    font-size: 1em;
+
+}
+
+.input{
+    background-color: #bbb5ef;
+    padding-left: 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    width: 25rem;
+    border: none;
+    color: white;
+}::placeholder{
+    color: white;
+    text-align: center;
+}
+
+.input:hover{
+    border: 2px solid #ccbaf8;
+}
+
+.btn-login{
+    width: 80%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 5px;
+    background-color: #674baf;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    width: 18rem;
+}
+
+.inputs-container p{
+    margin: 0;
+}
+
+.span{
+    color: var(--button-bg);
+    font-weight: 40;
+    cursor: pointer;
+}
+.material-symbols-outlined{
+    color: #9089cc;
+}
+
+#fecha-de-salida2{
+    color: white;
+    padding-top: 10px;
+    background: #0a021c;
+    margin-bottom: 41rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#error6 ,#error7 {
+
+    width: 400px;
+    color: rgb(232, 39, 39);
+    text-align: center;
+    margin: auto;
+    font-size: 0.7rem;
+}
+
+.container-warnings {
+margin-top:rem;
+font-size: 0.8rem;
+}
+ /* ----------------RESPONSIVE DE FORM DE LOGIN----------------- */
+
+ 
+/* RESPONSIVE */
+@media screen and (max-width:1024px ) {
+    .login-container{
+       height: 50rem;
+       margin-bottom: 10rem;
+    }
+    #fecha-de-salida3{
+       margin-bottom: 30rem;
+    }
+    .widgets{
+        margin-top: 20rem;
+    }
+   
+   }
+@media screen and (max-width:1000px ) {
+    .imagen-contenedor{
+        display: none;
+    }
+
+    .login-container{
+        width: 70%;
+        margin-top: 3rem;
+    }
+
+    .login-info-container-login{
+        width:100% ;
+    }
+}
+
+@media screen and (max-width:650px ) {
+    .login-container{
+        width: 90%;
+    }
+}
+@media screen and (max-width:500px ) {
+
+    .login-container{
+        height: 90%;
+    }
+    .social-login{
+        flex-direction: column;
+        align-items: center;
+        height: 30%;
+    }
+
+    .login-info-container-login > p{
+     margin: 0;
+    }
+    .title{
+        font-size: 2rem;
+        margin-top: 10px;
+        margin-bottom: -50px;
+    }
+    .social-login-element-admin{
+        margin-top: 2px;
+    }
+    .social-login-element{
+        margin-bottom: -70px;
+    }
+}
+@media screen and (max-width:360px ) {
+
+    #fecha-de-salida2{
+        margin-bottom: 35rem;
+    }
+}
+
+@media screen and (max-width:300px ) {
+
+    .login-container{
+        margin-left: 35px;
+    }
+
+    #fecha-de-salida2{
+        margin-top: -100px;
+    }
+}
+
+@media screen and (max-width:281px ) {
+
+    .login-container{
+        height: 110%;
+        padding-bottom: 50px;
+    }
+    .social-login{
+        flex-direction: column;
+        align-items: center;
+        height: 30%;
+    }
+}
+
+
+@media screen and (max-width:500px ) {
+    .input{
+      width: 15rem; 
+    }
+    .btn-login{
+        width: 12rem;
+    }
+}
+
+
+ /* #################################################### LOGIN ADMINISTRADOR ############################################################# */
+
+ /* MODAL DE REGISTRO */
+ .modal-login-admin {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 30;
+    max-width: 900px;
+    width: 100%;
+    height: max-content;
+    padding: 2em;
+    margin: auto;
+    text-align: center;
+    background-color: var(--light-bg-color);
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform .2s, visibility .2s, opacity .2s;
+}
+
+.showmodal3 .modal-login-admin {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 1s, visibility 1s, opacity 1s;
+}
+
+.modal-login-admin .image {
+    display: flex;
+    position: relative;
+    height: calc(150px + 10vw);
+    overflow: hidden;
+    max-height: 100px;
+    margin: -2em -2em 0 -2em;
+}
+
+.modal-login-admin .t-close {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+.modal-login-admin .mini-text {
+    margin-top: 2em;
+    margin-bottom: -1em;
+}
+
+
+.backtotop {
+    position: fixed;
+    bottom: 6em;
+    right: 2em;
+    text-align: center;
+    gap: 0;
+    font-size: var(--font-small);
+    padding: 3px;
+    z-index: 999;
+    background-color: var(--light-bg-color);
+    transition: var(--trans-background-color);
+}
+
+.backtotop a:hover {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
+
+/* ------------------------------------ CSS DE LOGIN ADMINISTRADOR */
+
+ /* ----------------FORM DE LOGIN----------------- */
+ 
+ :root {
+    --login-bg: #453C5C;
+    --title-bg: #8881c8;
+    --button-bg: #674baf;
+    --light-pink: #e882e8;
+    --image-bg: #eadbff;
+}
+
+.login-container-admin{
+    height: 54em;
+    width: 100em;
+    margin: 6eb auto;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;/* para centrar login */
+    overflow: hidden;      /* visible por mientras */
+    border-radius: 20px;
+}
+
+.login-info-container-admin{
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 0.5rem;
+    background-color: var(--login-bg);
+}
+
+.imagen-contenedor-admin{
+    width: 50%;
+    padding-top: 2rem;
+    padding: 2rem;
+    background-color: var(--image-bg);
+    box-sizing: border-box;
+}
+
+.title-admin{
+    color: white;
+    text-transform: capitalize;
+    font-size: 3rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.25rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.title1-admin{
+    color: white;
+    text-transform: capitalize;
+    font-size: 3rem;
+    margin-top:0rem;
+    margin-bottom: 2.25rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.social-login{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.social-login-element{
+    width: 12.5rem;
+    height: 3.75rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    border-radius: 5px;
+    border: 1px solid ;
+}
+
+.social-login-element img{
+    width: 1.875rem;
+    height: 1.875rem;
+    position: relative;
+    top: 0;
+    left: -0.625rem;
+}
+
+.social-login-element:hover{
+background-color: #a19ae6;
+color: #f6efff;
+cursor: pointer;
+}
+
+.login-info-container-admin > p{
+    font-size: 1.25em;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+}
+
+.login-info-container-admin  p{
+color: white;
+}
+
+
+.inputs-container{
+    height: 55%;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.input, .btn-login{
+    width: 90%;
+    height: 3.125rem;
+    font-size: 1em;
+
+}
+
+.input{
+    background-color:#8881c8 ;
+    padding-left: 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    width: 25rem;
+    color: white;
+}::placeholder{
+        color: #8f68f8;
+        text-align: center;
+        color: white;
+}
+
+.input:hover{
+    border: 2px solid #3e1c96;
+}
+
+.btn-login{
+    width: 80%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 5px;
+    background-color: #a19ae6;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    width: 18rem;
+    margin-top: 2rem;
+}
+
+.inputs-container p{
+    margin: 0;
+    margin-top: 2rem;
+}
+
+.span{
+    color:#a19ae6;
+    font-weight: 40;
+    cursor: pointer;
+}
+.iconss{
+    color: white;
+}
+#fecha-de-salida3{
+    color: white;
+    padding-top: 10px;
+    background: #0a021c;
+    margin-bottom: 41.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#error8 ,#error9 {
+    width: 300px;
+    color: rgb(220, 44, 44);
+    text-align: center;
+    margin: auto;
+    font-size: 0.7rem;
+    
+}
+.container-warnings {
+margin-top:-0.4rem;
+font-size: 0.8rem;
+padding: 10px;
+border-radius: 10px;
+
+}
+
+.espacio{
+    height: 1.5rem;
+}
+ /* ----------------RESPONSIVE DE FORM DE LOGIN----------------- */
+
+/* RESPONSIVE */
+@media screen and (max-width:1024px ) {
+ .login-container-admin{
+    height: 45rem;
+ }
+ #fecha-de-salida3{
+    margin-bottom: 30rem;
+ }
+
+}
+@media screen and (max-width:1000px ) {
+    .imagen-contenedor{
+        display: none;
+    }
+
+    .login-container-admin{
+        width: 50%;
+        margin-top: 3rem;
+    }
+
+    .login-info-container-admin{
+        width:100% ;
+    }
+    .input{
+        width: 0.50rem;
+    }
+}
+
+@media screen and (max-width:650px ) {
+    .login-container-admin{
+        width: 90%;
+    }
+}
+
+
+@media screen and (max-width:500px ) {
+
+    .login-container-admin{
+        height: 90%;
+    }
+    .social-login{
+        flex-direction: column;
+        align-items: center;
+        height: 30%;
+    }
+
+    .login-info-container-admin > p{
+     margin-top: 10rem;
+    }
+
+    #fecha-de-salida3{
+        margin-bottom: 32rem;
+    }
+}
+
+@media screen and (max-width:850px ) {
+    .input{
+      width: 15rem; 
+    }
+    .btn-login{
+        width: 12rem;
+    }
+    .title-admin {
+        font-size:2.5rem;
+    }
+    .title1-admin{
+        font-size:2.5rem;
+    }
+}
+
+@media screen and (max-width:639px ) {
+    .input{
+      width: 28rem; 
+    }
+    .btn-login{
+        width: 20rem;
+    }
+    .title-admin{
+        font-size:2.5rem;
+    }
+    .title1-admin{
+        font-size:2.5rem;
+    }
+}
+
+
+@media screen and (max-width:377px ) {
+    .input{
+      width: 10rem; 
+    }
+    .btn-login{
+        width: 10rem;
+    }
+    .title-admin {
+        font-size:1.5rem;
+    }
+    .title1-admin{
+        font-size:1.5rem;
+    }
+
+}
+
+@media screen and (max-width:281px ) {
+    .login-container-admin{
+        margin-left: 2.8rem;
+    }
+    .input{
+      width: 5rem; 
+    }
+    .btn-login{
+        width: 10rem;
+    }
+    .title-admin {
+        font-size:0.50em;
+    }
+    .title1-admin{
+        display: none;
+    }
+    .title2-admin{
+        overflow: visible;
+    }
+}
+
+@media screen and (max-width:500px ) {
+
+    .input{
+      width: 15rem; 
+    }
+    .btn-login{
+        width: 12rem;
+    }
+    .title-admin {
+        font-size:2.5rem;
+    }
+    .title1-admin{
+        font-size:2.5rem;
+    }
+}
+
+@media screen and (min-width: 414px) {
+    .login-container-admin{
+     width: 85%;
+     padding-bottom: 150px;
+    }
+    .input{
+     width: 150%;
+    }
+    .title-admin{
+        font-size:1.8rem;
+    }
+    .title1-admin{
+        font-size: 1.8rem;
+    }
+
+ }
+
+ @media screen and (min-width: 36px) {
+
+    .title-admin{
+        font-size:1.8rem;
+    }
+    .title1-admin{
+        font-size: 1.8rem;
+    }
+
+ }
+

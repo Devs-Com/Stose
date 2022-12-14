@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title th:text="${TituloPagina}"></title>
-    <link rel="shortcut icon" href="./assets/images_readme/logo/logoWhite.png">
-    <link rel="stylesheet" href="/css/libro-oferta.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="shortcut icon" type="img/png" th:href="@{./assets/images_readme/logo/logoWhite.png}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/libro-oferta.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css}">
 </head>
 <body>
     <div id="page" class="site">
@@ -15,7 +15,7 @@
         <aside class="site-off desktop-hide">
             <div class="off-canvas">
                 <div class="canvas-head flexitem">
-                    <div class="logo"><a href="/inicio/"><span class="circle"></span>.Stose</a></div>
+                    <div class="logo"><a th:href="@{/inicio/}"><span class="circle"></span>.Stose</a></div>
                     <a href="#" class="t-close flexcenter"><i class="ri-close-line"></i></a>
                 </div>
                 <div class="categories"></div>
@@ -32,10 +32,10 @@
                         <div class="left">
                             <ul class="flexitem main-links">
                                <li class="links">
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Lista de deseos</a></li>
-                                <li><a href="/inicio/crearblog">Crear Blog</a></li>
-                                <li><a href="/inicio/libros">Gestionar Libros</a></li>
+	                                <li><a href="#">Blog</a></li>
+	                                <li><a th:href="@{/inicio/lista-de-deseos}">Lista de deseos</a></li>
+	                                <li><a th:href="@{/inicio/crearblog}">Crear Blog</a></li>
+	                                <li><a th:href="@{/inicio/libros}">Gestionar Libros</a></li>
                                 </li>
                             </ul>
                         </div>
@@ -56,13 +56,13 @@
                     <div class="wrapper flexitem">
                         <a href="#" class="trigger desktop-hide"><span class="i ri-menu-2-line"></span></a>
                         <div class="left flexitem">
-                            <div class="logo"><a href="/inicio/"><span class="circle"></span>.Stose</a></div>
+                            <div class="logo"><a th:href="@{/inicio/}"><span class="circle"></span>.Stose</a></div>
                             <nav class="mobile-hide">
                                 <ul class="flexitem second-links">
-                                    <li><a href="/inicio/">Inicio</a></li>
-                                    <li><a href="/inicio/tienda">Tienda</a></li>
-                                    <li><a href="/inicio/costos-de-envio">Costos de envío</a></li>
-                                    <li><a href="/inicio/nosotros">Nosotros</a></li>
+                                    <li><a th:href="@{/inicio/}">Inicio</a></li>
+                                    <li><a th:href="@{/inicio/tienda}">Tienda</a></li>
+                                    <li><a th:href="@{/inicio/costos-de-envio}">Costos de envío</a></li>
+                                    <li><a th:href="@{/inicio/nosotros}">Nosotros</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -75,7 +75,7 @@
                                     <div class="wish-list">
                                         <div class="content">
                                             <div class="wish-list-head">
-                                                # libros deseados
+                                                Libros deseados
                                             </div>
                                             <div class="wish-list-body">
                                                 <ul class="products wish">
@@ -145,7 +145,7 @@
 
                                                 <div class="actions">
 
-                                                    <a href="/inicio/lista-de-deseos" class="secondary-button">Ver Lista
+                                                    <a th:href="@{/inicio/lista-de-deseos}" class="secondary-button">Ver Lista
                                                         de Deseos</a>
                                                 </div>
                                             </div>
@@ -166,61 +166,22 @@
                                 <div class="mini-cart">
                                     <div class="content">
                                         <div class="cart-head">
-                                            # libros en el carrito
+                                            Libros en el carrito
                                         </div>
                                         <div class="cart-body">
-                                            <ul class="products mini" th:each="Lista : ${CarritoC}">
+                                            <ul class="products mini" th:each="carrito : ${carrito}">
                                                 <li class="item">
                                                     <div class="thumbnail object-cover">
-                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
+                                                        <a href="#"><img th:src="${carrito.img}" width="100" height="100"></a>
                                                     </div>
                                                     <div class="item-content">
-                                                        <p><a href="#" th:text="${Lista.CarritoCompras1}"></a></p>
-                                                        <span class="price">
-                                                            <span>$0.00</span>
-                                                            <span class="fly-item"><span>1x</span></span>
+                                                        <p><a href="#" th:text="${carrito.titulo}"></a></p>
+                                                        <span class="price">$
+                                                            <span th:text="${carrito.precio}"></span>
+                                                            <span class="fly-item">x<span th:text="${carrito.cantidad}"></span></span>
                                                         </span>
                                                     </div>
-                                                    <a href="#" class="item-remove"><i class="ri-close-line"></i></a>
-                                                </li>
-                                                <li class="item">
-                                                    <div class="thumbnail object-cover">
-                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
-                                                    </div>
-                                                    <div class="item-content">
-                                                        <p><a href="#" th:text="${Lista.CarritoCompras2}"></a></p>
-                                                        <span class="price">
-                                                            <span>$0.00</span>
-                                                            <span class="fly-item"><span>1x</span></span>
-                                                        </span>
-                                                    </div>
-                                                    <a href="#" class="item-remove"><i class="ri-close-line"></i></a>
-                                                </li>
-                                                <li class="item">
-                                                    <div class="thumbnail object-cover">
-                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
-                                                    </div>
-                                                    <div class="item-content">
-                                                        <p><a href="#" th:text="${Lista.CarritoCompras3}"></a></p>
-                                                        <span class="price">
-                                                            <span>$0.00</span>
-                                                            <span class="fly-item"><span>1x</span></span>
-                                                        </span>
-                                                    </div>
-                                                    <a href="#" class="item-remove"><i class="ri-close-line"></i></a>
-                                                </li>
-                                                <li class="item">
-                                                    <div class="thumbnail object-cover">
-                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
-                                                    </div>
-                                                    <div class="item-content">
-                                                        <p><a href="#" th:text="${Lista.CarritoCompras4}"></a></p>
-                                                        <span class="price">
-                                                            <span>$0.00</span>
-                                                            <span class="fly-item"><span>1x</span></span>
-                                                        </span>
-                                                    </div>
-                                                    <a href="#" class="item-remove"><i class="ri-close-line"></i></a>
+                                                    <a th:href="@{/inicio/libro-oferta/{id}(id=${carrito.id})}" class="item-remove"><i class="ri-close-line"></i></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -230,8 +191,8 @@
                                                 <p><strong>$0.00</strong></p>
                                             </div>
                                             <div class="actions">
-                                                <a href="/inicio/revision-pedido" class="primary-button">Verificar</a>
-                                                <a href="/inicio/carrito-compras" class="secondary-button">Ver Carrito</a></div>
+                                                <a th:href="@{/inicio/revision-pedido}" class="primary-button">Verificar</a>
+                                                <a th:href="@{/inicio/carrito-compras}" class="secondary-button">Ver Carrito</a></div>
                                         </div>
                                     </div>
                                 </div>
@@ -449,8 +410,8 @@
                     <div class="wrapper">
                         <div class="breadcrumb">
                             <ul class="flexitem">
-                                <li><a href="/inicio/">Inicio</a></li>
-                                <li><a href="/inicio/tienda/">Tienda</a></li>
+                                 <li><a th:href="@{/inicio/}">Inicio</a></li>
+                                <li><a th:href="@{/inicio/tienda/}">Tienda</a></li>
                                 <li>**Nombre del libro**</li>
                             </ul>
                         </div>
@@ -632,7 +593,7 @@
                         <div class="sectop flexitem">
                             <h2><span class="circle"></span><span>Libros Relacionados</span></h2>
                             <div class="second-links">
-                                <a href="/inicio/tienda" class="view-all">Ver más<i class="ri-arrow-right-line"></i></a>
+                                <a th:href="@{/inicio/tienda}" class="view-all">Ver más<i class="ri-arrow-right-line"></i></a>
                             </div>
                         </div>
                         <div class="column">
@@ -640,7 +601,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                             <a th:href="@{/inicio/detalle-libro}">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -656,7 +617,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                          <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado1}"></a></h3>
+                                          <h3 th:each="Lista : ${LibroR}"><a th:href="@{/app/detalle-libro}" th:text="${Lista.LibroRelacionado1}"></a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -666,7 +627,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a th:href="@{/inicio/detalle-libro}">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -682,7 +643,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                       <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado2}"></a></h3>
+                                       <h3 th:each="Lista : ${LibroR}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroRelacionado2}"></a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -692,7 +653,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a th:href="@{/inicio/detalle-libro}">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -708,7 +669,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                        <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado3}"></a></h3>
+                                        <h3 th:each="Lista : ${LibroR}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroRelacionado3}"></a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -718,7 +679,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a th:href="@{/inicio/detalle-libro}">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -734,7 +695,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                        <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado4}"></a></h3>
+                                        <h3 th:each="Lista : ${LibroR}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroRelacionado4}"></a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -744,7 +705,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a th:href="@{/inicio/detalle-libro}">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -760,7 +721,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                         <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado5}"></a></h3>
+                                         <h3 th:each="Lista : ${LibroR}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroRelacionado5}"></a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -770,7 +731,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a th:href="@{/inicio/detalle-libro}">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -786,7 +747,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                        <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado6}"></a></h3>
+                                        <h3 th:each="Lista : ${LibroR}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroRelacionado6}"></a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -796,7 +757,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a th:href="@{/inicio/detalle-libro}">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -812,7 +773,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                        <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado7}"></a></h3>
+                                        <h3 th:each="Lista : ${LibroR}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroRelacionado7}"></a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -822,7 +783,7 @@
                                 <div class="item">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
+                                            <a th:href="@{/inicio/detalle-libro}">
                                                 <img src="./assets/images/ejemplo.png" alt="">
                                             </a>
                                         </div>
@@ -838,7 +799,7 @@
                                             <div class="stars"></div>
                                             <span class="mini-text">(#)</span>
                                         </div>
-                                         <h3 th:each="Lista : ${LibroR}"><a href="#" th:text="${Lista.LibroRelacionado8}"></a></h3>
+                                         <h3 th:each="Lista : ${LibroR}"><a th:href="@{/inicio/detalle-libro}" th:text="${Lista.LibroRelacionado8}"></a></h3>
                                         <div class="price">
                                             <div class="current">$0.00</div>
                                             <div class="normal mini-text">$0.00</div>
@@ -853,25 +814,52 @@
         </main>
 
         <footer>
-            <!-- newsletter -->
-            <div class="newsletter">
-                <div class="container">
-                    <div class="wrapper">
-                        <div class="box">
-                            <div class="content">
-                                <h3>Suscríbete a nuestro boletín</h3>
-                                <p>Recibe actualizaciones por correo electrónico sobre nuestros libros más recientes y <strong> ofertas especiales</strong></p>
-                            </div>
-                            <form action="" class="search">
-                                <span class="icon-large"><i class="ri-mail-line"></i></span>
-                                <input type="mail" placeholder="Correo electrónico" required>
-                                <button type="submit">Registrarse</button>
-                            </form>
+        <!-- newsletter -->
+        <div class="newsletter">
+            <div class="container">
+                <div class="wrapper">
+                    <div class="box" id="mc_embed_signup">
+                        <div class="content">
+                            <h3>Suscríbete a nuestro boletín</h3>
+                            <p>Recibe actualizaciones por correo electrónico sobre nuestros libros más recientes y
+                                <strong> ofertas especiales</strong>
+                            </p>
                         </div>
+                        <form
+                            action="https://gmail.us21.list-manage.com/subscribe/post?u=6f7b243471f92673c6bf7b363&amp;id=505742f9f7&amp;f_id=0095c3e1f0"
+                            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                            class="search" target="_blank" novalidate>
+                            <div class="mc-field-group">
+                                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required></span>
+                                <br>
+                                <br>
+                                <input type="submit" value="Subscribete" name="subscribe" id="mc-embedded-subscribe" class="button">
+                                <br>
+                                <span><i class="ri-mail-line"></i>
+                                
+                                <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+                            </div>
+                            <div id="mce-responses" class="clear foot">
+                                <div class="response" id="mce-error-response" style="display:none"></div>
+                                <div class="response" id="mce-success-response" style="display:none"></div>
+                                
+                            </div>
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                name="b_6f7b243471f92673c6bf7b363_505742f9f7" tabindex="-1" value=""></div>
+                            <div class="optionalParent">
+                                <div class="clear foot">
+                                    
+    
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-
+        </div>
+    </div>
+            </form>
+        </div>
             <!-- widgets -->
             <div class="widgets">
                 <div class="container">
@@ -939,14 +927,14 @@
                     <div class="wrapper">
                         <div class="flexcol">
                             <div class="logo">
-                                <a href="/inicio/"><span class="circle"></span>.Stose</a>
+                                <a th:href="@{/inicio/}"><span class="circle"></span>.Stose</a>
                             </div>
                             <div class="socials">
                                 <ul class="flexitem">
-                                    <li><a href="https://twitter.com/StoseOficial" target="_blank"><i class="ri-twitter-line"></i></a></li>
-                                    <li><a href="https://www.facebook.com/profile.php?id=100087639915317&sk=about" target="_blank"><i class="ri-facebook-line"></i></a></li>
-                                    <li><a href="https://www.instagram.com/stose_oficial_la/" target="_blank"><i class="ri-instagram-line"></i></a></li>
-                                    <li><a href="https://www.youtube.com/channel/UClqy7a7vzpY-vwNqyAVb2eA" target="_blank"><i class="ri-youtube-line"></i></a></li>
+                                    <li><a th:href="@{https://twitter.com/StoseOficial}" target="_blank"><i class="ri-twitter-line"></i></a></li>
+                                    <li><a th:href="@{https://www.facebook.com/profile.php?id=100087639915317&sk=about}" target="_blank"><i class="ri-facebook-line"></i></a></li>
+                                    <li><a th:href="@{https://www.instagram.com/stose_oficial_la/}" target="_blank"><i class="ri-instagram-line"></i></a></li>
+                                    <li><a th:href="@{https://www.youtube.com/channel/UClqy7a7vzpY-vwNqyAVb2eA}" target="_blank"><i class="ri-youtube-line"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -1022,6 +1010,30 @@
 
         </footer>
     </div>
-    <script src="/js/libro-oferta.js"></script>
+    <script th:src="@{/js/libro-oferta.js}"></script>
+    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='NAME';ftypes[1]='text'; /*
+        * Translated default messages for the $ validation plugin.
+        * Locale: ES
+        */
+       $.extend($.validator.messages, {
+         required: "Este campo es obligatorio.",
+         remote: "Por favor, rellena este campo.",
+         email: "Por favor, escribe una dirección de correo válida",
+         url: "Por favor, escribe una URL válida.",
+         date: "Por favor, escribe una fecha válida.",
+         dateISO: "Por favor, escribe una fecha (ISO) válida.",
+         number: "Por favor, escribe un número entero válido.",
+         digits: "Por favor, escribe sólo dígitos.",
+         creditcard: "Por favor, escribe un número de tarjeta válido.",
+         equalTo: "Por favor, escribe el mismo valor de nuevo.",
+         accept: "Por favor, escribe un valor con una extensión aceptada.",
+         maxlength: $.validator.format("Por favor, no escribas más de {0} caracteres."),
+         minlength: $.validator.format("Por favor, no escribas menos de {0} caracteres."),
+         rangelength: $.validator.format("Por favor, escribe un valor entre {0} y {1} caracteres."),
+         range: $.validator.format("Por favor, escribe un valor entre {0} y {1}."),
+         max: $.validator.format("Por favor, escribe un valor menor o igual a {0}."),
+         min: $.validator.format("Por favor, escribe un valor mayor o igual a {0}.")
+       });}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+       <!--End mc_embed_signup-->
 </body>
 </html>
