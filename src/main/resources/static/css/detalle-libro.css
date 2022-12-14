@@ -4,7 +4,9 @@ Fonts:
 - Poppins: 300, 400, 600, 700, 800
 - Rubik: 300, 400, 500, 600
 */
-
+#loguot-admin1{
+    padding-left: 1260px;
+}
 :root {
     --primary-color: #ff6b6b;
     --secundary-color: #794afa;
