@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title th:text="${TituloPagina}"></title>
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="shortcut icon" href="./assets/images_readme/logo/logoWhite.png">
     <link rel="stylesheet" href="/css/index.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -40,7 +41,6 @@
                                     <li><a href="/inicio/lista-de-deseos">Lista de deseos</a></li>
                                     <li><a href="/inicio/crearblog">Crear Blog</a></li>
                                     <li><a href="/inicio/libros">Gestionar Libros</a></li>
-                                </li>
                             </ul>
                         </div>
                         <div class="right">
@@ -548,45 +548,43 @@
                         <div class="sectop flexitem">
                             <h2><span class="circle"></span><span>Libros en Tendencia</span></h2>
                         </div>
+                        
                         <div class="column">
                             <div class="flexwrap">
-                                <div class="row products big">
+                            
+                                <div class="row products big" th:each="o : ${oferta}">
                                     <div class="item">
                                         <div class="ofter">
                                             <p>Libro en Oferta</p>
                                         </div>
                                         <div class="media">
                                             <div class="image">
-                                                <a href="/inicio/libro-oferta">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
-                                                </a>
+                                                    <img th:src="${o.img}" alt="">
                                             </div>
                                             <div class="hoverable">
                                                 <ul>
                                                     <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <div class="discount circle flexcenter"><span>20%</span></div>
+                                            <div class="discount circle flexcenter"><span th:text="${o.porcentaje_descuento}"></span></div>
                                         </div>
                                         <div class="content">
-                                            <div class="rating">
-                                                <div class="stars"></div>
-                                                <span class="mini-text">(248)</span>
-                                            </div>
-                                            <h3 class="main-links" th:each="Lista : ${LibroO}"><a href="/inicio/libro-oferta" th:text="${Lista.libroOferta}"></a></h3>
+                                            <h3 class="main-links"><a th:text="${o.titulo}"></a></h3>
                                             <div class="price">
-                                                <span class="current">$42.40</span>
-                                                <span class="normal mini-text">$52.99</span>
+                                                <span class="current" th:text="${'S/.' + o.precio_descuento}"></span>
+                                                <span class="normal mini-text" th:text="${'S/.' + o.precio_original}"></span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                
+                                <!-- contenedor de libro tendencia left -->
                                 <div class="row products mini-trending">
-                                    <div class="item">
+                                    <div class="item" th:each="tendencia_left : ${tendencia_left}">
                                         <div class="media">
                                             <div class="thumbnail object-cover">
                                                 <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
+                                                    <img th:src="${tendencia_left.img}" alt="">
                                                 </a>
                                             </div>
                                             <div class="hoverable">
@@ -594,121 +592,28 @@
                                                     <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <div class="discount circle flexcenter"><span>32%</span></div>
+                                            <div class="discount circle flexcenter"><span th:text=${tendencia_left.porcentaje_descuento}></span></div>
                                         </div>
                                         <div class="content">
-                                            <h3 class="main-links" th:each="Lista : ${LibroT}"><a href="#" th:text="${Lista.libroTendencia1}"></a></h3>
-                                            <div class="rating">
-                                                <div class="stars"></div>
-                                                <span class="mini-text">(125)</span>
-                                            </div>
+                                            <h3 class="main-links"><a href="#" th:text="${tendencia_left.titulo}"></a></h3>
                                             <div class="price">
-                                                <span class="current">$129.99</span>
-                                                <span class="normal mini-text">$189.99</span>
+                                                <span class="current" th:text="${'S/.' + tendencia_left.precio_descuento}"></span>
+                                                <span class="normal mini-text" th:text="${'S/.' + tendencia_left.precio_original}"></span>
                                             </div>
                                             <div class="mini-text">
-                                                <p>123 vendidos</p>
-                                                <p>Envió gratis</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="media">
-                                            <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="hoverable">
-                                                <ul>
-                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="discount circle flexcenter"><span>32%</span></div>
-                                        </div>
-                                        <div class="content">
-                                            <h3 class="main-links" th:each="Lista : ${LibroT}"><a href="#" th:text="${Lista.libroTendencia2}"></a></h3>
-                                            <div class="rating">
-                                                <div class="stars"></div>
-                                                <span class="mini-text">(125)</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="current">$129.99</span>
-                                                <span class="normal mini-text">$189.99</span>
-                                            </div>
-                                            <div class="mini-text">
-                                                <p>123 vendidos</p>
-                                                <p>Envió gratis</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="media">
-                                            <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="hoverable">
-                                                <ul>
-                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="discount circle flexcenter"><span>32%</span></div>
-                                        </div>
-                                        <div class="content">
-                                            <h3 class="main-links" th:each="Lista : ${LibroT}"><a href="#" th:text="${Lista.libroTendencia3}"></a></h3>
-                                            <div class="rating">
-                                                <div class="stars"></div>
-                                                <span class="mini-text">(125)</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="current">$129.99</span>
-                                                <span class="normal mini-text">$189.99</span>
-                                            </div>
-                                            <div class="mini-text">
-                                                <p>123 vendidos</p>
-                                                <p>Envió gratis</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="media">
-                                            <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="hoverable">
-                                                <ul>
-                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="discount circle flexcenter"><span>32%</span></div>
-                                        </div>
-                                        <div class="content">
-                                            <h3 class="main-links" th:each="Lista : ${LibroT}"><a href="#" th:text="${Lista.libroTendencia4}"></a></h3>
-                                            <div class="rating">
-                                                <div class="stars"></div>
-                                                <span class="mini-text">(125)</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="current">$129.99</span>
-                                                <span class="normal mini-text">$189.99</span>
-                                            </div>
-                                            <div class="mini-text">
-                                                <p>123 vendidos</p>
                                                 <p>Envió gratis</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                
+                               <!--  contenedor de libro tendencia right -->
                                 <div class="row products mini-trending">
-                                    <div class="item">
+                                    <div class="item" th:each="tendencia_right : ${tendencia_right}">
                                         <div class="media">
                                             <div class="thumbnail object-cover">
                                                 <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
+                                                    <img th:src="${tendencia_right.img}" alt="">
                                                 </a>
                                             </div>
                                             <div class="hoverable">
@@ -716,109 +621,15 @@
                                                     <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
                                                 </ul>
                                             </div>
-                                            <div class="discount circle flexcenter"><span>32%</span></div>
+                                            <div class="discount circle flexcenter"><span th:text=${tendencia_right.porcentaje_descuento}></span></div>
                                         </div>
                                         <div class="content">
-                                            <h3 class="main-links" th:each="Lista : ${LibroT}"><a href="#" th:text="${Lista.LibroTendencia5}"></a></h3><div class="rating">
-                                                <div class="stars"></div>
-                                                <span class="mini-text">(125)</span>
-                                            </div>
+                                            <h3 class="main-links"><a href="#" th:text="${tendencia_right.titulo}"></a></h3>
                                             <div class="price">
-                                                <span class="current">$129.99</span>
-                                                <span class="normal mini-text">$189.99</span>
+                                                <span class="current" th:text="${'S/.' + tendencia_right.precio_descuento}"></span>
+                                                <span class="normal mini-text" th:text="${'S/.' + tendencia_right.precio_original}"></span>
                                             </div>
                                             <div class="mini-text">
-                                                <p>123 vendidos</p>
-                                                <p>Envió gratis</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="media">
-                                            <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="hoverable">
-                                                <ul>
-                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="discount circle flexcenter"><span>32%</span></div>
-                                        </div>
-                                        <div class="content">
-                                            <h3 class="main-links" th:each="Lista : ${LibroT}"><a href="#" th:text="${Lista.LibroTendencia6}"></a></h3>
-                                            <div class="rating">
-                                                <div class="stars"></div>
-                                                <span class="mini-text">(125)</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="current">$129.99</span>
-                                                <span class="normal mini-text">$189.99</span>
-                                            </div>
-                                            <div class="mini-text">
-                                                <p>123 vendidos</p>
-                                                <p>Envió gratis</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="media">
-                                            <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="hoverable">
-                                                <ul>
-                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="discount circle flexcenter"><span>32%</span></div>
-                                        </div>
-                                        <div class="content">
-                                            <h3 class="main-links" th:each="Lista : ${LibroT}"><a href="#" th:text="${Lista.LibroTendencia7}"></a></h3>
-                                            <div class="rating">
-                                                <div class="stars"></div>
-                                                <span class="mini-text">(125)</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="current">$129.99</span>
-                                                <span class="normal mini-text">$189.99</span>
-                                            </div>
-                                            <div class="mini-text">
-                                                <p>123 vendidos</p>
-                                                <p>Envió gratis</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="media">
-                                            <div class="thumbnail object-cover">
-                                                <a href="/inicio/detalle-libro">
-                                                    <img src="./assets/products/apparel4.jpg" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="hoverable">
-                                                <ul>
-                                                    <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="discount circle flexcenter"><span>32%</span></div>
-                                        </div>
-                                        <div class="content">
-                                            <h3 class="main-links" th:each="Lista : ${LibroT}"><a href="#" th:text="${Lista.LibroTendencia8}"></a></h3>
-                                            <div class="rating">
-                                                <div class="stars"></div>
-                                                <span class="mini-text">(125)</span>
-                                            </div>
-                                            <div class="price">
-                                                <span class="current">$129.99</span>
-                                                <span class="normal mini-text">$189.99</span>
-                                            </div>
-                                            <div class="mini-text">
-                                                <p>123 vendidos</p>
                                                 <p>Envió gratis</p>
                                             </div>
                                         </div>
@@ -842,11 +653,14 @@
                         </div>
                         <div class="column">
                             <div class="products main flexwrap">
-                                <div class="item">
+                            
+                            
+                   <!-- contenedor de libro destacado -->
+                                 <div class="item" th:each="d : ${destacados}">
                                     <div class="media">
                                         <div class="thumbnail object-cover">
                                             <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
+                                                <img th:src="${d.img}" alt="">
                                             </a>
                                         </div>
                                         <div class="hoverable">
@@ -854,208 +668,25 @@
                                                 <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
                                             </ul>
                                         </div>
-                                        <div class="discount circle flexcenter"><span>15%</span></div>
+                                        <div class="discount circle flexcenter" th:text="${d.porcentaje_descuento}"><span></span></div>
                                     </div>
                                     <div class="content">
-                                        <div class="rating">
-                                            <div class="stars"></div>
-                                            <span class="mini-text">(156)</span>
-                                        </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro" th:text="${Lista.LibroDestacado1}"></a></h3>
+                                        <h3><a href="/app/detalle-libro" th:text="${d.titulo}"></a></h3>
                                         <div class="price">
-                                            <div class="current">$46.50</div>
-                                            <div class="normal mini-text">$65.50</div>
+                                            <div class="current" th:text="${'S/.' + d.precio_descuento}"></div>
+                                            <div class="normal mini-text" th:text="${'S/.' + d.precio_original}"></div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="item">
-                                    <div class="media">
-                                        <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="hoverable">
-                                            <ul>
-                                                <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="discount circle flexcenter"><span>15%</span></div>
-                                    </div>
-                                    <div class="content">
-                                        <div class="rating">
-                                            <div class="stars"></div>
-                                            <span class="mini-text">(156)</span>
-                                        </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro" th:text="${Lista.LibroDestacado2}"></a></h3>
-                                        <div class="price">
-                                            <div class="current">$46.50</div>
-                                            <div class="normal mini-text">$65.50</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="media">
-                                        <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="hoverable">
-                                            <ul>
-                                                <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="discount circle flexcenter"><span>15%</span></div>
-                                    </div>
-                                    <div class="content">
-                                        <div class="rating">
-                                            <div class="stars"></div>
-                                            <span class="mini-text">(156)</span>
-                                        </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro" th:text="${Lista.LibroDestacado3}"></a></h3>
-                                        <div class="price">
-                                            <div class="current">$46.50</div>
-                                            <div class="normal mini-text">$65.50</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="media">
-                                        <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="hoverable">
-                                            <ul>
-                                                <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="discount circle flexcenter"><span>15%</span></div>
-                                    </div>
-                                    <div class="content">
-                                        <div class="rating">
-                                            <div class="stars"></div>
-                                            <span class="mini-text">(156)</span>
-                                        </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro" th:text="${Lista.LibroDestacado4}"></a></h3>
-                                        <div class="price">
-                                            <div class="current">$46.50</div>
-                                            <div class="normal mini-text">$65.50</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="media">
-                                        <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="hoverable">
-                                            <ul>
-                                                <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="discount circle flexcenter"><span>15%</span></div>
-                                    </div>
-                                    <div class="content">
-                                        <div class="rating">
-                                            <div class="stars"></div>
-                                            <span class="mini-text">(156)</span>
-                                        </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro" th:text="${Lista.LibroDestacado5}"></a></h3>
-                                        <div class="price">
-                                            <div class="current">$46.50</div>
-                                            <div class="normal mini-text">$65.50</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="media">
-                                        <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="hoverable">
-                                            <ul>
-                                                <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="discount circle flexcenter"><span>15%</span></div>
-                                    </div>
-                                    <div class="content">
-                                        <div class="rating">
-                                            <div class="stars"></div>
-                                            <span class="mini-text">(156)</span>
-                                        </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro" th:text="${Lista.LibroDestacado6}"></a></h3>
-                                        <div class="price">
-                                            <div class="current">$46.50</div>
-                                            <div class="normal mini-text">$65.50</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="media">
-                                        <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="hoverable">
-                                            <ul>
-                                                <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="discount circle flexcenter"><span>15%</span></div>
-                                    </div>
-                                    <div class="content">
-                                        <div class="rating">
-                                            <div class="stars"></div>
-                                            <span class="mini-text">(156)</span>
-                                        </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro" th:text="${Lista.LibroDestacado7}"></a></h3>
-                                        <div class="price">
-                                            <div class="current">$46.50</div>
-                                            <div class="normal mini-text">$65.50</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="media">
-                                        <div class="thumbnail object-cover">
-                                            <a href="/inicio/detalle-libro">
-                                                <img src="./assets/images/romeo_y_julieta_libro_1.jpg" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="hoverable">
-                                            <ul>
-                                                <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="discount circle flexcenter"><span>15%</span></div>
-                                    </div>
-                                    <div class="content">
-                                        <div class="rating">
-                                            <div class="stars"></div>
-                                            <span class="mini-text">(156)</span>
-                                        </div>
-                                        <h3 th:each="Lista : ${LibroD}"><a href="/app/detalle-libro" th:text="${Lista.LibroDestacado8}"></a></h3>
-                                        <div class="price">
-                                            <div class="current">$46.50</div>
-                                            <div class="normal mini-text">$65.50</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                </div> 
+                          <!-- fin del contenedor de libro destacado -->      
+                                
+                              
                             </div>    
                         </div>
                     </div>
                 </div>
             </div>
-
+           
         </main>
 
         <footer>
@@ -1228,6 +859,7 @@
 
         </footer>
     </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="/js/index.js"></script>
 </body>

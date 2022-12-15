@@ -34,6 +34,9 @@ public class Libro {
     @Column(name = "id_subcategoria", nullable = false, length = 50)
     private String id_subcategoria;
 
+    @Column(name = "descripcion", nullable = false, length = 50)
+    private String descripcion;
+
     @Column(name = "precio_original", nullable = false, length = 50)
     private String precio_original;
 
@@ -56,14 +59,14 @@ public class Libro {
     public String toString() {
         return "Libro [id=" + id + ", img=" + img + ", titulo=" + titulo + ", autor=" + autor + ", id_editorial="
                 + id_editorial + ", id_categoria=" + id_categoria + ", id_subcategoria=" + id_subcategoria
-                + ", precio_original=" + precio_original + ", precio_descuento=" + precio_descuento
-                + ", porcentaje_descuento=" + porcentaje_descuento + ", numero_pagina=" + numero_pagina
-                + ", year_publicacion=" + year_publicacion + ", disponible=" + disponible + "]";
+                + ", descripcion=" + descripcion + ", precio_original=" + precio_original + ", precio_descuento="
+                + precio_descuento + ", porcentaje_descuento=" + porcentaje_descuento + ", numero_pagina="
+                + numero_pagina + ", year_publicacion=" + year_publicacion + ", disponible=" + disponible + "]";
     }
 
     public Libro(Long id, String img, String titulo, String autor, String id_editorial, String id_categoria,
-            String id_subcategoria, String precio_original, String precio_descuento, String porcentaje_descuento,
-            String numero_pagina, String year_publicacion, String disponible) {
+            String id_subcategoria, String descripcion, String precio_original, String precio_descuento,
+            String porcentaje_descuento, String numero_pagina, String year_publicacion, String disponible) {
         this.id = id;
         this.img = img;
         this.titulo = titulo;
@@ -71,6 +74,7 @@ public class Libro {
         this.id_editorial = id_editorial;
         this.id_categoria = id_categoria;
         this.id_subcategoria = id_subcategoria;
+        this.descripcion = descripcion;
         this.precio_original = precio_original;
         this.precio_descuento = precio_descuento;
         this.porcentaje_descuento = porcentaje_descuento;
@@ -80,14 +84,15 @@ public class Libro {
     }
 
     public Libro(String img, String titulo, String autor, String id_editorial, String id_categoria,
-            String id_subcategoria, String precio_original, String precio_descuento, String porcentaje_descuento,
-            String numero_pagina, String year_publicacion, String disponible) {
+            String id_subcategoria, String descripcion, String precio_original, String precio_descuento,
+            String porcentaje_descuento, String numero_pagina, String year_publicacion, String disponible) {
         this.img = img;
         this.titulo = titulo;
         this.autor = autor;
         this.id_editorial = id_editorial;
         this.id_categoria = id_categoria;
         this.id_subcategoria = id_subcategoria;
+        this.descripcion = descripcion;
         this.precio_original = precio_original;
         this.precio_descuento = precio_descuento;
         this.porcentaje_descuento = porcentaje_descuento;
@@ -150,6 +155,14 @@ public class Libro {
 
     public void setId_subcategoria(String id_subcategoria) {
         this.id_subcategoria = id_subcategoria;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public String getPrecio_original() {

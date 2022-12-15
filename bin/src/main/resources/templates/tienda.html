@@ -607,12 +607,16 @@
                                             </div>
                                         </div>
                                     </div>
+                                    
+                                    
                                     <div class="products main flexwrap">
-                                        <div class="item">
+                                    
+                                   <!--  contenedor de libro -->
+                                        <div class="item" th:each="lista:${libros}">
                                             <div class="media">
                                                 <div class="thumbnail object-cover">
                                                     <a href="#">
-                                                        <img src="./assets/images/ejemplo.png" alt="">
+                                                        <img th:src="${lista.img}" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="hoverable">
@@ -620,202 +624,17 @@
                                                         <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
                                                     </ul>
                                                 </div>
-                                                <div class="discount circle flexcenter"><span>0%</span></div>
+                                                <div class="discount circle flexcenter"><span th:text="${lista.porcentaje_descuento}"></span></div>
                                             </div>
                                             <div class="content">
-                                                <div class="rating">
-                                                    <div class="stars"></div>
-                                                    <span class="mini-text">(#)</span>
-                                                </div>
-                                                <h3><a href="#">/*Nombre de libro*/</a></h3>
+                                                <h3><a href="#" th:text="${lista.titulo}"></a></h3>
                                                 <div class="price">
-                                                    <div class="current">$0.00</div>
-                                                    <div class="normal mini-text">$0.00</div>
+                                                    <div class="current" th:text="${'S/.' + lista.precio_descuento}"></div>
+                                                    <div class="normal mini-text" th:text="${'S/.' + lista.precio_original}"></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="item">
-                                            <div class="media">
-                                                <div class="thumbnail object-cover">
-                                                    <a href="#">
-                                                        <img src="./assets/images/ejemplo.png" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="hoverable">
-                                                    <ul>
-                                                        <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="discount circle flexcenter"><span>0%</span></div>
-                                            </div>
-                                            <div class="content">
-                                                <div class="rating">
-                                                    <div class="stars"></div>
-                                                    <span class="mini-text">(#)</span>
-                                                </div>
-                                                <h3><a href="#">/*Nombre de libro*/</a></h3>
-                                                <div class="price">
-                                                    <div class="current">$0.00</div>
-                                                    <div class="normal mini-text">$0.00</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="media">
-                                                <div class="thumbnail object-cover">
-                                                    <a href="#">
-                                                        <img src="./assets/images/ejemplo.png" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="hoverable">
-                                                    <ul>
-                                                        <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="discount circle flexcenter"><span>0%</span></div>
-                                            </div>
-                                            <div class="content">
-                                                <div class="rating">
-                                                    <div class="stars"></div>
-                                                    <span class="mini-text">(#)</span>
-                                                </div>
-                                                <h3><a href="#">/*Nombre de libro*/</a></h3>
-                                                <div class="price">
-                                                    <div class="current">$0.00</div>
-                                                    <div class="normal mini-text">$0.00</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="media">
-                                                <div class="thumbnail object-cover">
-                                                    <a href="#">
-                                                        <img src="./assets/images/ejemplo.png" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="hoverable">
-                                                    <ul>
-                                                        <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="discount circle flexcenter"><span>0%</span></div>
-                                            </div>
-                                            <div class="content">
-                                                <div class="rating">
-                                                    <div class="stars"></div>
-                                                    <span class="mini-text">(#)</span>
-                                                </div>
-                                                <h3><a href="#">/*Nombre de libro*/</a></h3>
-                                                <div class="price">
-                                                    <div class="current">$0.00</div>
-                                                    <div class="normal mini-text">$0.00</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="media">
-                                                <div class="thumbnail object-cover">
-                                                    <a href="#">
-                                                        <img src="./assets/images/ejemplo.png" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="hoverable">
-                                                    <ul>
-                                                        <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="discount circle flexcenter"><span>0%</span></div>
-                                            </div>
-                                            <div class="content">
-                                                <div class="rating">
-                                                    <div class="stars"></div>
-                                                    <span class="mini-text">(#)</span>
-                                                </div>
-                                                <h3><a href="#">/*Nombre de libro*/</a></h3>
-                                                <div class="price">
-                                                    <div class="current">$0.00</div>
-                                                    <div class="normal mini-text">$0.00</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="media">
-                                                <div class="thumbnail object-cover">
-                                                    <a href="#">
-                                                        <img src="./assets/images/ejemplo.png" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="hoverable">
-                                                    <ul>
-                                                        <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="discount circle flexcenter"><span>0%</span></div>
-                                            </div>
-                                            <div class="content">
-                                                <div class="rating">
-                                                    <div class="stars"></div>
-                                                    <span class="mini-text">(#)</span>
-                                                </div>
-                                                <h3><a href="#">/*Nombre de libro*/</a></h3>
-                                                <div class="price">
-                                                    <div class="current">$0.00</div>
-                                                    <div class="normal mini-text">$0.00</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="media">
-                                                <div class="thumbnail object-cover">
-                                                    <a href="#">
-                                                        <img src="./assets/images/ejemplo.png" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="hoverable">
-                                                    <ul>
-                                                        <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="discount circle flexcenter"><span>0%</span></div>
-                                            </div>
-                                            <div class="content">
-                                                <div class="rating">
-                                                    <div class="stars"></div>
-                                                    <span class="mini-text">(#)</span>
-                                                </div>
-                                                <h3><a href="#">/*Nombre de libro*/</a></h3>
-                                                <div class="price">
-                                                    <div class="current">$0.00</div>
-                                                    <div class="normal mini-text">$0.00</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="media">
-                                                <div class="thumbnail object-cover">
-                                                    <a href="#">
-                                                        <img src="./assets/images/ejemplo.png" alt="">
-                                                    </a>
-                                                </div>
-                                                <div class="hoverable">
-                                                    <ul>
-                                                        <li class="active"><a href="#"><i class="ri-heart-line"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="discount circle flexcenter"><span>0%</span></div>
-                                            </div>
-                                            <div class="content">
-                                                <div class="rating">
-                                                    <div class="stars"></div>
-                                                    <span class="mini-text">(#)</span>
-                                                </div>
-                                                <h3><a href="#">/*Nombre de libro*/</a></h3>
-                                                <div class="price">
-                                                    <div class="current">$0.00</div>
-                                                    <div class="normal mini-text">$0.00</div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                   <!-- fin del contenedor de libro   -->   
                                     </div>
                                     <div class="load-more flexcenter">
                                         <a href="#" class="secondary-button">Cargar Mas</a>
