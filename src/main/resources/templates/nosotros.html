@@ -76,7 +76,7 @@
                                     <div class="wish-list">
                                         <div class="content">
                                             <div class="wish-list-head">
-                                                Libros deseados
+                                                # libros deseados
                                             </div>
                                             <div class="wish-list-body">
                                                 <ul class="products wish">
@@ -167,22 +167,61 @@
                                 <div class="mini-cart">
                                     <div class="content">
                                         <div class="cart-head">
-                                            Libros en el carrito
+                                            # libros en el carrito
                                         </div>
                                         <div class="cart-body">
-                                            <ul class="products mini" th:each="carrito : ${carrito}">
+                                            <ul class="products mini" th:each="Lista : ${CarritoC}">
                                                 <li class="item">
                                                     <div class="thumbnail object-cover">
-                                                        <a href="#"><img th:src="${carrito.img}" width="100" height="100"></a>
+                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
                                                     </div>
                                                     <div class="item-content">
-                                                        <p><a href="#" th:text="${carrito.titulo}"></a></p>
-                                                        <span class="price">$
-                                                            <span th:text="${carrito.precio}"></span>
-                                                            <span class="fly-item">x<span th:text="${carrito.cantidad}"></span></span>
+                                                        <p><a href="#" th:text="${Lista.CarritoCompras1}"></a></p>
+                                                        <span class="price">
+                                                            <span>$0.00</span>
+                                                            <span class="fly-item"><span>1x</span></span>
                                                         </span>
                                                     </div>
-                                                    <a th:href="@{/inicio/nosotros/{id}(id=${carrito.id})}" class="item-remove"><i class="ri-close-line"></i></a>
+                                                    <a href="#" class="item-remove"><i class="ri-close-line"></i></a>
+                                                </li>
+                                                <li class="item">
+                                                    <div class="thumbnail object-cover">
+                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
+                                                    </div>
+                                                    <div class="item-content">
+                                                        <p><a href="#" th:text="${Lista.CarritoCompras2}"></a></p>
+                                                        <span class="price">
+                                                            <span>$0.00</span>
+                                                            <span class="fly-item"><span>1x</span></span>
+                                                        </span>
+                                                    </div>
+                                                    <a href="#" class="item-remove"><i class="ri-close-line"></i></a>
+                                                </li>
+                                                <li class="item">
+                                                    <div class="thumbnail object-cover">
+                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
+                                                    </div>
+                                                    <div class="item-content">
+                                                        <p><a href="#" th:text="${Lista.CarritoCompras3}"></a></p>
+                                                        <span class="price">
+                                                            <span>$0.00</span>
+                                                            <span class="fly-item"><span>1x</span></span>
+                                                        </span>
+                                                    </div>
+                                                    <a href="#" class="item-remove"><i class="ri-close-line"></i></a>
+                                                </li>
+                                                <li class="item">
+                                                    <div class="thumbnail object-cover">
+                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
+                                                    </div>
+                                                    <div class="item-content">
+                                                        <p><a href="#" th:text="${Lista.CarritoCompras4}"></a></p>
+                                                        <span class="price">
+                                                            <span>$0.00</span>
+                                                            <span class="fly-item"><span>1x</span></span>
+                                                        </span>
+                                                    </div>
+                                                    <a href="#" class="item-remove"><i class="ri-close-line"></i></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -192,7 +231,7 @@
                                                 <p><strong>$0.00</strong></p>
                                             </div>
                                             <div class="actions">
-                                                <a href="/inicio/revision-pedido" class="primary-button">Verificar</a>
+                                                <a href="/inicio/revision-pedido"  class="primary-button">Verificar</a>
                                                 <a href="/inicio/carrito-compras" class="secondary-button">Ver Carrito</a></div>
                                         </div>
                                     </div>

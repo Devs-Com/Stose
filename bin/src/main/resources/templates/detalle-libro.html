@@ -457,26 +457,26 @@
                         
                         <!-- books images -->
                         <div class="column">
-                            <div class="products one" th:action="@{/inicio/info/{id}(id=${libroinfo.id})}" th:object="${libroinfo}" method="POST">
+                            <div class="products one">
                                 <div class="flexwrap">
                                     <div class="row">
                                         <div class="item is_sticky">
                                             <div class="price">
-                                                <span class="discount" th:text="*{porcentaje_descuento + 'OFF'}"></span>
+                                                <span class="discount">0%<br>OFF</span>
                                             </div>
                                             <div class="big-image">
                                                 <div class="big-image-wrapper">
                                                     <div class="image-show">
-                                                        <a href="#"><img th:src="*{img}" alt=""></a>
+                                                        <a href="#"><img src="./assets/images/ejemplo.png" alt=""></a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="item">
-                                            <h1 th:text="*{titulo}"></h1><br>
-                                            <h3 th:text="*{autor}"></h3>
+                                        <div class="item" th:each="Lista : ${DetalleLibro}">
+                                            <h1 th:text="${Lista.Titulo}"></h1><br>
+                                            <h3 th:text="${Lista.Autor}"></h3>
                                             <div class="content">
                                                 <div class="rating">
                                                     <div class="stars"></div>
@@ -488,8 +488,8 @@
                                                     <span class="sku mini-text">SKU-###</span>
                                                 </div>
                                                 <div class="price">
-                                                    <span class="current" th:text="*{'S/.' + precio_descuento}"></span>
-                                                    <span class="normal" th:text="*{'S/.' + precio_original}"></span>
+                                                    <span class="current">$0.00</span>
+                                                    <span class="normal">$0.00</span>
                                                 </div>
                                                 <div class="actions">
                                                     <div class="qty-control flexitem">
@@ -515,7 +515,7 @@
                                                     <ul>
                                                         <li class="has-child">
                                                             <a href="#0" class="icon-small">Descripción</a>
-                                                            <div class="content">
+                                                            <div class="content" th:each="Lista : ${Descripcion}">
                                                                 <p th:text="${Lista.Contenido}"></p>
                                                             </div>
                                                         </li>
