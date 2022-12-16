@@ -38,7 +38,7 @@ public class UsuarioServicioImpl implements UsuarioServicio {
 		passwordEncoder.encode(registroDTO.getPassword()), Arrays.asList(new Rol("ROLE_USER")));
 		return usuarioRepositorio.save(usuario);
 	}
-
+	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		Usuario usuario = usuarioRepositorio.findByEmail(username);
