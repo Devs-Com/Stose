@@ -70,10 +70,15 @@
 							type="password" id="password" class="form-control" th:field="*{password}"
 							required autofocus="autofocus">
 					</div>
-
+					
+						<span>Si estas registrado <a th:href="@{/login}">inicia sesión aqui</a></span>
+						<br>
+						<span>Si ya iniciaste sesión <a th:href="@{/inicio/}">presiona aqui.</a></span>
+						<br>
+						
 					<div class="form-group">
 						<button type="submit" class="btn btn-success">Registrar</button>
-						<span>Si estas registrado <a th:href="@{/login}">inicia sesión aqui</a></span>
+						
 					</div>
 				</form>
 

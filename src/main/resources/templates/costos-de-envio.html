@@ -42,10 +42,10 @@
                             </ul>
                         </div>
                         <div class="right">
-                            <ul class="flexitem main-links" th:each="Lista : ${HeaderT}">
-                                <li><a href="#" th:text="${Lista.Registrate}"></a></li>
-                                <li><a href="#" th:text="${Lista.MiCuenta}"></a></li>
-                                <li><a href="#" th:text="${Lista.RevisionDePedidos}"></a></li>
+                        <ul class="flexitem main-links">
+                                <li><a th:href="@{/login}">Inicia sesión</a></li>
+                                <li><a th:href="@{/registro}">Registrate</a></li>
+                                <li><a th:href="@{/logout}">Cerrar sesión</a></li>
                             </ul>
                         </div>
                     </div>
