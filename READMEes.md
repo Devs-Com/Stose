@@ -121,7 +121,7 @@ Nos gustaría agregar una lista de recursos que encontramos útiles para el desa
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/badge/CONTRIBUIDORES-5-green?style=for-the-badge
+[contributors-shield]: https://img.shields.io/badge/CONTRIBUIDORES-7-green?style=for-the-badge
 [contributors-url]: https://github.com/Devs-Com/Stose/graphs/contributors
 [architech-screenshot]: .github/images_readme/architech/threeLevelArchitectureEs.png
 [mockups-screenshot]: .github/images_readme/mockups/allMockups.png
